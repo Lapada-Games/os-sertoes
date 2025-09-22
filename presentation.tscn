@@ -164,6 +164,7 @@ texture = ExtResource("1_rjcjf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_03nak")
+volume_db = -2.568
 autoplay = true
 
 [node name="ColorRect2" type="ColorRect" parent="."]
