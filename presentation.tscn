@@ -4,70 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://0ncnri1qaneo" path="res://Assets/LapadaGamesLogo/frame2.png" id="2_w5moa"]
 [ext_resource type="AudioStream" uid="uid://dihsro21hp0kh" path="res://Assets/LapadaGamesLogo/lapada.mp3" id="3_03nak"]
 
-[sub_resource type="Animation" id="Animation_5buq6"]
-resource_name = "lapada"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Frame:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 0.6333333, 0.6833333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(577.6839, 338.375), Vector2(577.6839, 338.375), Vector2(577.6839, 338.375)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Frame:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 0.6333333, 0.6833333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0.12070112, 0.120701104), Vector2(0.5863097, 0.5863096), Vector2(0.5439815, 0.54398143)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Frame:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5011469),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Frame:texture")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.8666667, 1.0333333, 1.1956991, 1.3623657, 1.5464782, 1.7131448, 1.9064081, 2.0730748),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("1_rjcjf"), ExtResource("2_w5moa"), ExtResource("1_rjcjf"), ExtResource("2_w5moa"), ExtResource("1_rjcjf"), ExtResource("2_w5moa"), ExtResource("1_rjcjf"), ExtResource("2_w5moa"), ExtResource("1_rjcjf")]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("ColorRect2:color")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 5.4, 7),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_w5moa"]
 length = 0.001
 tracks/0/type = "value"
@@ -80,7 +16,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(577.6839, 338.375)]
+"values": [Vector2(577.684, 338.375)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -92,7 +28,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.12070112, 0.120701104)]
+"values": [Vector2(0.120701, 0.120701)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -131,10 +67,74 @@ tracks/4/keys = {
 "values": [Color(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_5buq6"]
+resource_name = "lapada"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 0.633333, 0.683333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(577.684, 338.375), Vector2(577.684, 338.375), Vector2(577.684, 338.375)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Frame:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 0.633333, 0.683333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.120701, 0.120701), Vector2(0.58631, 0.58631), Vector2(0.543981, 0.543981)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Frame:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.501147),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Frame:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.866667, 1.03333, 1.1957, 1.36237, 1.54648, 1.71314, 1.90641, 2.07307),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_rjcjf"), ExtResource("2_w5moa"), ExtResource("1_rjcjf"), ExtResource("2_w5moa"), ExtResource("1_rjcjf"), ExtResource("2_w5moa"), ExtResource("1_rjcjf"), ExtResource("2_w5moa"), ExtResource("1_rjcjf")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5.4, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_03nak"]
 _data = {
-&"RESET": SubResource("Animation_w5moa"),
-&"lapada": SubResource("Animation_5buq6")
+"RESET": SubResource("Animation_w5moa"),
+"lapada": SubResource("Animation_5buq6")
 }
 
 [node name="Presentation" type="Control"]
@@ -147,7 +147,7 @@ grow_vertical = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_03nak")
+"": SubResource("AnimationLibrary_03nak")
 }
 autoplay = "lapada"
 
@@ -158,8 +158,8 @@ offset_bottom = 669.0
 
 [node name="Frame" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(577.6839, 338.375)
-scale = Vector2(0.12070112, 0.120701104)
+position = Vector2(577.684, 338.375)
+scale = Vector2(0.120701, 0.120701)
 texture = ExtResource("1_rjcjf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
