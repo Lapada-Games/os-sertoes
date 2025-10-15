@@ -1,11 +1,13 @@
 extends CanvasLayer
 
-@export var character_name: String = ""
 @export_file("*.json") var scene_text_file
 
+signal on_next_line
+signal on_dialog_finished
 
 var dialogue = null
 var index = 0
+var finished = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,11 +34,13 @@ func load_json_file(path: String) -> Variant:
 
 func next_line():
 	if index + 1 > dialogue.size() - 1:
+		on_dialog_finished.emit()
 		return
 	index += 1
 	show_text()
 	
 func show_text():
+	$RichTextLabel.visible_characters = 0
 	$RichTextLabel.text = dialogue[index].text
 	if dialogue[index].has("speaker"):
 		$character.visible = true
@@ -46,8 +50,23 @@ func show_text():
 	else:
 		$character.visible = false
 		$Box.texture = load("res://Assets/Dialog/box.png")
+		$RichTextLabel.size.x = 1220
+	finished = false
+	while $RichTextLabel.visible_characters < len($RichTextLabel.text) and not finished:
+		$RichTextLabel.visible_characters += 1
+		await get_tree().create_timer(0.04).timeout
+	finished = true
+
+func get_current_speaker():
+	if dialogue[index].has("speaker"):
+		return dialogue[index].speaker
+	return null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		next_line()
+		if finished:
+			next_line()
+		else:
+			# skips dialog animation
+			$RichTextLabel.visible_characters = len($RichTextLabel.text)

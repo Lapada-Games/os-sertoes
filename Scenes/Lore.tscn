@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://gpjdbomlx7ty"]
+
+[ext_resource type="PackedScene" uid="uid://commjrcmkwfx6" path="res://Scenes/DialogBox.tscn" id="1_klpgi"]
+[ext_resource type="Texture2D" uid="uid://brx7264vfrstp" path="res://Assets/LoreImages/0.png" id="2_d825v"]
+[ext_resource type="AudioStream" uid="uid://ctjiwimyshowi" path="res://OST/Twilight Train - Dan Lebowitz.mp3" id="3_sxeq6"]
+
+[node name="Lore" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogBox" parent="." instance=ExtResource("1_klpgi")]
+scene_text_file = "res://Dialogs/lore.json"
+
+[node name="slide" type="Sprite2D" parent="."]
+position = Vector2(644.521, 411.875)
+scale = Vector2(1.61542, 1.61542)
+texture = ExtResource("2_d825v")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sxeq6")
+volume_db = -6.559
+autoplay = true

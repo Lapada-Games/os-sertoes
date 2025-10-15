@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://f5rbv3qcjf24"]
+[gd_scene load_steps=8 format=3 uid="uid://f5rbv3qcjf24"]
 
+[ext_resource type="Script" path="res://presentation.gd" id="1_bdtq3"]
 [ext_resource type="Texture2D" uid="uid://cji6wt4imi87j" path="res://Assets/LapadaGamesLogo/frame1.png" id="1_rjcjf"]
 [ext_resource type="Texture2D" uid="uid://0ncnri1qaneo" path="res://Assets/LapadaGamesLogo/frame2.png" id="2_w5moa"]
 [ext_resource type="AudioStream" uid="uid://dihsro21hp0kh" path="res://Assets/LapadaGamesLogo/lapada.mp3" id="3_03nak"]
@@ -130,6 +131,20 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"finish"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_03nak"]
 _data = {
@@ -144,6 +159,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bdtq3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
