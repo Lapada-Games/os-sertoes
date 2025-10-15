@@ -1,0 +1,18 @@
+{
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "Antonio",
+			"text": "Bem vindo a canudos!"
+		},
+		{
+			"id": 2,
+			"text": "Sua tarefa eh ser o estrategista do nosso povo"
+		},
+		{
+			"id": 3,
+			"speaker": "Antonio",
+			"text": "boa sorte!"
+		}
+	]
+}
