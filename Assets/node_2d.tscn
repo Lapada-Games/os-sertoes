@@ -3998,7 +3998,7 @@ sources/23 = SubResource("TileSetAtlasSource_3i0ad")
 sources/24 = SubResource("TileSetAtlasSource_7ho2o")
 sources/25 = SubResource("TileSetAtlasSource_0cdgs")
 
-[node name="Node2D" type="Node2D"]
+[node name="cena1" type="Node2D"]
 
 [node name="Unnamed" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.721569)
