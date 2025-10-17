@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://drjmyu6263i4y"]
+
+[ext_resource type="Script" path="res://Tower.gd" id="1_nljyu"]
+[ext_resource type="Texture2D" uid="uid://b1xdrtl1ep333" path="res://Assets/LoreImages/bolaaaaa.png" id="2_0sckh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ya6nr"]
+size = Vector2(372, 310)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yhd5o"]
+radius = 222.002
+
+[node name="Tower" type="StaticBody2D"]
+script = ExtResource("1_nljyu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(160, 112)
+shape = SubResource("RectangleShape2D_ya6nr")
+
+[node name="Aim" type="Marker2D" parent="."]
+position = Vector2(243, 105)
+
+[node name="Bolaaaaa" type="Sprite2D" parent="."]
+position = Vector2(158, 106)
+rotation = 1.5708
+texture = ExtResource("2_0sckh")
+
+[node name="Torre" type="Area2D" parent="."]
+position = Vector2(332, 95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Torre"]
+position = Vector2(-182, 14)
+shape = SubResource("CircleShape2D_yhd5o")
+
+[node name="BulletContainer" type="Node" parent="."]
+
+[connection signal="body_entered" from="Torre" to="." method="_on_torre_body_entered"]
+[connection signal="body_exited" from="Torre" to="." method="_on_torre_body_exited"]

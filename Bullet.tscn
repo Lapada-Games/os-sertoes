@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg1udr3orh8ei"]
+
+[ext_resource type="Script" path="res://Bullet.gd" id="1_ouajs"]
+[ext_resource type="Texture2D" uid="uid://eqak6cdju3ag" path="res://Assets/LoreImages/Captura de tela 2025-10-16 224847.png" id="1_rvrw6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oojyk"]
+radius = 63.0
+height = 130.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_el55x"]
+radius = 35.0
+height = 96.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_ouajs")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(317, 66)
+shape = SubResource("CapsuleShape2D_oojyk")
+
+[node name="CapturaDeTela2025-10-16224847" type="Sprite2D" parent="."]
+position = Vector2(313, 57.75)
+scale = Vector2(1.36364, 1.65789)
+texture = ExtResource("1_rvrw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(317, 60)
+shape = SubResource("CapsuleShape2D_el55x")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
