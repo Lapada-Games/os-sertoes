@@ -13,11 +13,12 @@ radius = 222.002
 script = ExtResource("1_nljyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(160, 112)
+position = Vector2(156, 109)
 shape = SubResource("RectangleShape2D_ya6nr")
 
 [node name="Aim" type="Marker2D" parent="."]
-position = Vector2(243, 105)
+position = Vector2(157, 112)
+rotation = 1.79594
 
 [node name="Bolaaaaa" type="Sprite2D" parent="."]
 position = Vector2(158, 106)
@@ -25,13 +26,17 @@ rotation = 1.5708
 texture = ExtResource("2_0sckh")
 
 [node name="Torre" type="Area2D" parent="."]
-position = Vector2(332, 95)
+position = Vector2(161, 110)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Torre"]
-position = Vector2(-182, 14)
+position = Vector2(-4, -1)
 shape = SubResource("CircleShape2D_yhd5o")
 
 [node name="BulletContainer" type="Node" parent="."]
 
+[node name="timer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="Torre" to="." method="_on_torre_body_entered"]
 [connection signal="body_exited" from="Torre" to="." method="_on_torre_body_exited"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

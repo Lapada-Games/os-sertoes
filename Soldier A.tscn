@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_oruv6"]
 radius = 29.0172
 
-[node name="Soldier A" type="CharacterBody2D"]
+[node name="Soldier A" type="CharacterBody2D" groups=["inimigos"]]
 position = Vector2(81, 44)
 script = ExtResource("1_031cw")
 
