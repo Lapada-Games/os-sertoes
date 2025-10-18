@@ -21,8 +21,9 @@ position = Vector2(317, 66)
 shape = SubResource("CapsuleShape2D_oojyk")
 
 [node name="CapturaDeTela2025-10-16224847" type="Sprite2D" parent="."]
-position = Vector2(313, 57.75)
-scale = Vector2(1.36364, 1.65789)
+position = Vector2(312.5, 68.5)
+rotation = 0.0309844
+scale = Vector2(0.420455, 0.473684)
 texture = ExtResource("1_rvrw6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
