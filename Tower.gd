@@ -7,7 +7,7 @@ var currTargets = []
 var curr
 
 	
-func _on_tower_body_entered(body):
+func _on_torre_body_entered(body):
 	if "Soldier A" in body.name:
 		var tempArray = []
 		currTargets = get_node("Torre").get_overlapping_bodies()
@@ -33,3 +33,5 @@ func _on_tower_body_entered(body):
 
 func _on_tower_body_exited(body):
 	pass
+
+

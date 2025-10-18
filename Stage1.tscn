@@ -17,3 +17,4 @@ rotation = 2.56522
 loop = false
 
 [node name="Soldier A" parent="PathFollow2D" instance=ExtResource("1_0xi7i")]
+position = Vector2(96.421, -56.595)
