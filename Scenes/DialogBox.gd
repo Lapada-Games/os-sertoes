@@ -45,6 +45,10 @@ func show_text():
 	if dialogue[index].has("speaker"):
 		$character.visible = true
 		$character.texture = load("res://Assets/Characters/" + dialogue[index].speaker.to_lower() + ".png")
+		if dialogue[index].has("flip"):
+			$character.flip_h = not dialogue[index].flip
+		else:
+			$character.flip_h = true
 		$Box.texture = load("res://Assets/Dialog/box-shrinked.png")
 		
 	else:

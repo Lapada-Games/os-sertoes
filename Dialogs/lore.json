@@ -6,6 +6,8 @@
 		},
 		{
 			"id": 2,
+			"speaker": "governador",
+			"flip": true,
 			"text": "Mas a esperança logo seria vista como ameaça.\nPara o governo, Canudos representava rebeldia.\nPara os sertanejos, era o último refúgio de fé."
 		},
 		{
