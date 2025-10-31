@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0pwl15jkblrh" path="res://Assets/Characters/sprites/villager.png" id="2_wv6q3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3b5ni"]
-size = Vector2(54, 90)
+size = Vector2(38, 66)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mexpq"]
 radius = 122.188
@@ -13,7 +13,7 @@ radius = 122.188
 script = ExtResource("1_c3fk5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.574468, 0.574468)
+scale = Vector2(0.404255, 0.404255)
 texture = ExtResource("2_wv6q3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -13,6 +13,7 @@ centered = false
 
 [node name="Tower" parent="." instance=ExtResource("2_evsq7")]
 position = Vector2(810, 462)
+range = 200.0
 
 [node name="Enemy" parent="." instance=ExtResource("3_mksqp")]
 position = Vector2(1053, 659)
