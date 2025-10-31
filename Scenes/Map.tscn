@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctlnsv7r3syn7"]
+
+[ext_resource type="Texture2D" uid="uid://bpdp15k5bejr" path="res://Assets/Scenario/scene.png" id="1_2gg6k"]
+[ext_resource type="PackedScene" uid="uid://dy0roh66tg0ai" path="res://Scenes/Tower.tscn" id="2_evsq7"]
+[ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Enemy.tscn" id="3_mksqp"]
+
+[node name="Map" type="Node2D"]
+
+[node name="temp" type="Sprite2D" parent="."]
+scale = Vector2(0.833984, 0.833984)
+texture = ExtResource("1_2gg6k")
+centered = false
+
+[node name="Tower" parent="." instance=ExtResource("2_evsq7")]
+position = Vector2(810, 462)
+
+[node name="Enemy" parent="." instance=ExtResource("3_mksqp")]
+position = Vector2(1053, 659)
