@@ -10,7 +10,6 @@ var current_target: Node2D = null
 var time_since_last_shot: float = 0.0
 var target_position: Vector2
 
-#temp 
 var has_shooted = false
 
 # Called when the node enters the scene tree for the first time.
@@ -31,7 +30,7 @@ func _process(delta):
 			time_since_last_shot = 0.0
 
 func _on_range_body_entered(body):
-	if body is Enemy:
+	if body.name == "Enemy":
 		enemies_in_range.append(body)
 
 func _on_range_body_exited(body):
@@ -44,6 +43,7 @@ func shoot(target: Vector2):
 	var tempbullet = bullet.instantiate()
 	tempbullet.target = current_target
 	tempbullet.global_position = self.global_position
+	tempbullet.damage = 50
 	get_parent().add_child(tempbullet)
 
 func find_new_target():
@@ -56,6 +56,7 @@ func find_new_target():
 	
 
 func aim_to_target(pos: Vector2):
+	$Arrow.look_at(pos)
 	target_position = pos
 
 

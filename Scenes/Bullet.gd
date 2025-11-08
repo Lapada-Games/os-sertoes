@@ -3,11 +3,7 @@ extends CharacterBody2D
 
 @export var target: Node2D
 @export var speed = 300
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+@export var damage = 10
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -22,6 +18,6 @@ func _physics_process(delta):
 		move_and_slide()
 	
 		if global_position.distance_to(target.global_position) < 10:
-			# TODO: hit target
+			target.get_parent().damage(damage)
 			queue_free()
 		

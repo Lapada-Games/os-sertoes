@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctlnsv7r3syn7"]
+[gd_scene load_steps=6 format=3 uid="uid://ctlnsv7r3syn7"]
 
 [ext_resource type="Texture2D" uid="uid://bpdp15k5bejr" path="res://Assets/Scenario/scene.png" id="1_2gg6k"]
+[ext_resource type="Script" path="res://Scenes/Map.gd" id="1_ms0u8"]
 [ext_resource type="PackedScene" uid="uid://dy0roh66tg0ai" path="res://Scenes/Tower.tscn" id="2_evsq7"]
 [ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Enemy.tscn" id="3_mksqp"]
 
+[sub_resource type="Curve2D" id="Curve2D_gqbme"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1209, 850, 0, 0, 0, 0, 969, 561, 0, 0, 0, 0, 939, 485, 0, 0, 0, 0, 851, 407, 0, 0, 0, 0, 705, 316, 0, 0, 0, 0, 766, 177, 0, 0, 0, 0, 868, 92, 0, 0, 0, 0, 914, 6)
+}
+point_count = 8
+
 [node name="Map" type="Node2D"]
+script = ExtResource("1_ms0u8")
 
 [node name="temp" type="Sprite2D" parent="."]
 scale = Vector2(0.833984, 0.833984)
@@ -15,5 +23,18 @@ centered = false
 position = Vector2(810, 462)
 range = 200.0
 
-[node name="Enemy" parent="." instance=ExtResource("3_mksqp")]
-position = Vector2(1053, 659)
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_gqbme")
+
+[node name="Enemy" parent="Path2D" instance=ExtResource("3_mksqp")]
+position = Vector2(1209, 850)
+rotation = -2.26383
+
+[node name="Enemy2" parent="Path2D" instance=ExtResource("3_mksqp")]
+position = Vector2(1036.33, 642.075)
+rotation = -2.26383
+progress = 270.27
+
+[connection signal="child_exiting_tree" from="Path2D" to="." method="_on_path_2d_child_exiting_tree"]

@@ -1,16 +1,19 @@
 class_name Enemy
-extends CharacterBody2D
+extends Node2D
 
+var speed = 100
+var hp = 100
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+func _ready():
+	$HP.value = hp
 
+func _process(delta):
+	self.progress += speed * delta
+	$HP.rotation = -rotation
+	$HP.global_position = $Enemy.global_position + Vector2(0, 40)
 
-func _physics_process(delta):
-	# Temp
-	velocity.x = -80
-	velocity.y = -80
-
-	move_and_slide()
+func damage(amount: int):
+	hp -= amount
+	if hp <= 0:
+		queue_free()
+	$HP.value = hp
