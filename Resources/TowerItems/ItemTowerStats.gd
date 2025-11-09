@@ -1,5 +1,5 @@
 extends Resource
-class_name TowerStats
+class_name ItemTowerStats
 
 @export var item_name: String
 @export_multiline var description: String

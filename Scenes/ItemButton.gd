@@ -1,6 +1,6 @@
 extends Control
 
-@export var tower_stats: TowerStats
+@export var tower_stats: ItemTowerStats
 
 @onready var tooltip = get_tree().get_root().get_node("Map").get_node("HUD").get_node("ToolTip")
 
