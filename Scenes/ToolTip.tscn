@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://0q3aq0atrryd" path="res://Assets/Fonts/Merienda-Regular.ttf" id="2_q3omj"]
 
 [node name="ToolTip" type="TextureRect"]
+visible = false
 texture_filter = 1
 offset_left = -347.0
 offset_right = -2.0
