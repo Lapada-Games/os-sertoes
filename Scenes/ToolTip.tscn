@@ -1,35 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://osgo2nocvk4j"]
+[gd_scene load_steps=4 format=3 uid="uid://osgo2nocvk4j"]
 
 [ext_resource type="Texture2D" uid="uid://n0lv2qd0v13s" path="res://Assets/Misc/tooltip.png" id="1_vqmo1"]
+[ext_resource type="Script" path="res://Scenes/ToolTip.gd" id="2_74kk3"]
 [ext_resource type="FontFile" uid="uid://0q3aq0atrryd" path="res://Assets/Fonts/Merienda-Regular.ttf" id="2_q3omj"]
 
-[node name="ToolTip" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -769.0
-offset_bottom = -400.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(511, 0)
-
-[node name="Rect" type="TextureRect" parent="."]
+[node name="ToolTip" type="TextureRect"]
 texture_filter = 1
-layout_mode = 0
-offset_right = 523.0
-offset_bottom = 327.0
+offset_left = -347.0
+offset_right = -2.0
+offset_bottom = 216.0
+pivot_offset = Vector2(346.755, 0)
 texture = ExtResource("1_vqmo1")
+script = ExtResource("2_74kk3")
 
 [node name="Text" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 24.0
-offset_right = 986.0
-offset_bottom = 582.0
+offset_left = 15.0
+offset_top = 16.0
+offset_right = 659.0
+offset_bottom = 396.0
 scale = Vector2(0.5, 0.5)
 theme_override_colors/default_color = Color(0.560784, 0.337255, 0.231373, 1)
 theme_override_fonts/normal_font = ExtResource("2_q3omj")
-theme_override_font_sizes/normal_font_size = 43
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Mussum Ipsum, cacilds vidis litro abertis.  Suco de cevadiss deixa as pessoas mais interessantis. Quem num gosta di mim que vai caçá sua turmis! Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis."

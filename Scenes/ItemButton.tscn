@@ -11,7 +11,8 @@
 layout_mode = 3
 anchors_preset = 0
 offset_right = 66.0
-offset_bottom = 103.0
+offset_bottom = 92.0
+mouse_filter = 2
 script = ExtResource("1_g11cd")
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -22,6 +23,7 @@ anchor_right = 0.97
 anchor_bottom = 0.621
 offset_right = -24.02
 offset_bottom = -23.963
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("1_e88nf")
 texture_pressed = ExtResource("2_pkcii")
 texture_disabled = ExtResource("3_877ru")
@@ -33,6 +35,7 @@ offset_left = 2.0
 offset_top = 2.0
 offset_right = 60.0
 offset_bottom = 61.0
+mouse_filter = 2
 texture = ExtResource("2_h64wd")
 expand_mode = 1
 stretch_mode = 5
@@ -44,9 +47,12 @@ offset_top = 63.0
 offset_right = 127.0
 offset_bottom = 143.0
 scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 theme_override_colors/default_color = Color(0.560784, 0.337255, 0.231373, 1)
 theme_override_fonts/normal_font = ExtResource("3_mqgtj")
 theme_override_font_sizes/normal_font_size = 43
 text = "$25"
 
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

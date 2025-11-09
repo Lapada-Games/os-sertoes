@@ -15,6 +15,7 @@ border_color = Color(0.85098, 0.627451, 0.4, 1)
 offset_left = 1012.0
 offset_right = 1283.0
 offset_bottom = 491.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ojtr0")
 script = ExtResource("1_soda6")
 
@@ -31,13 +32,14 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-mouse_filter = 0
+mouse_filter = 2
 theme_override_constants/h_separation = 70
 theme_override_constants/v_separation = 100
 
 [node name="ItemButton" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
+mouse_filter = 0
 
 [node name="ItemButton2" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
-item_name = "Cangaceiro"
+mouse_filter = 0

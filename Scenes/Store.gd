@@ -39,12 +39,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# this disables the button whether the player is holding a tower or not
 	var buttons = $FlowContainer.get_children()
 	for b in buttons:
 		b.get_node("TextureButton").disabled = is_player_building_something()
-		
-
-
-
-func _on_item_button_gui_input(event):
-	print(event)
