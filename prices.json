@@ -1,14 +1,14 @@
 [
-    {
-        "name": "Aldeã",
-        "filename": "Girl.png",
-        "description": "Taca pedra nos outro\nDano: 10\nVel. Ataque: 1\nRange: 100",
-        "price": 25
-    },
-    {
-        "name": "Cangaceiro",
-        "filename": "cangaceiro.png",
-        "description": "Dá tiro nos outro\nDano: 50\nVel. Ataque: 0.6\nRange: 150",
-        "price": 50
-    }
+	{
+		"name": "Aldeã",
+		"filename": "Girl.png",
+		"description": "Taca pedra nos outro\nDano: 10\nVel. Ataque: 1\nRange: 100",
+		"price": 25
+	},
+	{
+		"name": "Cangaceiro",
+		"filename": "cangaceiro.png",
+		"description": "Dá tiro nos outro\nDano: 50\nVel. Ataque: 0.6\nRange: 150",
+		"price": 50
+	}
 ]

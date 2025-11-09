@@ -1,11 +1,12 @@
 class_name Tower
 extends Area2D
 
+
+@export var bullet = preload("res://Scenes/Bullet.tscn")
 @export var attack_damage: int = 10
 @export var attack_speed: float = 1.0
 @export var range: float = 100.0
 
-const bullet = preload("res://Scenes/Bullet.tscn")
 var enemies_in_range: Array[Node2D] = []
 var current_target: Node2D = null
 var time_since_last_shot: float = 0.0

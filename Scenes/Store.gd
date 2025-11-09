@@ -25,17 +25,6 @@ func is_player_building_something():
 			return true
 	return false
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	var item_info = load_json_file("res://prices.json")
-	if item_info:
-		for i in range(len($FlowContainer.get_children())):
-			var child = $FlowContainer.get_children()[i]
-			child.setup(item_info[i].name, item_info[i].filename, item_info[i].description, item_info[i].price)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# this disables the button whether the player is holding a tower or not
 	var buttons = $FlowContainer.get_children()

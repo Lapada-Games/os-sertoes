@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TowerStats" load_steps=4 format=3 uid="uid://ddb2oev1oeakx"]
+
+[ext_resource type="Script" path="res://Resources/TowerItems/TowerStats.gd" id="1_myrb5"]
+[ext_resource type="Texture2D" uid="uid://dba1fnep3q2qu" path="res://Assets/Characters/sprites/cangaceiro.png" id="2_ked3n"]
+[ext_resource type="PackedScene" uid="uid://da7sody3x2y10" path="res://Scenes/CangaceiroTower.tscn" id="3_vbe7i"]
+
+[resource]
+script = ExtResource("1_myrb5")
+item_name = "Cangaceiro"
+description = "Dá tiro nos outro
+Dano: 50
+Vel. Ataque: 0.6
+Range: 150"
+tower = ExtResource("3_vbe7i")
+price = 50
+texture = ExtResource("2_ked3n")

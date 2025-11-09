@@ -1,9 +1,15 @@
 extends CharacterBody2D
 
+enum BulletType {
+	ROCK,
+	BULLET
+}
 
 @export var target: Node2D
 @export var speed = 300
 @export var damage = 10
+@export var type = BulletType.ROCK
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
