@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dy0roh66tg0ai"]
+[gd_scene load_steps=18 format=3 uid="uid://dy0roh66tg0ai"]
 
 [ext_resource type="Script" path="res://Tower.gd" id="1_c3fk5"]
 [ext_resource type="Texture2D" uid="uid://brmd75gq2s2wk" path="res://Assets/Characters/sprites/Girl/Girl_idle.png" id="2_6jg5h"]
@@ -79,7 +79,14 @@ animations = [{
 size = Vector2(38, 66)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mexpq"]
-radius = 122.188
+radius = 100.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4blvj"]
+bg_color = Color(0.6, 0.411765, 0.227451, 0.431373)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
 
 [node name="Tower" type="Area2D"]
 script = ExtResource("1_c3fk5")
@@ -99,6 +106,21 @@ shape = SubResource("RectangleShape2D_3b5ni")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 shape = SubResource("CircleShape2D_mexpq")
+
+[node name="Circle" type="Panel" parent="Range"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4blvj")
 
 [node name="Arrow" type="Sprite2D" parent="."]
 visible = false

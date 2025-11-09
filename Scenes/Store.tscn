@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://c30rssbwpe74k"]
+
+[ext_resource type="PackedScene" uid="uid://d3lhsfx1ajedo" path="res://Scenes/ItemButton.tscn" id="1_4lqvk"]
+[ext_resource type="Script" path="res://Scenes/Store.gd" id="1_soda6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojtr0"]
+bg_color = Color(0.956863, 0.843137, 0.737255, 0.588235)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.85098, 0.627451, 0.4, 1)
+
+[node name="Store" type="Panel"]
+offset_left = 1012.0
+offset_right = 1283.0
+offset_bottom = 491.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ojtr0")
+script = ExtResource("1_soda6")
+
+[node name="FlowContainer" type="FlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 23.0
+offset_right = -34.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 70
+theme_override_constants/v_separation = 100
+
+[node name="ItemButton" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2
+
+[node name="ItemButton2" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2
+
+[node name="ItemButton3" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2
+
+[node name="ItemButton4" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2
+
+[node name="ItemButton5" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2
+
+[node name="ItemButton6" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2
+
+[node name="ItemButton7" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2
+
+[node name="ItemButton8" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2

@@ -1,11 +1,9 @@
-extends Node2D
+extends Panel
 
-
-var cash = GameInfo.cash[GameInfo.level]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(cash)
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,7 +11,6 @@ func _process(delta):
 	pass
 
 
-func _on_path_2d_child_exiting_tree(node):
-	if $Path2D.get_child_count() <= 1:
-		print("ganhou!")
-		# TODO: ganhar
+
+func _on_item_button_gui_input(event):
+	print(event)

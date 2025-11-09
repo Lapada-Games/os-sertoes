@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://osgo2nocvk4j"]
+
+[ext_resource type="Texture2D" uid="uid://n0lv2qd0v13s" path="res://Assets/Misc/tooltip.png" id="1_vqmo1"]
+[ext_resource type="FontFile" uid="uid://0q3aq0atrryd" path="res://Assets/Fonts/Merienda-Regular.ttf" id="2_q3omj"]
+
+[node name="ToolTip" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -820.0
+offset_bottom = -432.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 456.0
+offset_bottom = 285.0
+texture = ExtResource("1_vqmo1")
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 15.0
+offset_right = 866.0
+offset_bottom = 519.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0.560784, 0.337255, 0.231373, 1)
+theme_override_fonts/normal_font = ExtResource("2_q3omj")
+theme_override_font_sizes/normal_font_size = 43
+text = "Mussum Ipsum, cacilds vidis litro abertis.  Suco de cevadiss deixa as pessoas mais interessantis. Quem num gosta di mim que vai caçá sua turmis! Pellentesque nec nulla ligula. Donec gravida turpis a vulputate ultricies. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis."

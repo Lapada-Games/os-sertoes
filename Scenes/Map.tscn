@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bpdp15k5bejr" path="res://Assets/Scenario/scene.png" id="1_2gg6k"]
 [ext_resource type="Script" path="res://Scenes/Map.gd" id="1_ms0u8"]
-[ext_resource type="PackedScene" uid="uid://dy0roh66tg0ai" path="res://Scenes/Tower.tscn" id="2_evsq7"]
 [ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Enemy.tscn" id="3_mksqp"]
+[ext_resource type="PackedScene" uid="uid://c4yhjj6tnm7f3" path="res://Scenes/HUD.tscn" id="4_3hc8h"]
 [ext_resource type="AudioStream" uid="uid://cymwv6py2j7dm" path="res://OST/prebattle.mp3" id="5_47qgm"]
 
 [sub_resource type="Curve2D" id="Curve2D_gqbme"]
@@ -15,18 +15,14 @@ point_count = 8
 [node name="Map" type="Node2D"]
 script = ExtResource("1_ms0u8")
 
+[node name="HUD" parent="." instance=ExtResource("4_3hc8h")]
+layer = 2
+
 [node name="bg" type="Sprite2D" parent="."]
 scale = Vector2(0.833984, 0.833984)
 texture = ExtResource("1_2gg6k")
 centered = false
-
-[node name="Tower" parent="." instance=ExtResource("2_evsq7")]
-position = Vector2(789, 456)
-
-[node name="Tower2" parent="." instance=ExtResource("2_evsq7")]
-position = Vector2(905, 622)
-
-[node name="HUD" type="CanvasLayer" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_gqbme")
@@ -34,16 +30,19 @@ curve = SubResource("Curve2D_gqbme")
 [node name="Enemy" parent="Path2D" instance=ExtResource("3_mksqp")]
 position = Vector2(1209, 850)
 rotation = -2.26383
+hp = 440
 
 [node name="Enemy2" parent="Path2D" instance=ExtResource("3_mksqp")]
 position = Vector2(1151.45, 780.696)
 rotation = -2.26383
 progress = 90.09
+hp = 525
 
 [node name="Enemy3" parent="Path2D" instance=ExtResource("3_mksqp")]
 position = Vector2(1093.89, 711.386)
 rotation = -2.26383
 progress = 180.18
+hp = 395
 
 [node name="WaveTimer" type="Timer" parent="."]
 

@@ -9,26 +9,36 @@ var enemies_in_range: Array[Node2D] = []
 var current_target: Node2D = null
 var time_since_last_shot: float = 0.0
 var target_position: Vector2
-
+var building = false
+var can_place = false
 var has_shooted = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Range/CollisionShape2D.shape.radius = range
-
-
+	$Range/Circle.size = Vector2(range * 2, range * 2)
+	$Range/Circle.position = Vector2(-range, -range)
 func _process(delta):
-	time_since_last_shot += delta
-	if current_target == null:
-		$Sprite2D.animation = "idle"
-		find_new_target()
-	
-	if current_target != null:
-		aim_to_target(current_target.global_position)
+	if not building:
+		$Range/Circle.visible = false # TODO: replace this to somewhere else
+		time_since_last_shot += delta
+		if current_target == null:
+			$Sprite2D.animation = "idle"
+			find_new_target()
 		
-		if time_since_last_shot > (1.0 / attack_speed):
-			shoot(current_target.global_position)
-			time_since_last_shot = 0.0
+		if current_target != null:
+			aim_to_target(current_target.global_position)
+			
+			if time_since_last_shot > (1.0 / attack_speed):
+				shoot(current_target.global_position)
+				time_since_last_shot = 0.0
+	else:
+		$Range/Circle.visible = true
+		global_position = get_global_mouse_position()
+		# TODO: if can not place, draw red stuff
+		
+		if Input.is_action_just_pressed("click"):
+			building = false
 
 func _on_range_body_entered(body):
 	if body.name == "Enemy":

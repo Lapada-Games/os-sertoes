@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv8itntmryovn"
-path="res://.godot/imported/Girl.png-a02713d83eebde4bed26eeea5b88fc99.ctex"
+uid="uid://bpi855df6qge8"
+path="res://.godot/imported/square_pressed.png-2798070662fdf98aef50c9c5843d6206.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/sprites/Girl/Girl.png"
-dest_files=["res://.godot/imported/Girl.png-a02713d83eebde4bed26eeea5b88fc99.ctex"]
+source_file="res://Assets/Misc/buttons/square_pressed.png"
+dest_files=["res://.godot/imported/square_pressed.png-2798070662fdf98aef50c9c5843d6206.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
