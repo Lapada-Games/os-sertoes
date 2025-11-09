@@ -6,6 +6,7 @@ extends Node2D
 @export var reward_coins = 50
 
 func _ready():
+	$HP.max_value = hp
 	$HP.value = hp
 
 func _process(delta):

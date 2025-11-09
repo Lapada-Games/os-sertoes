@@ -70,6 +70,11 @@ func find_new_target():
 
 func aim_to_target(pos: Vector2):
 	$Arrow.look_at(pos)
+	var clamped_angle = wrapf($Arrow.rotation_degrees, 0, 360)
+	if clamped_angle > 90 and clamped_angle < 273:
+		$Sprite2D.flip_h = true
+	else:
+		$Sprite2D.flip_h = false
 	target_position = pos
 
 
