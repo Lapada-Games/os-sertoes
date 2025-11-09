@@ -10,7 +10,7 @@ var current_target: Node2D = null
 var time_since_last_shot: float = 0.0
 var target_position: Vector2
 var building = false
-var can_place = false
+var can_place = true
 var has_shooted = false
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +18,7 @@ func _ready():
 	$Range/CollisionShape2D.shape.radius = range
 	$Range/Circle.size = Vector2(range * 2, range * 2)
 	$Range/Circle.position = Vector2(-range, -range)
+
 func _process(delta):
 	if not building:
 		$Range/Circle.visible = false # TODO: replace this to somewhere else
@@ -35,10 +36,16 @@ func _process(delta):
 	else:
 		$Range/Circle.visible = true
 		global_position = get_global_mouse_position()
-		# TODO: if can not place, draw red stuff
+		if not get_overlapping_areas().is_empty():
+			can_place = false
+			$Range/Circle.modulate = Color(1, 0, 0)
+		else:
+			can_place = true
+			$Range/Circle.modulate = Color(1, 1, 1)
 		
 		if Input.is_action_just_pressed("click"):
-			building = false
+			if can_place:
+				building = false
 
 func _on_range_body_entered(body):
 	if body.name == "Enemy":
@@ -76,6 +83,3 @@ func aim_to_target(pos: Vector2):
 	else:
 		$Sprite2D.flip_h = false
 	target_position = pos
-
-
-

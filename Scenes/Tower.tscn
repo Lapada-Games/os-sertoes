@@ -82,7 +82,7 @@ size = Vector2(38, 66)
 radius = 100.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4blvj"]
-bg_color = Color(0.6, 0.411765, 0.227451, 0.431373)
+bg_color = Color(0.6, 1, 0.227451, 0.431373)
 corner_radius_top_left = 450
 corner_radius_top_right = 450
 corner_radius_bottom_right = 450
@@ -103,6 +103,7 @@ frame_progress = 0.0849393
 shape = SubResource("RectangleShape2D_3b5ni")
 
 [node name="Range" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 shape = SubResource("CircleShape2D_mexpq")
