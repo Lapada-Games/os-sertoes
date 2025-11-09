@@ -6,13 +6,10 @@
 		},
 		{
 			"id": 2,
-			"speaker": "governador",
-			"flip": true,
 			"text": "Mas a esperança logo seria vista como ameaça.\nPara o governo, Canudos representava rebeldia.\nPara os sertanejos, era o último refúgio de fé."
 		},
 		{
 			"id": 3,
-			"speaker": "antonio",
 			"text": "Tropas imperiais marcham rumo ao sertão…\nA poeira levanta. O cerco se aproxima.\nE a guerra está prestes a começar."
 		},
 	]

@@ -1,0 +1,145 @@
+[gd_scene load_steps=12 format=3 uid="uid://dwp0bfw6tych3"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_wsnav"]
+[ext_resource type="Texture2D" uid="uid://b7gjn4sq5208e" path="res://Assets/Misc/menubg.jpg" id="2_12630"]
+[ext_resource type="Texture2D" uid="uid://bqcif5po5nopt" path="res://Assets/Misc/logo_game.png" id="3_vw6fs"]
+[ext_resource type="AudioStream" uid="uid://detphwx72mtlj" path="res://OST/The Colonel - Zachariah Hickman.mp3" id="4_ywj0c"]
+[ext_resource type="Texture2D" uid="uid://gw44lx7jxqo0" path="res://Assets/Misc/buttons/normal.png" id="5_2vilm"]
+[ext_resource type="Texture2D" uid="uid://c6dfvydb4a8n7" path="res://Assets/Misc/buttons/pressed.png" id="6_g5rgy"]
+[ext_resource type="Texture2D" uid="uid://crdcluply8rbp" path="res://Assets/Misc/buttons/hover.png" id="7_cwfoe"]
+[ext_resource type="Texture2D" uid="uid://gqvdtypk6lyo" path="res://Assets/Misc/buttons/disabled.png" id="8_lavg7"]
+[ext_resource type="FontFile" uid="uid://0q3aq0atrryd" path="res://Assets/Fonts/Merienda-Regular.ttf" id="8_u3jkb"]
+[ext_resource type="AudioStream" uid="uid://itbvk0xralr8" path="res://SFX/daggerswipe.ogg" id="10_bu8sa"]
+[ext_resource type="AudioStream" uid="uid://j1nuylvsrys" path="res://SFX/click.ogg" id="11_mkqbw"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wsnav")
+
+[node name="BG" type="Sprite2D" parent="."]
+scale = Vector2(0.832031, 0.832031)
+texture = ExtResource("2_12630")
+centered = false
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(640, -138)
+scale = Vector2(0.367188, 0.367188)
+texture = ExtResource("3_vw6fs")
+
+[node name="Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ywj0c")
+volume_db = -6.0
+autoplay = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 410.0
+offset_right = 784.0
+offset_bottom = 706.0
+
+[node name="ModoHistoria" type="TextureButton" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_2vilm")
+texture_pressed = ExtResource("6_g5rgy")
+texture_hover = ExtResource("7_cwfoe")
+texture_disabled = ExtResource("8_lavg7")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/ModoHistoria"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.772
+offset_top = 17.0
+offset_bottom = -7.008
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.282353, 0.160784, 0.0509804, 1)
+theme_override_fonts/normal_font = ExtResource("8_u3jkb")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Modo História[/center]"
+scroll_active = false
+
+[node name="Endless" type="TextureButton" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+disabled = true
+texture_normal = ExtResource("5_2vilm")
+texture_pressed = ExtResource("6_g5rgy")
+texture_hover = ExtResource("7_cwfoe")
+texture_disabled = ExtResource("8_lavg7")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Endless"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.772
+offset_top = 24.0
+offset_bottom = 1.22
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.282353, 0.160784, 0.0509804, 1)
+theme_override_fonts/normal_font = ExtResource("8_u3jkb")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center]Modo endless (em breve)[/center]"
+scroll_active = false
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_2vilm")
+texture_pressed = ExtResource("6_g5rgy")
+texture_hover = ExtResource("7_cwfoe")
+texture_disabled = ExtResource("8_lavg7")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.772
+offset_top = 17.0
+offset_bottom = -12.78
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.282353, 0.160784, 0.0509804, 1)
+theme_override_fonts/normal_font = ExtResource("8_u3jkb")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Sair[/center]"
+scroll_active = false
+
+[node name="appearSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_bu8sa")
+volume_db = -3.748
+
+[node name="clickSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_mkqbw")
+
+[node name="Fade" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -48.0
+offset_top = -32.0
+offset_right = 1360.0
+offset_bottom = 840.0
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="VBoxContainer/ModoHistoria" to="." method="_on_modo_historia_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

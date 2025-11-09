@@ -20,6 +20,7 @@ func _ready():
 func _process(delta):
 	time_since_last_shot += delta
 	if current_target == null:
+		$Sprite2D.animation = "idle"
 		find_new_target()
 	
 	if current_target != null:
@@ -40,6 +41,8 @@ func _on_range_body_exited(body):
 			current_target = null
 
 func shoot(target: Vector2):
+	$Sprite2D.animation = "attack"
+	
 	var tempbullet = bullet.instantiate()
 	tempbullet.target = current_target
 	tempbullet.global_position = self.global_position

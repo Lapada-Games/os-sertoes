@@ -1,8 +1,9 @@
 class_name Enemy
 extends Node2D
 
-var speed = 100
-var hp = 100
+@export var speed = 100
+@export var hp = 100
+@export var reward_coins = 50
 
 func _ready():
 	$HP.value = hp

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://commjrcmkwfx6" path="res://Scenes/DialogBox.tscn" id="1_klpgi"]
 [ext_resource type="Texture2D" uid="uid://brx7264vfrstp" path="res://Assets/LoreImages/0.png" id="2_d825v"]
-[ext_resource type="AudioStream" uid="uid://ctjiwimyshowi" path="res://OST/Twilight Train - Dan Lebowitz.mp3" id="3_sxeq6"]
+[ext_resource type="AudioStream" uid="uid://wvsxwhgbw6w3" path="res://OST/Journey to the Past - Carmen María and Edu Espinal.mp3" id="3_lm2q6"]
 
 [node name="Lore" type="Control"]
 layout_mode = 3
@@ -21,6 +21,6 @@ scale = Vector2(1.61542, 1.61542)
 texture = ExtResource("2_d825v")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_sxeq6")
+stream = ExtResource("3_lm2q6")
 volume_db = -6.559
 autoplay = true
