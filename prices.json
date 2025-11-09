@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Aldeã",
+        "description": "Taca pedra nos outro",
+        "price": 25
+    },
+    {
+        "name": "Cangaceiro",
+        "description": "Soldado com mais resistencia e dano, porem menos velocidade de ataque",
+        "price": 50
+    }
+]

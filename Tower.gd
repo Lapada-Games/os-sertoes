@@ -1,3 +1,4 @@
+class_name Tower
 extends Area2D
 
 @export var attack_damage: int = 10

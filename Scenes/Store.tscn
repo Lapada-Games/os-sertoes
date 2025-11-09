@@ -31,6 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+mouse_filter = 0
 theme_override_constants/h_separation = 70
 theme_override_constants/v_separation = 100
 
@@ -39,21 +40,4 @@ layout_mode = 2
 
 [node name="ItemButton2" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
-
-[node name="ItemButton3" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
-layout_mode = 2
-
-[node name="ItemButton4" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
-layout_mode = 2
-
-[node name="ItemButton5" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
-layout_mode = 2
-
-[node name="ItemButton6" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
-layout_mode = 2
-
-[node name="ItemButton7" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
-layout_mode = 2
-
-[node name="ItemButton8" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
-layout_mode = 2
+item_name = "Cangaceiro"
