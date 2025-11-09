@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv8itntmryovn"
-path="res://.godot/imported/Girl.png-a02713d83eebde4bed26eeea5b88fc99.ctex"
+uid="uid://bte6betnsctom"
+path="res://.godot/imported/Girl_attack.png-ddbe9a474bbbc208cea17b7e89ef8fff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/sprites/Girl/Girl.png"
-dest_files=["res://.godot/imported/Girl.png-a02713d83eebde4bed26eeea5b88fc99.ctex"]
+source_file="res://Assets/Characters/sprites/Girl_attack.png"
+dest_files=["res://.godot/imported/Girl_attack.png-ddbe9a474bbbc208cea17b7e89ef8fff.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxqytfsyycvdw"
-path="res://.godot/imported/Girl_walk.png-7a359cc901ce2f943622d1b86ab6e257.ctex"
+path="res://.godot/imported/Girl_walk.png-c50a941dcd51df8e4075f4952a8b3f09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/sprites/Girl/Girl_walk.png"
-dest_files=["res://.godot/imported/Girl_walk.png-7a359cc901ce2f943622d1b86ab6e257.ctex"]
+source_file="res://Assets/Characters/sprites/Girl_walk.png"
+dest_files=["res://.godot/imported/Girl_walk.png-c50a941dcd51df8e4075f4952a8b3f09.ctex"]
 
 [params]
 

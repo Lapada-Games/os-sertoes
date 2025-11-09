@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brmd75gq2s2wk"
-path="res://.godot/imported/Girl_idle.png-124cb600c6d74d3236d23be106143013.ctex"
+uid="uid://dgusxjcdrx8y3"
+path="res://.godot/imported/Girl_death.png-24cb090af61dd393c9f187039157dd88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/sprites/Girl/Girl_idle.png"
-dest_files=["res://.godot/imported/Girl_idle.png-124cb600c6d74d3236d23be106143013.ctex"]
+source_file="res://Assets/Characters/sprites/Girl_death.png"
+dest_files=["res://.godot/imported/Girl_death.png-24cb090af61dd393c9f187039157dd88.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

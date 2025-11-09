@@ -1,28 +1,28 @@
 [gd_scene load_steps=13 format=3 uid="uid://da7sody3x2y10"]
 
 [ext_resource type="PackedScene" uid="uid://dy0roh66tg0ai" path="res://Scenes/Tower.tscn" id="1_jrtu8"]
-[ext_resource type="Texture2D" uid="uid://dba1fnep3q2qu" path="res://Assets/Characters/sprites/cangaceiro.png" id="2_bsgqb"]
+[ext_resource type="Texture2D" uid="uid://by38aofvsnyyr" path="res://Assets/Characters/sprites/cangaceiro_attack.png" id="2_h7iqy"]
 [ext_resource type="Texture2D" uid="uid://dy2ppdle1kuxm" path="res://Assets/Characters/sprites/cangaceiro_idle.png" id="3_pc430"]
 [ext_resource type="AudioStream" uid="uid://bqvf54r0o53hq" path="res://SFX/shotgun.wav" id="4_lm7yo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r3iyl"]
-atlas = ExtResource("2_bsgqb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds4x7"]
+atlas = ExtResource("2_h7iqy")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p2v1p"]
-atlas = ExtResource("2_bsgqb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqsxb"]
+atlas = ExtResource("2_h7iqy")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uml4d"]
-atlas = ExtResource("2_bsgqb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e765"]
+atlas = ExtResource("2_h7iqy")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b3lua"]
-atlas = ExtResource("2_bsgqb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_obdfo"]
+atlas = ExtResource("2_h7iqy")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y7bh3"]
-atlas = ExtResource("2_bsgqb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbhly"]
+atlas = ExtResource("2_h7iqy")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pj6xa"]
@@ -37,19 +37,19 @@ region = Rect2(32, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r3iyl")
+"texture": SubResource("AtlasTexture_ds4x7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p2v1p")
+"texture": SubResource("AtlasTexture_yqsxb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uml4d")
+"texture": SubResource("AtlasTexture_4e765")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b3lua")
+"texture": SubResource("AtlasTexture_obdfo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y7bh3")
+"texture": SubResource("AtlasTexture_rbhly")
 }],
 "loop": true,
 "name": &"attack",
@@ -68,12 +68,13 @@ animations = [{
 }]
 
 [node name="Tower" instance=ExtResource("1_jrtu8")]
-attack_damage = 50
-attack_speed = 0.6
+attack_damage = 30
+attack_speed = 0.8
 range = 150.0
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ddkm3")
+animation = &"attack"
 frame_progress = 0.0
 
 [node name="shoot_SFX" parent="." index="4"]

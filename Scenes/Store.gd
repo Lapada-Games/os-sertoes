@@ -29,12 +29,10 @@ func is_player_building_something():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var item_info = load_json_file("res://prices.json")
-	print(item_info[0].name)
 	if item_info:
 		for i in range(len($FlowContainer.get_children())):
 			var child = $FlowContainer.get_children()[i]
-			child.item_name = item_info[i].name
-			child.description = item_info[i].description
+			child.setup(item_info[i].name, item_info[i].filename, item_info[i].description, item_info[i].price)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

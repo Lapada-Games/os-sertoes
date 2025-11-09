@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgusxjcdrx8y3"
-path="res://.godot/imported/Girl_death.png-4785666211565786f11bccf2f1935221.ctex"
+uid="uid://cgsm6yac63w61"
+path="res://.godot/imported/cangaceiro_stand.png-12881b6e24276427dcf5dbca09ba8099.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/sprites/Girl/Girl_death.png"
-dest_files=["res://.godot/imported/Girl_death.png-4785666211565786f11bccf2f1935221.ctex"]
+source_file="res://Assets/Characters/sprites/cangaceiro_stand.png"
+dest_files=["res://.godot/imported/cangaceiro_stand.png-12881b6e24276427dcf5dbca09ba8099.ctex"]
 
 [params]
 
