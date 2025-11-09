@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://dy0roh66tg0ai"]
+[gd_scene load_steps=17 format=3 uid="uid://dy0roh66tg0ai"]
 
 [ext_resource type="Script" path="res://Tower.gd" id="1_c3fk5"]
 [ext_resource type="Texture2D" uid="uid://brmd75gq2s2wk" path="res://Assets/Characters/sprites/Girl/Girl_idle.png" id="2_6jg5h"]
 [ext_resource type="Texture2D" uid="uid://bte6betnsctom" path="res://Assets/Characters/sprites/Girl/Girl_attack.png" id="2_xcsvg"]
 [ext_resource type="Texture2D" uid="uid://frj7q8pb7yal" path="res://Assets/Misc/arrow.png" id="3_uwj5u"]
+[ext_resource type="AudioStream" uid="uid://bqjxk6sa0o6cg" path="res://SFX/shoot_rock.ogg" id="5_5qsvp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dabr8"]
 atlas = ExtResource("2_xcsvg")
@@ -103,6 +104,10 @@ shape = SubResource("CircleShape2D_mexpq")
 visible = false
 texture = ExtResource("3_uwj5u")
 offset = Vector2(36, 0)
+
+[node name="shoot_SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5qsvp")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

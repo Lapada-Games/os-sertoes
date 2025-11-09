@@ -42,11 +42,11 @@ func _on_range_body_exited(body):
 
 func shoot(target: Vector2):
 	$Sprite2D.animation = "attack"
-	
+	$shoot_SFX.play()
 	var tempbullet = bullet.instantiate()
 	tempbullet.target = current_target
 	tempbullet.global_position = self.global_position
-	tempbullet.damage = 50
+	tempbullet.damage = attack_damage
 	get_parent().add_child(tempbullet)
 
 func find_new_target():

@@ -9,6 +9,11 @@ func _ready():
 	$HP.value = hp
 
 func _process(delta):
+	if rotation_degrees < -90:
+		$Enemy/Sprite2D.flip_v = true
+	else:
+		$Enemy/Sprite2D.flip_v = false
+	
 	self.progress += speed * delta
 	$HP.rotation = -rotation
 	$HP.global_position = $Enemy.global_position + Vector2(0, 40)

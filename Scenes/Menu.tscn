@@ -22,7 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_wsnav")
 
 [node name="BG" type="Sprite2D" parent="."]
-scale = Vector2(0.832031, 0.832031)
+scale = Vector2(0.833333, 0.833333)
 texture = ExtResource("2_12630")
 centered = false
 
