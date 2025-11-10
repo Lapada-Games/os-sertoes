@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvj5qmqrxgs0"]
+
+[ext_resource type="PackedScene" uid="uid://bua53fikrab6s" path="res://Scenes/Bullet.tscn" id="1_0p1ng"]
+[ext_resource type="Texture2D" uid="uid://bnwb8k3f58ix3" path="res://Assets/Misc/fireball.png" id="2_fjti2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_muh6d"]
+radius = 14.0357
+
+[node name="Bullet" instance=ExtResource("1_0p1ng")]
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(1, 0)
+scale = Vector2(0.71875, 0.71875)
+texture = ExtResource("2_fjti2")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_muh6d")

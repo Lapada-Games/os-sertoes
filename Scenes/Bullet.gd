@@ -1,15 +1,12 @@
 extends CharacterBody2D
 
-enum BulletType {
-	ROCK,
-	BULLET
-}
 
-@export var target: Node2D
 @export var speed = 300
 @export var damage = 10
-@export var type = BulletType.ROCK
+@export var type = "rock"
+@export var effects = ["damage"]
 
+var target: Node2D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -24,6 +21,10 @@ func _physics_process(delta):
 		move_and_slide()
 	
 		if global_position.distance_to(target.global_position) < 10:
-			target.get_parent().damage(damage)
+			# TODO: change this to resources (component system)
+			if "damage" in effects:
+				target.get_parent().damage(damage)
+			if "freeze" in effects:
+				target.get_parent().speed = 50
 			queue_free()
 		

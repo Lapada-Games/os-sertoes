@@ -25,6 +25,17 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "purple",
+"res://Dialogs/": "gray",
+"res://OST/": "yellow",
+"res://Resources/": "green",
+"res://SFX/": "pink",
+"res://Scenes/": "blue"
+}
+
 [input]
 
 click={

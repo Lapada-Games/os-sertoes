@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemTowerStats" load_steps=4 format=3 uid="uid://cgal5lpomwcq2"]
+
+[ext_resource type="Script" path="res://Resources/TowerItems/ItemTowerStats.gd" id="1_qycyv"]
+[ext_resource type="Texture2D" uid="uid://f00ncyw00lh8" path="res://Assets/Characters/sprites/firecamp.png" id="2_1m6t5"]
+[ext_resource type="PackedScene" uid="uid://cguseulwsyvcf" path="res://Scenes/FirecampTower.tscn" id="3_o1xxx"]
+
+[resource]
+script = ExtResource("1_qycyv")
+item_name = "Fogueira"
+description = "Taca fogo nos inimigos fazendo eles queimarem por um curto período de tempo"
+tower = ExtResource("3_o1xxx")
+price = 80
+texture = ExtResource("2_1m6t5")
