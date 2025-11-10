@@ -56,6 +56,11 @@ position = Vector2(1041.96, 654.998)
 rotation = -2.23087
 progress = 424.08
 
+[node name="Enemy7" parent="Path2D" instance=ExtResource("3_mksqp")]
+position = Vector2(992.104, 590.764)
+rotation = -2.23087
+progress = 505.38
+
 [node name="WaveTimer" type="Timer" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-
+# TODO: remove these useless values. except for speed?
 @export var speed = 300
 @export var damage = 10
 @export var type = "rock"
-@export var effects = ["damage"]
+@export var effects = ["damage"] # TODO: change this to resources (component system)
 
 var target: Node2D
 
@@ -25,6 +25,10 @@ func _physics_process(delta):
 			if "damage" in effects:
 				target.get_parent().damage(damage)
 			if "freeze" in effects:
-				target.get_parent().speed = 50
+				# TODO: create slow down function in enemy
+				# that receives slow down value from effect resource
+				target.get_parent().speed = 50 
+			if "fire" in effects:
+				target.get_parent().burn(3.0, 20, 1.0)
 			queue_free()
 		

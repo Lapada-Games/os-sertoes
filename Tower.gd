@@ -73,7 +73,6 @@ func find_new_target():
 	if enemies_in_range.is_empty():
 		current_target = null
 		return
-		
 	current_target = enemies_in_range[0]
 	
 

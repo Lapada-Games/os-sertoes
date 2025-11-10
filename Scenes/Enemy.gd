@@ -5,6 +5,8 @@ extends Node2D
 @export var hp = 100
 @export var reward_coins = 50
 
+var burning: bool = false
+
 func _ready():
 	$HP.max_value = hp
 	$HP.value = hp
@@ -24,3 +26,30 @@ func damage(amount: int):
 	if hp <= 0:
 		queue_free()
 	$HP.value = hp
+
+func burn(duration: float, dps: int, tick_rate: float):
+	if burning:
+		$BurnTimerTotal.start()
+		return
+	
+	burning = true
+	$BurnTimerDPS.wait_time = tick_rate
+	$BurnTimerDPS.start()
+	$BurnTimerTotal.start(duration)
+	
+	# TODO: add burning animation later
+	self.modulate = Color(2, 1, 1)
+	
+	set_meta("burn_dps", dps)
+
+func _on_burn_timer_dps_timeout():
+	if has_meta("burn_dps"):
+		var dps = get_meta("burn_dps")
+		damage(dps)
+
+func _on_burn_timer_total_timeout():
+	burning = false
+	self.modulate = Color(1, 1, 1)
+	$BurnTimerDPS.stop()
+
+

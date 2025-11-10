@@ -130,3 +130,11 @@ theme_override_styles/background = SubResource("StyleBoxFlat_63w8j")
 theme_override_styles/fill = SubResource("StyleBoxFlat_w34dy")
 value = 19.6
 show_percentage = false
+
+[node name="BurnTimerDPS" type="Timer" parent="."]
+
+[node name="BurnTimerTotal" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="BurnTimerDPS" to="." method="_on_burn_timer_dps_timeout"]
+[connection signal="timeout" from="BurnTimerTotal" to="." method="_on_burn_timer_total_timeout"]
