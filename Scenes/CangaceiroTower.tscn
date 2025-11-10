@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://da7sody3x2y10"]
+[gd_scene load_steps=14 format=3 uid="uid://da7sody3x2y10"]
 
 [ext_resource type="PackedScene" uid="uid://dy0roh66tg0ai" path="res://Scenes/Tower.tscn" id="1_jrtu8"]
 [ext_resource type="Texture2D" uid="uid://by38aofvsnyyr" path="res://Assets/Characters/sprites/cangaceiro_attack.png" id="2_h7iqy"]
@@ -67,6 +67,9 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o48p"]
+size = Vector2(50, 86)
+
 [node name="Tower" instance=ExtResource("1_jrtu8")]
 attack_damage = 30
 attack_speed = 0.8
@@ -76,6 +79,10 @@ range = 150.0
 sprite_frames = SubResource("SpriteFrames_ddkm3")
 animation = &"attack"
 frame_progress = 0.0
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_1o48p")
 
 [node name="shoot_SFX" parent="." index="4"]
 stream = ExtResource("4_lm7yo")

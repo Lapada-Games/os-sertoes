@@ -7,7 +7,10 @@
 [resource]
 script = ExtResource("1_qycyv")
 item_name = "Fogueira"
-description = "Taca fogo nos inimigos fazendo eles queimarem por um curto período de tempo"
+description = "Taca fogo nos inimigos fazendo eles queimarem por um curto período de tempo
+Dano: 30 + 10 hit/s
+Vel. Ataque: 0.6
+Range: 90"
 tower = ExtResource("3_o1xxx")
 price = 80
 texture = ExtResource("2_1m6t5")
