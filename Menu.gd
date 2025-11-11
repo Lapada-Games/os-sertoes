@@ -21,8 +21,8 @@ func _process(delta):
 	if timeDelta > 4.0:
 		can_go_down = true
 	if can_go_down:
-		$Logo.position.y = lerp(float($Logo.position.y), 240.0, 0.008)
-	$BG.position.y = lerp(float($BG.position.y), -800.0, 0.0008)
+		$Logo.position.y = lerp(float($Logo.position.y), 240.0, 1 * delta)
+	$BG.position.y = lerp(float($BG.position.y), -800.0, 0.1 * delta)
 	
 	if $Logo.position.y >= 200:
 		if timeDelta > 0.4 and buttonRevealIndex < 3:
