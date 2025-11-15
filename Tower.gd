@@ -3,7 +3,8 @@ extends Area2D
 
 
 @export var bullet = preload("res://Scenes/Bullet.tscn")
-@export var attack_damage: int = 10
+@export var bullet_effects: Array[BulletEffect]
+#@export var attack_damage: int = 10
 @export var attack_speed: float = 1.0
 @export var range: float = 100.0
 
@@ -62,10 +63,10 @@ func _on_range_body_exited(body):
 func shoot(target: Vector2):
 	$Sprite2D.animation = "attack"
 	$shoot_SFX.play()
-	var tempbullet = bullet.instantiate()
+	var tempbullet: Bullet = bullet.instantiate()
 	tempbullet.target = current_target
 	tempbullet.global_position = self.global_position
-	tempbullet.damage = attack_damage
+	tempbullet.effects = bullet_effects.duplicate()
 	get_parent().add_child(tempbullet)
 
 func find_new_target():

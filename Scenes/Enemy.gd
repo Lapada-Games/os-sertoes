@@ -1,5 +1,5 @@
-class_name Enemy
 extends Node2D
+class_name Enemy
 
 @export var speed = 100
 @export var hp = 100
@@ -41,6 +41,9 @@ func burn(duration: float, dps: int, tick_rate: float):
 	self.modulate = Color(2, 1, 1)
 	
 	set_meta("burn_dps", dps)
+
+func set_speed(speed: int):
+	self.speed = speed
 
 func _on_burn_timer_dps_timeout():
 	if has_meta("burn_dps"):

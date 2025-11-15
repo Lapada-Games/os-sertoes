@@ -1,9 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://da7sody3x2y10"]
+[gd_scene load_steps=16 format=3 uid="uid://da7sody3x2y10"]
 
 [ext_resource type="PackedScene" uid="uid://dy0roh66tg0ai" path="res://Scenes/Tower.tscn" id="1_jrtu8"]
 [ext_resource type="Texture2D" uid="uid://by38aofvsnyyr" path="res://Assets/Characters/sprites/cangaceiro_attack.png" id="2_h7iqy"]
+[ext_resource type="Script" path="res://Resources/BulletEffects/damage_effect.gd" id="2_k8ut4"]
 [ext_resource type="Texture2D" uid="uid://dy2ppdle1kuxm" path="res://Assets/Characters/sprites/cangaceiro_idle.png" id="3_pc430"]
 [ext_resource type="AudioStream" uid="uid://bqvf54r0o53hq" path="res://SFX/shotgun.wav" id="4_lm7yo"]
+
+[sub_resource type="Resource" id="Resource_rbio7"]
+script = ExtResource("2_k8ut4")
+damage = 50
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ds4x7"]
 atlas = ExtResource("2_h7iqy")
@@ -71,7 +76,7 @@ animations = [{
 size = Vector2(50, 86)
 
 [node name="Tower" instance=ExtResource("1_jrtu8")]
-attack_damage = 30
+bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_rbio7")])
 attack_speed = 0.8
 range = 150.0
 

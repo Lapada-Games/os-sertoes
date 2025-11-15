@@ -1,10 +1,9 @@
 extends CharacterBody2D
+class_name Bullet
 
 # TODO: remove these useless values. except for speed?
 @export var speed = 300
-@export var damage = 10
-@export var type = "rock"
-@export var effects = ["damage"] # TODO: change this to resources (component system)
+@export var effects: Array[BulletEffect]
 
 var target: Node2D
 
@@ -21,14 +20,7 @@ func _physics_process(delta):
 		move_and_slide()
 	
 		if global_position.distance_to(target.global_position) < 10:
-			# TODO: change this to resources (component system)
-			if "damage" in effects:
-				target.get_parent().damage(damage)
-			if "freeze" in effects:
-				# TODO: create slow down function in enemy
-				# that receives slow down value from effect resource
-				target.get_parent().speed = 50 
-			if "fire" in effects:
-				target.get_parent().burn(3.0, 20, 1.0)
+			for e in effects:
+				e.apply_effect(target.get_parent())
 			queue_free()
 		
