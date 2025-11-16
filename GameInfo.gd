@@ -5,7 +5,7 @@ var HP = 3
 # There will be multiple waves per level
 # Depending on the global level variable, the waves will be different each time
 var waves = [
-	[5, 10, 20],
+	[10, 20, 30],
 	[3, 5, 10],
 	[2, 3, 4]
 ]

@@ -1,21 +1,21 @@
 # TODO
 
 # Urgent stuff
-- [ ] attack effect resources
-- [ ] buy stuff
-- [ ] tower resources
-- [ ] collision areas
-- [ ] 
+- [x] attack effect resources
+- [x] buy stuff
+- [x] tower resources
+- [x] collision areas
+- [ ] tower durability
 - [ ] 
 - [ ] 
 - [ ] 
 - [ ] 
 
 # Less priority right now
-- [ ] HUD icons
+- [x] HUD icons
 - [ ] Lore slides
 - [ ] dialog cutscenes
-- [ ] 
+- [ ] gameover screen
 - [ ] 
 - [ ] 
 - [ ] 

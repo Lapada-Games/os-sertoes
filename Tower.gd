@@ -51,7 +51,7 @@ func _process(delta):
 				building = false
 
 func _on_range_body_entered(body):
-	if body.name == "Enemy":
+	if body.name == "EnemyBody":
 		enemies_in_range.append(body)
 
 func _on_range_body_exited(body):

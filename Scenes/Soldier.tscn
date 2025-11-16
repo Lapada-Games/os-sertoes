@@ -1,54 +1,54 @@
 [gd_scene load_steps=19 format=3 uid="uid://d3intu4yo7hob"]
 
-[ext_resource type="Script" path="res://Scenes/Enemy.gd" id="1_4tlw4"]
-[ext_resource type="Texture2D" uid="uid://b4kvs1pnrcxnn" path="res://Assets/Characters/sprites/soldiers/soldier1.png" id="2_jeui4"]
+[ext_resource type="Script" path="res://Scenes/Enemy.gd" id="1_jgoo7"]
+[ext_resource type="Texture2D" uid="uid://b4kvs1pnrcxnn" path="res://Assets/Characters/sprites/soldiers/soldier1.png" id="2_b3k1b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lfltm"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(0, 0, 42, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ltgbe"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(40, 0, 40, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kqyqw"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(84, 0, 42, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8kule"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(130, 0, 43, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g04bf"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(176, 0, 42, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s5okj"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(217, 0, 42, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0wndr"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(256, 0, 42, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pp64a"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(297, 0, 42, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8psbt"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(341, 0, 42, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8n7c"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(384, 0, 42, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ba8op"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(427, 0, 42, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_580pe"]
-atlas = ExtResource("2_jeui4")
+atlas = ExtResource("2_b3k1b")
 region = Rect2(468, 0, 42, 37)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4nbvk"]
@@ -104,13 +104,14 @@ bg_color = Color(1, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w34dy"]
 bg_color = Color(0.6, 1, 0.6, 1)
 
-[node name="Enemy" type="PathFollow2D"]
+[node name="Soldier" type="PathFollow2D"]
 loop = false
-script = ExtResource("1_4tlw4")
+script = ExtResource("1_jgoo7")
+speed = 70
 
-[node name="Enemy" type="CharacterBody2D" parent="."]
+[node name="EnemyBody" type="CharacterBody2D" parent="."]
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="Enemy"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="EnemyBody"]
 scale = Vector2(1.6, 1.6)
 sprite_frames = SubResource("SpriteFrames_4nbvk")
 animation = &"walking"
@@ -118,7 +119,7 @@ autoplay = "walking"
 frame_progress = 0.864253
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBody"]
 shape = SubResource("RectangleShape2D_yhamp")
 
 [node name="HP" type="ProgressBar" parent="."]

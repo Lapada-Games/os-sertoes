@@ -17,13 +17,13 @@ func _process(delta):
 		queue_free()
 	
 	if rotation_degrees < -90:
-		$Enemy/Sprite2D.flip_v = true
+		$EnemyBody/Sprite2D.flip_v = true
 	else:
-		$Enemy/Sprite2D.flip_v = false
+		$EnemyBody/Sprite2D.flip_v = false
 	
 	self.progress += speed * delta
 	$HP.rotation = -rotation
-	$HP.global_position = $Enemy.global_position + Vector2(0, 40)
+	$HP.global_position = $EnemyBody.global_position + Vector2(0, 40)
 
 func damage(amount: int):
 	hp -= amount

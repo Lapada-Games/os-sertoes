@@ -4,9 +4,9 @@ extends Node2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	#if Input.is_action_just_pressed("ui_accept"):
+		#get_tree().change_scene_to_file("res://Scenes/Map.tscn")
 
 
-func _on_path_2d_child_exiting_tree(node):
-	if $Path2D.get_child_count() <= 1:
-		print("ganhou!")
-		# TODO: ganhar
+func _on_spawn_timer_timeout():
+	pass # Replace with function body.

@@ -1,12 +1,17 @@
 extends CanvasLayer
 
+signal wave_start
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
+func hide_stuff():
+	$Store.visible = false
+	$PlayButton.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$HP.text = str(GameInfo.HP)
-	$Cash.text = str(GameInfo.get_cash())
+	$Store/Cash.text = "$" + str(GameInfo.get_cash())
+
+
+func _on_play_button_pressed():
+	hide_stuff()
+	wave_start.emit()

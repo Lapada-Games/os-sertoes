@@ -11,11 +11,34 @@ script = ExtResource("1_l2ovv")
 
 [node name="Store" parent="." instance=ExtResource("1_8g53j")]
 
+[node name="Cash" type="RichTextLabel" parent="Store"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 1.0
+offset_right = 404.0
+offset_bottom = 117.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0.560784, 0.337255, 0.231373, 1)
+theme_override_fonts/normal_font = ExtResource("2_83p4q")
+theme_override_font_sizes/normal_font_size = 72
+text = "$100"
+
+[node name="Loja" type="RichTextLabel" parent="Store"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 242.0
+offset_bottom = 116.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0.560784, 0.337255, 0.231373, 1)
+theme_override_fonts/normal_font = ExtResource("2_83p4q")
+theme_override_font_sizes/normal_font_size = 72
+text = "Loja"
+
 [node name="HP" type="RichTextLabel" parent="."]
-offset_left = 404.0
-offset_top = 16.0
-offset_right = 632.0
-offset_bottom = 132.0
+offset_left = 628.554
+offset_top = 8.0
+offset_right = 856.553
+offset_bottom = 124.0
 scale = Vector2(0.5, 0.5)
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -24,22 +47,18 @@ theme_override_fonts/normal_font = ExtResource("2_83p4q")
 theme_override_font_sizes/normal_font_size = 72
 text = "25"
 
-[node name="Cash" type="RichTextLabel" parent="."]
-offset_left = 546.0
-offset_top = 16.0
-offset_right = 774.0
-offset_bottom = 132.0
-scale = Vector2(0.5, 0.5)
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 16
-theme_override_fonts/normal_font = ExtResource("2_83p4q")
-theme_override_font_sizes/normal_font_size = 72
-text = "$100"
-
 [node name="ToolTip" parent="." instance=ExtResource("3_m8k2m")]
 
 [node name="Heart" type="Sprite2D" parent="."]
-position = Vector2(380, 43)
+position = Vector2(604.554, 35)
 scale = Vector2(0.00438838, 0.00438837)
 texture = ExtResource("4_1iopk")
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 1012.0
+offset_top = 499.0
+offset_right = 1274.0
+offset_bottom = 563.0
+text = "Play"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
