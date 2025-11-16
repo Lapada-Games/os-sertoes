@@ -1,7 +1,7 @@
 extends Node
 
 var level = 1
-var HP = 20
+var HP = 3
 # There will be multiple waves per level
 # Depending on the global level variable, the waves will be different each time
 var waves = [
@@ -20,3 +20,6 @@ func get_cash():
 
 func subtract_cash(amount: int):
 	self.cash[self.level - 1] -= amount
+
+func add_cash(amount: int):
+	self.cash[self.level - 1] += amount

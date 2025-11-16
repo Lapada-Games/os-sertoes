@@ -3,7 +3,7 @@ class_name Enemy
 
 @export var speed = 100
 @export var hp = 100
-@export var reward_coins = 50
+@export var reward_coins = 5
 @export var world_damage = 1
 var burning: bool = false
 
@@ -28,6 +28,7 @@ func _process(delta):
 func damage(amount: int):
 	hp -= amount
 	if hp <= 0:
+		GameInfo.add_cash(self.reward_coins)
 		queue_free()
 	$HP.value = hp
 
