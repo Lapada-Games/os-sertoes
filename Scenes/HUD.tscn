@@ -1,17 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4yhjj6tnm7f3"]
+[gd_scene load_steps=6 format=3 uid="uid://c4yhjj6tnm7f3"]
 
 [ext_resource type="PackedScene" uid="uid://c30rssbwpe74k" path="res://Scenes/Store.tscn" id="1_8g53j"]
+[ext_resource type="Script" path="res://Scenes/HUD.gd" id="1_l2ovv"]
 [ext_resource type="FontFile" uid="uid://0q3aq0atrryd" path="res://Assets/Fonts/Merienda-Regular.ttf" id="2_83p4q"]
 [ext_resource type="PackedScene" uid="uid://osgo2nocvk4j" path="res://Scenes/ToolTip.tscn" id="3_m8k2m"]
+[ext_resource type="Texture2D" uid="uid://c2jg18w1kts3m" path="res://Assets/Misc/heart.png" id="4_1iopk"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_l2ovv")
 
 [node name="Store" parent="." instance=ExtResource("1_8g53j")]
 
 [node name="HP" type="RichTextLabel" parent="."]
-offset_left = 400.0
+offset_left = 404.0
 offset_top = 16.0
-offset_right = 628.0
+offset_right = 632.0
 offset_bottom = 132.0
 scale = Vector2(0.5, 0.5)
 theme_override_colors/default_color = Color(1, 1, 1, 1)
@@ -19,7 +22,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
 theme_override_fonts/normal_font = ExtResource("2_83p4q")
 theme_override_font_sizes/normal_font_size = 72
-text = "S2 25"
+text = "25"
 
 [node name="Cash" type="RichTextLabel" parent="."]
 offset_left = 546.0
@@ -35,3 +38,8 @@ theme_override_font_sizes/normal_font_size = 72
 text = "$100"
 
 [node name="ToolTip" parent="." instance=ExtResource("3_m8k2m")]
+
+[node name="Heart" type="Sprite2D" parent="."]
+position = Vector2(380, 43)
+scale = Vector2(0.00438838, 0.00438837)
+texture = ExtResource("4_1iopk")

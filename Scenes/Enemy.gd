@@ -4,7 +4,7 @@ class_name Enemy
 @export var speed = 100
 @export var hp = 100
 @export var reward_coins = 50
-
+@export var world_damage = 1
 var burning: bool = false
 
 func _ready():
@@ -12,6 +12,10 @@ func _ready():
 	$HP.value = hp
 
 func _process(delta):
+	if self.progress_ratio >= 1:
+		GameInfo.HP -= world_damage
+		queue_free()
+	
 	if rotation_degrees < -90:
 		$Enemy/Sprite2D.flip_v = true
 	else:
