@@ -8,12 +8,12 @@ func _ready():
 	$TextureButton/TextureRect.texture = tower_stats.texture
 	$RichTextLabel.text = "$" + str(tower_stats.price)
 
+func _process(delta):
+	$TextureButton.disabled = GameInfo.get_cash() < tower_stats.price
 func _on_texture_button_pressed():
 	var tempTower = null
-	if tower_stats.item_name == "Cangaceiro":
-		tempTower = tower_stats.tower.instantiate()
-	else:
-		tempTower = tower_stats.tower.instantiate()
+	tempTower = tower_stats.tower.instantiate()
+	GameInfo.subtract_cash(tower_stats.price)
 	tempTower.building = true
 	get_tree().get_root().get_node("Map").get_node("Towers").add_child(tempTower)
 

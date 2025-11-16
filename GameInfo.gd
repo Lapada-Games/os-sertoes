@@ -10,3 +10,13 @@ var waves = [
 	[2, 3, 4]
 ]
 var cash = [100, 500, 1000]
+
+
+func next_level():
+	self.level += 1
+
+func get_cash():
+	return self.cash[self.level - 1]
+
+func subtract_cash(amount: int):
+	self.cash[self.level - 1] -= amount
