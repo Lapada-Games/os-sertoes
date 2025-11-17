@@ -40,6 +40,7 @@ volume_db = -7.495
 autoplay = true
 
 [connection signal="on_dialog_finished" from="DialogBox" to="." method="_on_dialog_box_on_dialog_finished"]
+[connection signal="reset" from="HUD" to="." method="_on_hud_reset"]
 [connection signal="wave_start" from="HUD" to="LevelManager" method="_on_hud_wave_start"]
 [connection signal="child_exiting_tree" from="LevelManager/Path2D" to="." method="_on_path_2d_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="LevelManager/Path2D" to="LevelManager" method="_on_path_2d_child_exiting_tree"]

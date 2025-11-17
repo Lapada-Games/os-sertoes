@@ -57,8 +57,16 @@ texture = ExtResource("4_1iopk")
 [node name="PlayButton" type="Button" parent="."]
 offset_left = 1012.0
 offset_top = 499.0
-offset_right = 1274.0
+offset_right = 1140.0
 offset_bottom = 563.0
 text = "Play"
 
+[node name="ResetButton" type="Button" parent="."]
+offset_left = 1160.0
+offset_top = 499.0
+offset_right = 1275.0
+offset_bottom = 563.0
+text = "Reset"
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
