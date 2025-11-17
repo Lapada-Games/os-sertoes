@@ -13,7 +13,6 @@ script = ExtResource("1_ms0u8")
 
 [node name="DialogBox" parent="." instance=ExtResource("2_7u5e1")]
 layer = 4
-visible = false
 scene_text_file = "res://Dialogs/tutorial_dialog.json"
 
 [node name="HUD" parent="." instance=ExtResource("4_3hc8h")]
@@ -24,8 +23,6 @@ scale = Vector2(0.833984, 0.833984)
 texture = ExtResource("1_2gg6k")
 centered = false
 metadata/_edit_lock_ = true
-
-[node name="Towers" type="Node2D" parent="."]
 
 [node name="LevelManager" type="Node2D" parent="."]
 script = ExtResource("5_udjft")
@@ -39,6 +36,8 @@ curve = ExtResource("4_anelk")
 stream = ExtResource("5_47qgm")
 volume_db = -7.495
 autoplay = true
+
+[node name="Towers" type="Node2D" parent="LevelManager"]
 
 [node name="ProhibitedAreas" type="Node2D" parent="."]
 

@@ -1,7 +1,7 @@
 extends Node2D
 
 # FOR DEBUG
-var skip_dialog = true
+var skip_dialog = false
 
 func _ready():
 	if skip_dialog:
@@ -16,6 +16,6 @@ func _on_dialog_box_on_dialog_finished():
 
 
 func _on_hud_reset():
-	for tower in $Towers.get_children():
+	for tower in $LevelManager/Towers.get_children():
 		GameInfo.reset_cash()
 		tower.queue_free()
