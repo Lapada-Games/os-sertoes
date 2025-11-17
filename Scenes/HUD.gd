@@ -5,8 +5,7 @@ signal reset
 
 func hide_stuff():
 	$Store.visible = false
-	$ResetButton.visible = false
-	$PlayButton.visible = false
+	$ControlButtons.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

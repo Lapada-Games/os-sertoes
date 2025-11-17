@@ -25,8 +25,20 @@ func is_player_building_something():
 			return true
 	return false
 
-func _process(delta):
-	# this disables the button whether the player is holding a tower or not
+func _on_tower_building_state_changed(_is_building):
 	var buttons = $FlowContainer.get_children()
 	for b in buttons:
-		b.get_node("TextureButton").disabled = is_player_building_something()
+		b.get_node("TextureButton").disabled = _is_building || GameInfo.get_cash() < b.tower_stats.price
+
+	
+#func _process(delta):
+	#var buttons = $FlowContainer.get_children()
+	#for b in buttons:
+		#print(b.get_node("TextureButton").disabled)
+# TODO: this is unoptimized, because every frame it is calling a O(n) function
+# implement signals instead
+#func _process(delta):
+	## this disables the button whether the player is holding a tower or not
+	#var buttons = $FlowContainer.get_children()
+	#for b in buttons:
+		#b.get_node("TextureButton").disabled = is_player_building_something()

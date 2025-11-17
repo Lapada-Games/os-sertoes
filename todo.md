@@ -7,7 +7,7 @@
 - [x] collision areas
 - [ ] resources to organize waves and cash
 - [ ] tower durability
-- [ ] 
+- [ ] add arrows indicating enemy path
 - [ ] 
 
 # Less priority

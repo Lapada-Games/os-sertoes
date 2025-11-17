@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://gpjdbomlx7ty"]
+[gd_scene load_steps=5 format=3 uid="uid://gpjdbomlx7ty"]
 
 [ext_resource type="PackedScene" uid="uid://commjrcmkwfx6" path="res://Scenes/DialogBox.tscn" id="1_klpgi"]
+[ext_resource type="PackedScene" uid="uid://ctlnsv7r3syn7" path="res://Scenes/Map.tscn" id="2_2lkbb"]
 [ext_resource type="Texture2D" uid="uid://brx7264vfrstp" path="res://Assets/LoreImages/0.png" id="2_d825v"]
 [ext_resource type="AudioStream" uid="uid://wvsxwhgbw6w3" path="res://OST/Journey to the Past - Carmen María and Edu Espinal.mp3" id="3_lm2q6"]
 
@@ -14,6 +15,7 @@ grow_vertical = 2
 
 [node name="DialogBox" parent="." instance=ExtResource("1_klpgi")]
 scene_text_file = "res://Dialogs/lore.json"
+scene_to_go_after_end = ExtResource("2_2lkbb")
 
 [node name="slide" type="Sprite2D" parent="."]
 position = Vector2(644.521, 411.875)

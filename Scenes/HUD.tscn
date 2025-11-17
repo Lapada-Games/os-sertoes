@@ -54,19 +54,27 @@ position = Vector2(604.554, 35)
 scale = Vector2(0.00438838, 0.00438837)
 texture = ExtResource("4_1iopk")
 
-[node name="PlayButton" type="Button" parent="."]
+[node name="ControlButtons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="Button" parent="ControlButtons"]
+layout_mode = 0
 offset_left = 1012.0
 offset_top = 499.0
 offset_right = 1140.0
 offset_bottom = 563.0
 text = "Play"
 
-[node name="ResetButton" type="Button" parent="."]
+[node name="ResetButton" type="Button" parent="ControlButtons"]
+layout_mode = 0
 offset_left = 1160.0
 offset_top = 499.0
 offset_right = 1275.0
 offset_bottom = 563.0
 text = "Reset"
 
-[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="ControlButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ControlButtons/ResetButton" to="." method="_on_reset_button_pressed"]

@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export_file("*.json") var scene_text_file
+@export var scene_to_go_after_end: PackedScene
 
 signal on_next_line
 signal on_dialog_finished
@@ -35,6 +36,8 @@ func load_json_file(path: String) -> Variant:
 func next_line():
 	if index + 1 > dialogue.size() - 1:
 		on_dialog_finished.emit()
+		if scene_to_go_after_end:
+			get_tree().change_scene_to_packed(scene_to_go_after_end)
 		return
 	index += 1
 	show_text()
