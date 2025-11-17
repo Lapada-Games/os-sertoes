@@ -73,7 +73,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1o48p"]
-size = Vector2(33, 27)
+size = Vector2(27, 20)
 
 [node name="Tower" instance=ExtResource("1_jrtu8")]
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_rbio7")])
@@ -86,7 +86,7 @@ animation = &"attack"
 frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(2.5, 29.5)
+position = Vector2(3.5, 33)
 shape = SubResource("RectangleShape2D_1o48p")
 
 [node name="shoot_SFX" parent="." index="4"]

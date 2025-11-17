@@ -45,7 +45,7 @@ autoplay = true
 [node name="Area1" type="Area2D" parent="ProhibitedAreas"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProhibitedAreas/Area1"]
-polygon = PackedVector2Array(16, 409, 19, 249, 141, 264, 359, 274, 661, 264, 885, -3, 974, -3, 913, 104, 778, 241, 760, 305, 966, 452, 1314, 901, 1154, 940, 1139, 846, 951, 630, 788, 581, 557, 574, 417, 597, 329, 663, 224, 858, 108, 858, 229, 647, 349, 536, 870, 518, 880, 485, 760, 391, 585, 345, 163, 338, 163, 406, 102, 437)
+polygon = PackedVector2Array(16, 409, 29, 284, 147, 277, 359, 289, 669, 284, 885, -3, 974, -3, 892, 88, 754, 246, 746, 312, 949, 453, 1294, 906, 1154, 940, 1155, 840, 956, 612, 781, 567, 548, 565, 409, 581, 316, 656, 207, 859, 124, 863, 245, 658, 364, 551, 544, 533, 879, 535, 899, 476, 781, 376, 585, 327, 158, 323, 163, 406, 102, 437)
 
 [node name="Area2" type="Area2D" parent="ProhibitedAreas"]
 
@@ -56,25 +56,49 @@ polygon = PackedVector2Array(77, 474, 193, 389, 271, 366, 332, 417, 330, 541, 16
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProhibitedAreas/Area3"]
 position = Vector2(538, 237)
-polygon = PackedVector2Array(97, 413, 148, 376, 241, 395, 291, 426, 341, 492, 338, 555, 282, 586, 109, 538)
+polygon = PackedVector2Array(97, 413, 148, 376, 241, 395, 270, 441, 341, 492, 338, 555, 282, 586, 109, 538)
 
 [node name="Area4" type="Area2D" parent="ProhibitedAreas"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProhibitedAreas/Area4"]
 position = Vector2(266, 241)
-polygon = PackedVector2Array(107, 434, 216, 391, 268, 421, 275, 504, 198, 541, 114, 522)
+polygon = PackedVector2Array(114, 437, 219, 390, 268, 421, 275, 504, 198, 541, 114, 522)
 
 [node name="Area5" type="Area2D" parent="ProhibitedAreas"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProhibitedAreas/Area5"]
 position = Vector2(783, -224)
-polygon = PackedVector2Array(107, 434, 163, 386, 272, 408, 272, 502, 198, 527, 104, 509)
+polygon = PackedVector2Array(107, 434, 163, 386, 272, 408, 265, 515, 203, 556, 109, 538)
 
 [node name="Area6" type="Area2D" parent="ProhibitedAreas"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProhibitedAreas/Area6"]
 position = Vector2(975, 36)
 polygon = PackedVector2Array(107, 414, 163, 386, 226, 404, 227, 461, 287, 514, 276, 565, 239, 575, 183, 566, 111, 550)
+
+[node name="Area7" type="Area2D" parent="ProhibitedAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProhibitedAreas/Area7"]
+position = Vector2(-63, -334)
+polygon = PackedVector2Array(107, 414, 163, 386, 221, 407, 218, 550, 183, 566, 111, 550)
+
+[node name="Area8" type="Area2D" parent="ProhibitedAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProhibitedAreas/Area8"]
+position = Vector2(116, -335)
+polygon = PackedVector2Array(141, 441, 177, 359, 212, 415, 231, 544, 154, 566, 111, 550, 71, 535, 77, 470, 107, 435)
+
+[node name="Area9" type="Area2D" parent="ProhibitedAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProhibitedAreas/Area9"]
+position = Vector2(1021, -312)
+polygon = PackedVector2Array(73, 337, 145, 345, 232, 452, 231, 544, 154, 566, 111, 550, 30, 517, 25, 447, 23, 351)
+
+[node name="Area10" type="Area2D" parent="ProhibitedAreas"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProhibitedAreas/Area10"]
+position = Vector2(1017, -101)
+polygon = PackedVector2Array(74, 384, 119, 397, 183, 422, 198, 503, 150, 515, 104, 503, 32, 476, 36, 431, 68, 426)
 
 [connection signal="on_dialog_finished" from="DialogBox" to="." method="_on_dialog_box_on_dialog_finished"]
 [connection signal="reset" from="HUD" to="." method="_on_hud_reset"]
