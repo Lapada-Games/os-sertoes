@@ -6,7 +6,6 @@
 - [x] tower resources
 - [x] collision areas
 - [ ] resources to organize waves and cash
-- [ ] make HP local
 - [ ] tower durability
 - [ ] 
 - [ ] 
