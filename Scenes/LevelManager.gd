@@ -2,7 +2,7 @@ extends Node2D
 
 var enemy = preload("res://Scenes/Soldier.tscn")
 var current_level = GameInfo.level
-var wave_index = 0
+var wave_index = 0 # this variable has to be local to the scene!
 var spawn_time = 1 # enemy per second
 
 func start_wave():

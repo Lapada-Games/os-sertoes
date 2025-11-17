@@ -108,6 +108,7 @@ bg_color = Color(0.6, 1, 0.6, 1)
 loop = false
 script = ExtResource("1_jgoo7")
 speed = 70
+hp = 80
 
 [node name="EnemyBody" type="CharacterBody2D" parent="."]
 

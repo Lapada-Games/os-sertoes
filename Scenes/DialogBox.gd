@@ -35,7 +35,6 @@ func load_json_file(path: String) -> Variant:
 func next_line():
 	if index + 1 > dialogue.size() - 1:
 		on_dialog_finished.emit()
-		get_tree().change_scene_to_file("res://Scenes/Map.tscn")
 		return
 	index += 1
 	show_text()

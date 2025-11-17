@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctlnsv7r3syn7"]
+[gd_scene load_steps=8 format=3 uid="uid://ctlnsv7r3syn7"]
 
 [ext_resource type="Texture2D" uid="uid://bpdp15k5bejr" path="res://Assets/Scenario/scene.png" id="1_2gg6k"]
 [ext_resource type="Script" path="res://Scenes/Map.gd" id="1_ms0u8"]
+[ext_resource type="PackedScene" uid="uid://commjrcmkwfx6" path="res://Scenes/DialogBox.tscn" id="2_7u5e1"]
 [ext_resource type="PackedScene" uid="uid://c4yhjj6tnm7f3" path="res://Scenes/HUD.tscn" id="4_3hc8h"]
 [ext_resource type="Curve2D" uid="uid://ug0vvtwuq3nl" path="res://Resources/Paths/Stage1.tres" id="4_anelk"]
 [ext_resource type="AudioStream" uid="uid://cymwv6py2j7dm" path="res://OST/prebattle.mp3" id="5_47qgm"]
@@ -9,6 +10,10 @@
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_ms0u8")
+
+[node name="DialogBox" parent="." instance=ExtResource("2_7u5e1")]
+layer = 4
+scene_text_file = "res://Dialogs/tutorial_dialog.json"
 
 [node name="HUD" parent="." instance=ExtResource("4_3hc8h")]
 layer = 2
@@ -34,6 +39,7 @@ stream = ExtResource("5_47qgm")
 volume_db = -7.495
 autoplay = true
 
+[connection signal="on_dialog_finished" from="DialogBox" to="." method="_on_dialog_box_on_dialog_finished"]
 [connection signal="wave_start" from="HUD" to="LevelManager" method="_on_hud_wave_start"]
 [connection signal="child_exiting_tree" from="LevelManager/Path2D" to="." method="_on_path_2d_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="LevelManager/Path2D" to="LevelManager" method="_on_path_2d_child_exiting_tree"]

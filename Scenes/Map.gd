@@ -1,12 +1,15 @@
 extends Node2D
 
+# FOR DEBUG
+var skip_dialog = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	#if Input.is_action_just_pressed("ui_accept"):
-		#get_tree().change_scene_to_file("res://Scenes/Map.tscn")
-
+func _ready():
+	if skip_dialog:
+		$DialogBox.queue_free()
 
 func _on_spawn_timer_timeout():
 	pass # Replace with function body.
+
+
+func _on_dialog_box_on_dialog_finished():
+	$DialogBox.queue_free()
