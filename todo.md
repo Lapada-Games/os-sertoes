@@ -15,7 +15,7 @@
 - [ ] Lore slides
 - [ ] dialog cutscenes
 - [ ] gameover screen
-- [ ] Undo or reset button
+- [x] Undo or reset button
 - [ ] 
 - [ ] 
 - [ ] 
