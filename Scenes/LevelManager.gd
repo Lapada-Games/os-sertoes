@@ -4,14 +4,27 @@ var enemy = preload("res://Scenes/Soldier.tscn")
 var current_level = GameInfo.level
 var wave_index = 0 # this variable has to be local to the scene!
 var spawn_time = 1 # enemy per second
+@onready var arrows = $Path2D.get_children().filter(func(element): return element.name.begins_with("Arrow"))
+
+var wave_started = false
 
 func start_wave():
+	wave_started = true
 	$Music.stream = load("res://OST/battle_01.ogg")
 	$Music.play()
 	$SpawnTimer.wait_time = spawn_time
 	$SpawnTimer.start()
+	$Path2D/Arrow1.visible = false
+	$Path2D/Arrow2.visible = false
+	$Path2D/Arrow3.visible = false
+
+func _process(delta):
+	if not wave_started:
+		for arrow in arrows:
+			arrow.progress += 100 * delta
 
 func end_wave():
+	wave_started = false
 	if GameInfo.HP <= 0:
 		print("perdeu")
 	if $Path2D.get_child_count() <= 1:

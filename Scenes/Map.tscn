@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctlnsv7r3syn7"]
+[gd_scene load_steps=9 format=3 uid="uid://ctlnsv7r3syn7"]
 
 [ext_resource type="Texture2D" uid="uid://bpdp15k5bejr" path="res://Assets/Scenario/scene.png" id="1_2gg6k"]
 [ext_resource type="Script" path="res://Scenes/Map.gd" id="1_ms0u8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Curve2D" uid="uid://ug0vvtwuq3nl" path="res://Resources/Paths/Stage1.tres" id="4_anelk"]
 [ext_resource type="AudioStream" uid="uid://cymwv6py2j7dm" path="res://OST/prebattle.mp3" id="5_47qgm"]
 [ext_resource type="Script" path="res://Scenes/LevelManager.gd" id="5_udjft"]
+[ext_resource type="Texture2D" uid="uid://frj7q8pb7yal" path="res://Assets/Misc/arrow.png" id="7_s7ldw"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_ms0u8")
@@ -30,6 +31,39 @@ script = ExtResource("5_udjft")
 [node name="Path2D" type="Path2D" parent="LevelManager"]
 curve = ExtResource("4_anelk")
 
+[node name="Arrow1" type="PathFollow2D" parent="LevelManager/Path2D"]
+position = Vector2(1008.56, 611.966)
+rotation = -2.23087
+progress = 478.542
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelManager/Path2D/Arrow1"]
+position = Vector2(1.22635, -1.57985)
+rotation = 0.0153732
+scale = Vector2(2.61538, 2.61538)
+texture = ExtResource("7_s7ldw")
+
+[node name="Arrow2" type="PathFollow2D" parent="LevelManager/Path2D"]
+position = Vector2(784.096, 365.3)
+rotation = -2.58423
+progress = 821.21
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelManager/Path2D/Arrow2"]
+position = Vector2(1.22635, -1.57985)
+rotation = 0.0153732
+scale = Vector2(2.61538, 2.61538)
+texture = ExtResource("7_s7ldw")
+
+[node name="Arrow3" type="PathFollow2D" parent="LevelManager/Path2D"]
+position = Vector2(805.372, 144.19)
+rotation = -0.694738
+progress = 1117.46
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelManager/Path2D/Arrow3"]
+position = Vector2(1.22635, -1.57985)
+rotation = 0.0153732
+scale = Vector2(2.61538, 2.61538)
+texture = ExtResource("7_s7ldw")
+
 [node name="SpawnTimer" type="Timer" parent="LevelManager"]
 
 [node name="Music" type="AudioStreamPlayer" parent="LevelManager"]
@@ -40,6 +74,7 @@ autoplay = true
 [node name="Towers" type="Node2D" parent="LevelManager"]
 
 [node name="ProhibitedAreas" type="Node2D" parent="."]
+visible = false
 
 [node name="Area1" type="Area2D" parent="ProhibitedAreas"]
 

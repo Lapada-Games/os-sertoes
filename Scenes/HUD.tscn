@@ -76,5 +76,6 @@ offset_right = 1275.0
 offset_bottom = 563.0
 text = "Reset"
 
+[connection signal="reset" from="." to="Store" method="_on_hud_reset"]
 [connection signal="pressed" from="ControlButtons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ControlButtons/ResetButton" to="." method="_on_reset_button_pressed"]

@@ -17,5 +17,4 @@ func _on_dialog_box_on_dialog_finished():
 
 func _on_hud_reset():
 	for tower in $LevelManager/Towers.get_children():
-		GameInfo.reset_cash()
 		tower.queue_free()
