@@ -61,6 +61,7 @@ func wet(speed: int, duration: int):
 		
 	if burning:
 		burning = false
+		AudioManager.play_sfx("fizz")
 		$BurnTimerDPS.stop()
 	
 	set_speed(speed)
