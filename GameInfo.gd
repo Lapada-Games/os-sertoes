@@ -10,7 +10,7 @@ var waves = [
 	[2, 3, 4]
 ]
 
-var cashInfo = [150, 500, 1000]
+var cashInfo = [9950, 500, 1000]
 
 var cash = cashInfo[level - 1]
 

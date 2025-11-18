@@ -1,7 +1,7 @@
 extends Node2D
 
 # FOR DEBUG
-var skip_dialog = false
+var skip_dialog = true
 
 func _ready():
 	if skip_dialog:

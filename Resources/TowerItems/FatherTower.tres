@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_uqby6")
-item_name = ""
+item_name = "Padre"
 description = "O poder do Espirito Santo desacelera os inimigos."
 tower = ExtResource("3_w1yfj")
-price = 60
+price = 120
 texture = ExtResource("2_xds24")

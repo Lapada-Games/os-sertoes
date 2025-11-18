@@ -10,7 +10,7 @@
 
 [sub_resource type="Resource" id="Resource_hl7g7"]
 script = ExtResource("3_rwvak")
-damage = 30
+damage = 0
 
 [sub_resource type="Resource" id="Resource_e1sf2"]
 script = ExtResource("4_chhxj")
@@ -107,7 +107,7 @@ radius = 17.6139
 [node name="Tower" instance=ExtResource("1_of371")]
 bullet = ExtResource("2_knuvl")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_hl7g7"), SubResource("Resource_e1sf2")])
-attack_speed = 0.7
+attack_speed = 0.5
 range = 90.0
 
 [node name="Sprite2D" parent="." index="0"]

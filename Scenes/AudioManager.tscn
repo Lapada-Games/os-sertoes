@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx83eccfehks0"]
+
+[ext_resource type="Script" path="res://AudioManager.gd" id="1_u3pw5"]
+[ext_resource type="AudioStream" uid="uid://ctqi7sqy2af3j" path="res://SFX/splash.ogg" id="2_61cjo"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_u3pw5")
+
+[node name="splash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_61cjo")
+volume_db = -4.0

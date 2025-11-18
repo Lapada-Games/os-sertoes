@@ -5,4 +5,4 @@ class_name FreezeEffect
 @export var duration: float
 
 func apply_effect(target: Enemy):
-	target.set_speed(speed)
+	target.wet(speed, duration)

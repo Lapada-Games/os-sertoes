@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bua53fikrab6s"]
+[gd_scene load_steps=5 format=3 uid="uid://bua53fikrab6s"]
 
 [ext_resource type="Script" path="res://Scenes/Bullet.gd" id="1_8jij5"]
 [ext_resource type="Texture2D" uid="uid://q5676ox2se6a" path="res://Assets/Misc/rock.png" id="2_n06xi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iepyl"]
 radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4k32"]
+radius = 31.0644
 
 [node name="Bullet" type="CharacterBody2D"]
 script = ExtResource("1_8jij5")
@@ -16,3 +19,8 @@ texture = ExtResource("2_n06xi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iepyl")
 disabled = true
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_e4k32")

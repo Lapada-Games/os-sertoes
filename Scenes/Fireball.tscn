@@ -8,6 +8,8 @@ radius = 14.0357
 
 [node name="Bullet" instance=ExtResource("1_0p1ng")]
 speed = 330
+effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([])
+area_radius = 0
 
 [node name="Sprite2D" parent="." index="0"]
 position = Vector2(1, 0)
