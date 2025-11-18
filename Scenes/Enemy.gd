@@ -85,5 +85,4 @@ func _on_burn_timer_total_timeout():
 func _on_wet_timer_timeout():
 	is_wet = false
 	self.modulate = Color(1, 1, 1)
-	print("fodase")
 	self.speed = self.last_speed
