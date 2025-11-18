@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c30rssbwpe74k"]
+[gd_scene load_steps=8 format=3 uid="uid://c30rssbwpe74k"]
 
 [ext_resource type="PackedScene" uid="uid://d3lhsfx1ajedo" path="res://Scenes/ItemButton.tscn" id="1_4lqvk"]
 [ext_resource type="Script" path="res://Scenes/Store.gd" id="1_soda6"]
 [ext_resource type="Resource" uid="uid://ckm0m6crdcgh2" path="res://Resources/TowerItems/AldeaTower.tres" id="3_qc8cc"]
 [ext_resource type="Resource" uid="uid://ddb2oev1oeakx" path="res://Resources/TowerItems/CangaceiroTower.tres" id="4_cx7ur"]
 [ext_resource type="Resource" uid="uid://cgal5lpomwcq2" path="res://Resources/TowerItems/FirecampTower.tres" id="5_egrvn"]
+[ext_resource type="Resource" uid="uid://dftmocd5dedms" path="res://Resources/TowerItems/FatherTower.tres" id="6_vk26j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojtr0"]
 bg_color = Color(0.956863, 0.843137, 0.737255, 0.588235)
@@ -52,3 +53,7 @@ tower_stats = ExtResource("4_cx7ur")
 [node name="Firecamp" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
 tower_stats = ExtResource("5_egrvn")
+
+[node name="Father" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2
+tower_stats = ExtResource("6_vk26j")

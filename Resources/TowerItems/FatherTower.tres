@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemTowerStats" load_steps=4 format=3 uid="uid://dftmocd5dedms"]
+
+[ext_resource type="Script" path="res://Resources/TowerItems/ItemTowerStats.gd" id="1_uqby6"]
+[ext_resource type="Texture2D" uid="uid://de87fapblk676" path="res://Assets/Characters/sprites/pade1.png" id="2_xds24"]
+[ext_resource type="PackedScene" uid="uid://bdygaghjqbi2t" path="res://Scenes/Father.tscn" id="3_w1yfj"]
+
+[resource]
+script = ExtResource("1_uqby6")
+item_name = ""
+description = "O poder do Espirito Santo desacelera os inimigos."
+tower = ExtResource("3_w1yfj")
+price = 60
+texture = ExtResource("2_xds24")
