@@ -79,6 +79,7 @@ size = Vector2(27, 20)
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_rbio7")])
 attack_speed = 0.7
 range = 150.0
+durability = 50
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ddkm3")
@@ -91,3 +92,9 @@ shape = SubResource("RectangleShape2D_1o48p")
 
 [node name="shoot_SFX" parent="." index="4"]
 stream = ExtResource("4_lm7yo")
+
+[node name="Durability" parent="." index="5"]
+offset_left = -15.0
+offset_top = 44.0
+offset_right = 17.0
+offset_bottom = 49.0

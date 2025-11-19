@@ -7,6 +7,7 @@ extends Area2D
 #@export var attack_damage: int = 10
 @export var attack_speed: float = 1.0
 @export var range: float = 100.0
+@export var durability: int = 100
 
 var enemies_in_range: Array[Node2D] = []
 var current_target: Node2D = null
@@ -27,6 +28,8 @@ func _ready():
 	$Range/CollisionShape2D.shape.radius = range
 	$Range/Circle.size = Vector2(range * 2, range * 2)
 	$Range/Circle.position = Vector2(-range, -range)
+	$Durability.max_value = durability
+	$Durability.value = durability
 
 func _process(delta):
 	if not building:
@@ -91,3 +94,16 @@ func aim_to_target(pos: Vector2):
 	else:
 		$Sprite2D.flip_h = false
 	target_position = pos
+
+func start_durability_timer():
+	$DurabilityTimer.paused = false # idk if is necessary
+	$DurabilityTimer.start()
+
+func pause_durability_timer():
+	$DurabilityTimer.paused = true
+
+func _on_durability_timer_timeout():
+	self.durability -= 1
+	if self.durability <= 0:
+		queue_free()
+	$Durability.value = durability

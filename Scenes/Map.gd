@@ -24,12 +24,18 @@ func start_wave():
 	$Music.play()
 	$SpawnTimer.wait_time = spawn_time
 	$SpawnTimer.start()
+	# starting the timer in each tower
+	for tower in $Towers.get_children().filter(func(e): return e is Tower):
+		tower.start_durability_timer()
 	$Path2D/Arrow1.visible = false
 	$Path2D/Arrow2.visible = false
 	$Path2D/Arrow3.visible = false
 
 func end_wave():
 	wave_started = false
+	# pausing the timer in each tower
+	for tower in $Towers.get_children().filter(func(e): return e is Tower):
+		tower.pause_durability_timer()
 	if GameInfo.HP <= 0:
 		print("perdeu")
 	if $Path2D.get_child_count() <= 1:
@@ -43,11 +49,6 @@ func spawn_enemy():
 
 func _on_hud_wave_start():
 	start_wave()
-
-
-func _on_path_2d_child_exiting_tree(node):
-	end_wave()
-
 
 func _on_spawn_timer_timeout():
 	spawn_enemy()

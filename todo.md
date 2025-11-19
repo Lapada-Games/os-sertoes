@@ -8,7 +8,7 @@
 * [x] collision areas
 * [x] remove level manager and put the script in the Map itself
 * [ ] tower durability and a way to pause it
-* [ ] resources to organize waves and cash
+* [x] resources to organize waves and cash
 * [x] add arrows indicating enemy path
 * [ ] money animation
 * [ ] 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dy0roh66tg0ai"]
+[gd_scene load_steps=22 format=3 uid="uid://dy0roh66tg0ai"]
 
 [ext_resource type="Script" path="res://Tower.gd" id="1_c3fk5"]
 [ext_resource type="Texture2D" uid="uid://bte6betnsctom" path="res://Assets/Characters/sprites/Girl_attack.png" id="2_vldvw"]
@@ -93,9 +93,16 @@ corner_radius_top_right = 450
 corner_radius_bottom_right = 450
 corner_radius_bottom_left = 450
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xha0v"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ueelt"]
+bg_color = Color(0.6, 1, 0.6, 1)
+
 [node name="Tower" type="Area2D"]
 script = ExtResource("1_c3fk5")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_slgtf")])
+durability = 20
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -139,5 +146,18 @@ offset = Vector2(36, 0)
 stream = ExtResource("5_5qsvp")
 volume_db = -10.0
 
+[node name="Durability" type="ProgressBar" parent="."]
+offset_left = -16.0
+offset_top = 34.0
+offset_right = 16.0
+offset_bottom = 39.0
+pivot_offset = Vector2(16, 2)
+theme_override_styles/background = SubResource("StyleBoxFlat_xha0v")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ueelt")
+show_percentage = false
+
+[node name="DurabilityTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
 [connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
+[connection signal="timeout" from="DurabilityTimer" to="." method="_on_durability_timer_timeout"]

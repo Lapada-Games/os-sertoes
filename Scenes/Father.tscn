@@ -54,7 +54,14 @@ animations = [{
 bullet = ExtResource("2_k4wbe")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_oig46"), SubResource("Resource_eysdl")])
 attack_speed = 0.4
+durability = 60
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_l4uux")
 frame_progress = 0.498916
+
+[node name="Durability" parent="." index="5"]
+offset_left = -17.0
+offset_top = 40.0
+offset_right = 15.0
+offset_bottom = 45.0
