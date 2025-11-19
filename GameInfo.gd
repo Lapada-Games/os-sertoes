@@ -1,7 +1,9 @@
 extends Node
 
+const DEBUG = true
+
 var level = 1
-var HP = 3 # TODO: make this variable local to levelmanager
+var HP = 3
 # There will be multiple waves per level
 # Depending on the global level variable, the waves will be different each time
 var waves = [

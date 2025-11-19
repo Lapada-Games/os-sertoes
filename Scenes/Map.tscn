@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctlnsv7r3syn7"]
+[gd_scene load_steps=8 format=3 uid="uid://ctlnsv7r3syn7"]
 
 [ext_resource type="Texture2D" uid="uid://bpdp15k5bejr" path="res://Assets/Scenario/scene.png" id="1_2gg6k"]
 [ext_resource type="Script" path="res://Scenes/Map.gd" id="1_ms0u8"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c4yhjj6tnm7f3" path="res://Scenes/HUD.tscn" id="4_3hc8h"]
 [ext_resource type="Curve2D" uid="uid://ug0vvtwuq3nl" path="res://Resources/Paths/Stage1.tres" id="4_anelk"]
 [ext_resource type="AudioStream" uid="uid://cymwv6py2j7dm" path="res://OST/prebattle.mp3" id="5_47qgm"]
-[ext_resource type="Script" path="res://Scenes/LevelManager.gd" id="5_udjft"]
 [ext_resource type="Texture2D" uid="uid://frj7q8pb7yal" path="res://Assets/Misc/arrow.png" id="7_s7ldw"]
 
 [node name="Map" type="Node2D"]
@@ -14,7 +13,6 @@ script = ExtResource("1_ms0u8")
 
 [node name="DialogBox" parent="." instance=ExtResource("2_7u5e1")]
 layer = 4
-visible = false
 scene_text_file = "res://Dialogs/tutorial_dialog.json"
 
 [node name="HUD" parent="." instance=ExtResource("4_3hc8h")]
@@ -26,53 +24,50 @@ texture = ExtResource("1_2gg6k")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="LevelManager" type="Node2D" parent="."]
-script = ExtResource("5_udjft")
-
-[node name="Path2D" type="Path2D" parent="LevelManager"]
+[node name="Path2D" type="Path2D" parent="."]
 curve = ExtResource("4_anelk")
 
-[node name="Arrow1" type="PathFollow2D" parent="LevelManager/Path2D"]
+[node name="Arrow1" type="PathFollow2D" parent="Path2D"]
 position = Vector2(933.701, 480.304)
 rotation = -2.41636
 progress = 478.542
 
-[node name="Sprite2D" type="Sprite2D" parent="LevelManager/Path2D/Arrow1"]
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/Arrow1"]
 position = Vector2(1.22635, -1.57985)
 rotation = 0.0153732
 scale = Vector2(2.61538, 2.61538)
 texture = ExtResource("7_s7ldw")
 
-[node name="Arrow2" type="PathFollow2D" parent="LevelManager/Path2D"]
+[node name="Arrow2" type="PathFollow2D" parent="Path2D"]
 position = Vector2(729.161, 260.944)
 rotation = -1.15725
 progress = 821.21
 
-[node name="Sprite2D" type="Sprite2D" parent="LevelManager/Path2D/Arrow2"]
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/Arrow2"]
 position = Vector2(1.22635, -1.57985)
 rotation = 0.0153732
 scale = Vector2(2.61538, 2.61538)
 texture = ExtResource("7_s7ldw")
 
-[node name="Arrow3" type="PathFollow2D" parent="LevelManager/Path2D"]
+[node name="Arrow3" type="PathFollow2D" parent="Path2D"]
 position = Vector2(901.876, 28.6662)
 rotation = -1.07963
 progress = 1117.46
 
-[node name="Sprite2D" type="Sprite2D" parent="LevelManager/Path2D/Arrow3"]
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/Arrow3"]
 position = Vector2(1.22635, -1.57985)
 rotation = 0.0153732
 scale = Vector2(2.61538, 2.61538)
 texture = ExtResource("7_s7ldw")
 
-[node name="SpawnTimer" type="Timer" parent="LevelManager"]
+[node name="SpawnTimer" type="Timer" parent="."]
 
-[node name="Music" type="AudioStreamPlayer" parent="LevelManager"]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_47qgm")
 volume_db = -7.495
 autoplay = true
 
-[node name="Towers" type="Node2D" parent="LevelManager"]
+[node name="Towers" type="Node2D" parent="."]
 
 [node name="ProhibitedAreas" type="Node2D" parent="."]
 visible = false
@@ -137,7 +132,6 @@ polygon = PackedVector2Array(74, 384, 119, 397, 183, 422, 198, 503, 150, 515, 10
 
 [connection signal="on_dialog_finished" from="DialogBox" to="." method="_on_dialog_box_on_dialog_finished"]
 [connection signal="reset" from="HUD" to="." method="_on_hud_reset"]
-[connection signal="wave_start" from="HUD" to="LevelManager" method="_on_hud_wave_start"]
-[connection signal="child_exiting_tree" from="LevelManager/Path2D" to="." method="_on_path_2d_child_exiting_tree"]
-[connection signal="child_exiting_tree" from="LevelManager/Path2D" to="LevelManager" method="_on_path_2d_child_exiting_tree"]
-[connection signal="timeout" from="LevelManager/SpawnTimer" to="LevelManager" method="_on_spawn_timer_timeout"]
+[connection signal="wave_start" from="HUD" to="." method="_on_hud_wave_start"]
+[connection signal="child_exiting_tree" from="Path2D" to="." method="_on_path_2d_child_exiting_tree"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

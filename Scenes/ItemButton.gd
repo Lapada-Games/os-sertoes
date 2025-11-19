@@ -17,7 +17,7 @@ func _on_texture_button_pressed():
 	GameInfo.subtract_cash(tower_stats.price)
 	tempTower.building_state_changed.connect(get_parent().get_parent()._on_tower_building_state_changed)
 	tempTower.building = true
-	get_tree().get_root().get_node("Map").get_node("LevelManager").get_node("Towers").add_child(tempTower)
+	get_tree().get_root().get_node("Map").get_node("Towers").add_child(tempTower)
 
 
 func _on_texture_button_mouse_entered():
