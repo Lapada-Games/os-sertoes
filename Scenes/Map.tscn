@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://Scenes/Map.gd" id="1_ms0u8"]
 [ext_resource type="PackedScene" uid="uid://commjrcmkwfx6" path="res://Scenes/DialogBox.tscn" id="2_7u5e1"]
 [ext_resource type="PackedScene" uid="uid://c4yhjj6tnm7f3" path="res://Scenes/HUD.tscn" id="4_3hc8h"]
-[ext_resource type="Curve2D" uid="uid://ug0vvtwuq3nl" path="res://Resources/Paths/Stage1.tres" id="4_anelk"]
 [ext_resource type="AudioStream" uid="uid://cymwv6py2j7dm" path="res://OST/prebattle.mp3" id="5_47qgm"]
+[ext_resource type="Curve2D" uid="uid://ug0vvtwuq3nl" path="res://Resources/LevelData/Paths/Stage1.tres" id="5_nxqdq"]
 [ext_resource type="Texture2D" uid="uid://frj7q8pb7yal" path="res://Assets/Misc/arrow.png" id="7_s7ldw"]
 
 [node name="Map" type="Node2D"]
@@ -25,7 +25,7 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = ExtResource("4_anelk")
+curve = ExtResource("5_nxqdq")
 
 [node name="Arrow1" type="PathFollow2D" parent="Path2D"]
 position = Vector2(933.701, 480.304)

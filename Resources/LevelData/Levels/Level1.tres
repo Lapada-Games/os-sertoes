@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Level" load_steps=2 format=3 uid="uid://f1kxoykll174"]
+
+[ext_resource type="Script" path="res://Resources/LevelData/Levels/level.gd" id="1_2rya7"]
+
+[resource]
+script = ExtResource("1_2rya7")
+cash = 0
+waves = Array[Resource("res://Resources/LevelData/Waves/wave.gd")]([])

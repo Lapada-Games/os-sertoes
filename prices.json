@@ -1,14 +1,53 @@
-[
-	{
-		"name": "Aldeã",
-		"filename": "Girl.png",
-		"description": "Taca pedra nos outro\nDano: 10\nVel. Ataque: 1\nRange: 100",
-		"price": 25
-	},
-	{
-		"name": "Cangaceiro",
-		"filename": "cangaceiro.png",
-		"description": "Dá tiro nos outro\nDano: 50\nVel. Ataque: 0.6\nRange: 150",
-		"price": 50
-	}
-]
+{
+	"levels": [
+		{
+			"cash": 150,
+			"waves": [
+				{
+					"wavePath": "this would receive a Curve2D node in godot",
+					"enemies": [
+						{"name": "Soldier", "quantity": 5}
+					]
+				},
+				{
+					"wavePath": "this would receive a Curve2D node in godot",
+					"enemies": [
+						{"name": "Soldier", "quantity": 15}
+					]
+				},
+				{
+					"wavePath": "this would receive a Curve2D node in godot",
+					"enemies": [
+						{"name": "Soldier", "quantity": 20}
+					]
+				}
+			]
+		},
+		{
+			"cash": 400,
+			"waves": [
+				{
+					"wavePath": "this would receive a Curve2D node in godot",
+					"enemies": [
+						{"name": "Soldier", "quantity": 10},
+						{"name": "EliteSoldier", "quantity": 5}
+					]
+				},
+				{
+					"wavePath": "this would receive a Curve2D node in godot",
+					"enemies": [
+						{"name": "ShieldSoldier", "quantity": 5},
+						{"name": "Soldier", "quantity": 15}
+					]
+				},
+				{
+					"wavePath": "this would receive a Curve2D node in godot",
+					"enemies": [
+						{"name": "ShieldSoldier", "quantity": 2},
+						{"name": "EliteSoldier", "quantity": 10}
+					]
+				}
+			]
+		}
+	]
+}
