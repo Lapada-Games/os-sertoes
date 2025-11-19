@@ -6,10 +6,17 @@
 * [x] buy stuff
 * [x] tower resources
 * [x] collision areas
+* [ ] remove level manager and put the script in the Map itself
+* [ ] 
+* [ ] tower durability and a way to pause it
 * [ ] resources to organize waves and cash
-* [ ] tower durability
 * [ ] add arrows indicating enemy path
 * [ ] money animation
+* [ ] 
+* [ ] 
+* [ ] 
+* [ ] 
+* [ ] 
 
 # Less priority
 

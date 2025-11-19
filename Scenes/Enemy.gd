@@ -41,7 +41,7 @@ func burn(duration: float, dps: int, tick_rate: float):
 		
 	if is_wet:
 		is_wet = false
-		$WetTimer.stop()
+		self.speed = self.last_speed
 	
 	burning = true
 	$BurnTimerDPS.wait_time = tick_rate
