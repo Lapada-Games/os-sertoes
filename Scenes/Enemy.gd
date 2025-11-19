@@ -53,7 +53,7 @@ func burn(duration: float, dps: int, tick_rate: float):
 	
 	set_meta("burn_dps", dps)
 
-func wet(speed: int, duration: int):
+func wet(cooldown_percentage: float, duration: int):
 	if is_wet:
 		$WetTimer.stop()
 		$WetTimer.start()
@@ -64,7 +64,7 @@ func wet(speed: int, duration: int):
 		AudioManager.play_sfx("fizz")
 		$BurnTimerDPS.stop()
 	
-	set_speed(speed)
+	set_speed(cooldown_percentage * speed)
 	is_wet = true
 	self.modulate = Color(1, 1.5, 2)
 	$WetTimer.start(duration)

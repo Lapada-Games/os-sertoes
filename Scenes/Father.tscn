@@ -13,7 +13,7 @@ damage = 10
 
 [sub_resource type="Resource" id="Resource_eysdl"]
 script = ExtResource("3_4mr6m")
-speed = 40
+cooldown_percentage = 0.5
 duration = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgdy0"]
