@@ -8,7 +8,7 @@
 script = ExtResource("1_p81u3")
 item_name = "Aldeã"
 description = "Taca pedra nos outro
-Dano: 10
+Dano: 20
 Vel. Ataque: 1
 Range: 100"
 tower = ExtResource("3_1g53k")

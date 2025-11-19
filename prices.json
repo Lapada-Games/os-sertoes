@@ -6,19 +6,28 @@
 				{
 					"wavePath": "this would receive a Curve2D node in godot",
 					"enemies": [
-						{"name": "Soldier", "quantity": 5}
+						{
+							"name": "Soldier",
+							"quantity": 5
+						}
 					]
 				},
 				{
 					"wavePath": "this would receive a Curve2D node in godot",
 					"enemies": [
-						{"name": "Soldier", "quantity": 15}
+						{
+							"name": "Soldier",
+							"quantity": 15
+						}
 					]
 				},
 				{
 					"wavePath": "this would receive a Curve2D node in godot",
 					"enemies": [
-						{"name": "Soldier", "quantity": 20}
+						{
+							"name": "Soldier",
+							"quantity": 20
+						}
 					]
 				}
 			]
@@ -29,22 +38,40 @@
 				{
 					"wavePath": "this would receive a Curve2D node in godot",
 					"enemies": [
-						{"name": "Soldier", "quantity": 10},
-						{"name": "EliteSoldier", "quantity": 5}
+						{
+							"name": "Soldier",
+							"quantity": 10
+						},
+						{
+							"name": "EliteSoldier",
+							"quantity": 5
+						}
 					]
 				},
 				{
 					"wavePath": "this would receive a Curve2D node in godot",
 					"enemies": [
-						{"name": "ShieldSoldier", "quantity": 5},
-						{"name": "Soldier", "quantity": 15}
+						{
+							"name": "ShieldSoldier",
+							"quantity": 5
+						},
+						{
+							"name": "Soldier",
+							"quantity": 15
+						}
 					]
 				},
 				{
 					"wavePath": "this would receive a Curve2D node in godot",
 					"enemies": [
-						{"name": "ShieldSoldier", "quantity": 2},
-						{"name": "EliteSoldier", "quantity": 10}
+						{
+							"name": "ShieldSoldier",
+							"quantity": 2
+						},
+						{
+							"name": "EliteSoldier",
+							"quantity": 10
+						}
 					]
 				}
 			]

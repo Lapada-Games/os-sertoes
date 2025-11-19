@@ -79,7 +79,7 @@ size = Vector2(27, 20)
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_rbio7")])
 attack_speed = 0.7
 range = 150.0
-durability = 50
+durability = 60
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ddkm3")
