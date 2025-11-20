@@ -10,7 +10,7 @@ func hide_stuff():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$HP.text = str(GameInfo.HP)
-	$Store/Cash.text = "$" + str(GameInfo.get_cash())
+	$Store/HBoxContainer/Cash.text = str(GameInfo.get_cash())
 	if $Store.visible:
 		$ControlButtons.visible = not $Store.is_building
 
