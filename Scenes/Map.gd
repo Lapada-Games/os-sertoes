@@ -1,12 +1,18 @@
 extends Node2D
 
-var enemy = preload("res://Scenes/Soldier.tscn")
-var current_level = GameInfo.level
-var wave_index = 0 # this variable has to be local to the scene!
-var spawn_time = 1 # enemy per second
-@onready var arrows = $Path2D.get_children().filter(func(element): return element.name.begins_with("Arrow"))
+@export var level_data: Level
 
+var enemy = preload("res://Scenes/Soldier.tscn")
+var wave_index = 0
+var spawn_time = 1 # enemy per second
 var wave_started = false
+var enemy_counter = 0
+var enemy_queue: Array = [] 
+
+@onready var arrows = $Path2D.get_children().filter(func(element): return element.name.begins_with("Arrow"))
+@onready var current_wave: Wave = level_data.waves[wave_index]
+
+
 
 # TODO: load level wave data based on the current level 
 func _ready():
@@ -22,29 +28,41 @@ func start_wave():
 	wave_started = true
 	$Music.stream = load("res://OST/battle_01.ogg")
 	$Music.play()
-	$SpawnTimer.wait_time = spawn_time
-	$SpawnTimer.start()
-	# starting the timer in each tower
 	for tower in $Towers.get_children().filter(func(e): return e is Tower):
 		tower.start_durability_timer()
 	$Path2D/Arrow1.visible = false
 	$Path2D/Arrow2.visible = false
 	$Path2D/Arrow3.visible = false
+	
+	enemy_queue.clear()
+	for entry in current_wave.enemies:
+		enemy_queue.append({
+			"scene": entry.enemy_type,
+			"remaining": entry.quantity
+		})
+	# starting the timer
+	$SpawnTimer.wait_time = spawn_time
+	$SpawnTimer.start()
 
 func end_wave():
 	wave_started = false
 	# pausing the timer in each tower
 	for tower in $Towers.get_children().filter(func(e): return e is Tower):
 		tower.pause_durability_timer()
-	if GameInfo.HP <= 0:
-		print("perdeu")
-	if $Path2D.get_child_count() <= 1:
-		print("ganhou!")
-		# TODO: ganhar
+	
 
 func spawn_enemy():
-	var tempEnemy = enemy.instantiate()
+	if enemy_counter >= enemy_queue.size():
+		$SpawnTimer.stop()
+		return
+	
+	var entry = enemy_queue[enemy_counter]
+	var tempEnemy = entry["scene"].instantiate()
 	$Path2D.add_child(tempEnemy)
+	
+	entry["remaining"] -= 1
+	if entry["remaining"] <= 0:
+		enemy_counter += 1
 
 
 func _on_hud_wave_start():
@@ -60,3 +78,12 @@ func _on_dialog_box_on_dialog_finished():
 func _on_hud_reset():
 	for tower in $Towers.get_children():
 		tower.queue_free()
+
+
+func _on_path_2d_child_exiting_tree(node):
+	if GameInfo.HP <= 0:
+		print("perdeu")
+		end_wave()
+	if len($Path2D.get_children().filter(func(element): return not element.name.begins_with("Arrow"))) <= 1:
+		print("ganhou!")
+		end_wave()

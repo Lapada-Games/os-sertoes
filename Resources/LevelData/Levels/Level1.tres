@@ -1,11 +1,17 @@
-[gd_resource type="Resource" script_class="Level" load_steps=12 format=3 uid="uid://f1kxoykll174"]
+[gd_resource type="Resource" script_class="Level" load_steps=14 format=3 uid="uid://f1kxoykll174"]
 
 [ext_resource type="Script" path="res://Resources/LevelData/Levels/level.gd" id="1_2rya7"]
 [ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Soldier.tscn" id="2_nho12"]
 [ext_resource type="Script" path="res://Resources/LevelData/Waves/wave_enemy.gd" id="3_blk2p"]
+[ext_resource type="PackedScene" uid="uid://p0us3kgvw71s" path="res://Scenes/ShieldSoldier.tscn" id="4_bnfkg"]
 [ext_resource type="Curve2D" uid="uid://ug0vvtwuq3nl" path="res://Resources/LevelData/Paths/Stage1.tres" id="4_pa58v"]
 [ext_resource type="Script" path="res://Resources/LevelData/Waves/wave.gd" id="5_q3kyg"]
 [ext_resource type="PackedScene" uid="uid://dtqpetklnhonq" path="res://Scenes/EliteSoldier.tscn" id="6_alphi"]
+
+[sub_resource type="Resource" id="Resource_rkwe1"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("4_bnfkg")
+quantity = 3
 
 [sub_resource type="Resource" id="Resource_pbqp6"]
 script = ExtResource("3_blk2p")
@@ -15,7 +21,7 @@ quantity = 5
 [sub_resource type="Resource" id="Resource_irlax"]
 script = ExtResource("5_q3kyg")
 path = ExtResource("4_pa58v")
-enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_pbqp6")])
+enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_rkwe1"), SubResource("Resource_pbqp6")])
 
 [sub_resource type="Resource" id="Resource_7ly8t"]
 script = ExtResource("3_blk2p")

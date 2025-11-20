@@ -11,7 +11,7 @@
 * [x] resources to organize waves and cash
 * [x] add arrows indicating enemy path
 * [ ] money animation
-* [ ] 
+* [-] wave and level systems
 * [ ] 
 * [ ] 
 * [ ] 
