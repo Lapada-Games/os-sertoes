@@ -18,6 +18,7 @@ var enemy_queue: Array = []
 func _ready():
 	if GameInfo.DEBUG:
 		$DialogBox.queue_free()
+	GameInfo.reset_hp()
 
 func _process(delta):
 	if not wave_started:
@@ -81,9 +82,16 @@ func _on_hud_reset():
 
 
 func _on_path_2d_child_exiting_tree(node):
-	if GameInfo.HP <= 0:
-		print("perdeu")
-		end_wave()
+	if GameInfo.HP < 1:
+		# Move the scene change to the end of the frame
+		call_deferred("change_scene")
+		return # Stop the function here so we don't check the win condition
+
 	if len($Path2D.get_children().filter(func(element): return not element.name.begins_with("Arrow"))) <= 1:
 		print("ganhou!")
 		end_wave()
+
+func change_scene():
+	# A safety check to ensure we aren't already changing scenes
+	if get_tree(): 
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")

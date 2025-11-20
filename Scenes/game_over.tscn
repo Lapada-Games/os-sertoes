@@ -1,51 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://byyehm62scs7p"]
 
 [ext_resource type="Script" path="res://GameOver.gd" id="1_jnj7h"]
+[ext_resource type="Texture2D" uid="uid://covffjyjb54mb" path="res://Assets/Scenario/scene_destroyed.png" id="2_7ua84"]
 [ext_resource type="Theme" uid="uid://vvc105ilij0l" path="res://Assets/Misc/buttons/btn_theme.tres" id="2_8ne4g"]
-[ext_resource type="Texture2D" uid="uid://bpdp15k5bejr" path="res://Assets/Scenario/scene.png" id="2_cw7n4"]
 [ext_resource type="Texture2D" uid="uid://c1dc5nvrihtyd" path="res://Assets/Misc/game_over.png" id="3_6tt7d"]
 [ext_resource type="AudioStream" uid="uid://dngqkmkkhgy6o" path="res://OST/Too Late To Save The Town.mp3" id="3_ly1lj"]
 [ext_resource type="Texture2D" uid="uid://4syi4gidmsy4" path="res://Assets/Characters/toin_desmaiado.png" id="5_fwkyn"]
-
-[sub_resource type="Animation" id="Animation_g52c0"]
-resource_name = "animacao_game_over"
-length = 1.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("background:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 1.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-500, 0), Vector2(0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/HBoxContainer/antonio:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.4, 1.7),
-"transitions": PackedFloat32Array(0.217638, 2, 0.210224),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_0o7qw"]
 length = 0.001
@@ -86,6 +46,46 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_g52c0"]
+resource_name = "animacao_game_over"
+length = 1.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.4),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Vector2(-535, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/HBoxContainer/antonio:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.7),
+"transitions": PackedFloat32Array(0.217638, 2, 0.210224),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5itqy"]
 _data = {
 "RESET": SubResource("Animation_0o7qw"),
@@ -104,11 +104,9 @@ script = ExtResource("1_jnj7h")
 [node name="background" type="TextureRect" parent="."]
 self_modulate = Color(0.7, 0.7, 0.7, 1)
 layout_mode = 2
-offset_left = -40.0
-offset_top = -8.0
-offset_right = 1496.0
-offset_bottom = 1016.0
-texture = ExtResource("2_cw7n4")
+offset_right = 1281.0
+offset_bottom = 854.0
+texture = ExtResource("2_7ua84")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0

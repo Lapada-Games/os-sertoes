@@ -1,9 +1,10 @@
 extends Node
 
-const DEBUG = true
+const DEBUG = false
 
 var level = 1
-var HP = 3
+const MAX_HP = 5
+var HP = MAX_HP
 # There will be multiple waves per level
 # Depending on the global level variable, the waves will be different each time
 var waves = [
@@ -34,3 +35,6 @@ func subtract_cash(amount: int):
 
 func add_cash(amount: int):
 	self.cash += amount
+
+func reset_hp():
+	self.HP = MAX_HP
