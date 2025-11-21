@@ -7,6 +7,7 @@ extends Area2D
 #@export var attack_damage: int = 10
 @export var attack_speed: float = 1.0
 @export var range: float = 100.0
+@export var price: int
 @export var durability: int = 100
 
 var enemies_in_range: Array[Node2D] = []

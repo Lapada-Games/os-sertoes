@@ -109,6 +109,7 @@ bullet = ExtResource("2_knuvl")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_hl7g7"), SubResource("Resource_e1sf2")])
 attack_speed = 0.5
 range = 90.0
+price = 80
 durability = 90
 
 [node name="Sprite2D" parent="." index="0"]

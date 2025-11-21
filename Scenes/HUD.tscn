@@ -13,46 +13,37 @@ script = ExtResource("1_l2ovv")
 
 [node name="Store" parent="." instance=ExtResource("1_8g53j")]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Store"]
-layout_mode = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.993
 anchor_bottom = 0.118
-offset_left = 31.5
+offset_left = 483.0
 offset_top = 4.0
-offset_right = -0.102997
+offset_right = 451.397
 offset_bottom = 0.0619965
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = -100
+metadata/_edit_group_ = true
 
-[node name="Coin" type="Sprite2D" parent="Store/HBoxContainer"]
+[node name="Coin" type="Sprite2D" parent="HBoxContainer"]
 position = Vector2(-25, 26)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("3_ht2d0")
 
-[node name="Cash" type="RichTextLabel" parent="Store/HBoxContainer"]
+[node name="Cash" type="RichTextLabel" parent="HBoxContainer"]
 clip_contents = false
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0.560784, 0.337255, 0.231373, 1)
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
 theme_override_fonts/normal_font = ExtResource("2_83p4q")
 theme_override_font_sizes/normal_font_size = 36
 text = "1000"
 scroll_active = false
-
-[node name="Loja" type="RichTextLabel" parent="Store"]
-layout_mode = 0
-offset_left = 14.0
-offset_right = 242.0
-offset_bottom = 116.0
-scale = Vector2(0.5, 0.5)
-theme_override_colors/default_color = Color(0.560784, 0.337255, 0.231373, 1)
-theme_override_fonts/normal_font = ExtResource("2_83p4q")
-theme_override_font_sizes/normal_font_size = 72
-text = "Loja"
 
 [node name="HP" type="RichTextLabel" parent="."]
 offset_left = 628.554

@@ -102,6 +102,7 @@ bg_color = Color(0, 1, 1, 1)
 [node name="Tower" type="Area2D"]
 script = ExtResource("1_c3fk5")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_slgtf")])
+price = 25
 durability = 50
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

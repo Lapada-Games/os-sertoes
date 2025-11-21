@@ -15,7 +15,7 @@ var waves = [
 
 var cashInfo = [9950, 500, 1000]
 
-var cash = cashInfo[level - 1]
+var cash = 0
 
 
 func next_level():
@@ -27,8 +27,8 @@ func get_cash():
 func set_cash(value: int):
 	self.cash = value
 
-func reset_cash():
-	self.cash = self.cashInfo[self.level - 1]
+#func reset_cash():
+	#self.cash = self.cashInfo[self.level - 1]
 
 func subtract_cash(amount: int):
 	self.cash -= amount

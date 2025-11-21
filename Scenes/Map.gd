@@ -105,9 +105,10 @@ func _on_dialog_box_on_dialog_finished():
 
 
 func _on_hud_reset():
-	GameInfo.set_cash(level_data.cash)
 	for tower in $Towers.get_children():
+		GameInfo.add_cash(tower.price)
 		tower.queue_free()
+	$HUD.update_store_buttons()
 
 
 func _on_path_2d_child_exiting_tree(node):

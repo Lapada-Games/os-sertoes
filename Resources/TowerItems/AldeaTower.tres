@@ -12,5 +12,4 @@ Dano: 20
 Vel. Ataque: 1
 Range: 100"
 tower = ExtResource("3_1g53k")
-price = 25
 texture = ExtResource("2_vxx8s")

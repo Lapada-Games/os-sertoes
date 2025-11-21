@@ -54,6 +54,7 @@ animations = [{
 bullet = ExtResource("2_k4wbe")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_oig46"), SubResource("Resource_eysdl")])
 attack_speed = 0.4
+price = 120
 durability = 90
 
 [node name="Sprite2D" parent="." index="0"]

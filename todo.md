@@ -11,7 +11,6 @@
 * [x] resources to organize waves and cash
 * [x] add arrows indicating enemy path
 * [ ] wave and level labels
-* [ ] money animation
 * [x] wave and level systems
 * [ ] transfer price to tower.gd instead of itembutton
 * [x] change arrow colors
@@ -23,6 +22,7 @@
 * [x] HUD icons
 * [ ] Lore slides
 * [ ] dialog cutscenes
+* [ ] money animation
 * [x] gameover screen
 * [ ] give up button
 * [x] Undo or reset button

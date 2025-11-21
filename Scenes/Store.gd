@@ -23,16 +23,19 @@ func _on_tower_building_state_changed(_is_building):
 	is_building = _is_building
 	var buttons = $FlowContainer.get_children()
 	for b in buttons:
-		b.get_node("TextureButton").disabled = _is_building || GameInfo.get_cash() < b.tower_stats.price
+		if b.tower_instance:
+			b.get_node("TextureButton").disabled = _is_building || GameInfo.get_cash() < b.tower_instance.price
 
 
-func _on_hud_reset():
+func update_buttons():
 	var buttons = $FlowContainer.get_children()
 	for b in buttons:
-		b.get_node("TextureButton").disabled = GameInfo.get_cash() < b.tower_stats.price
+		if b.tower_instance:
+			b.get_node("TextureButton").disabled = GameInfo.get_cash() < b.tower_instance.price
 
 
 func _on_visibility_changed():
 	var buttons = $FlowContainer.get_children()
 	for b in buttons:
-		b.get_node("TextureButton").disabled = GameInfo.get_cash() < b.tower_stats.price
+		if b.tower_instance:
+			b.get_node("TextureButton").disabled = GameInfo.get_cash() < b.tower_instance.price
