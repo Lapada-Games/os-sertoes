@@ -10,6 +10,7 @@
 * [x] tower durability and a way to pause it
 * [x] resources to organize waves and cash
 * [x] add arrows indicating enemy path
+* [ ] wave and level labels
 * [ ] money animation
 * [x] wave and level systems
 * [ ] transfer price to tower.gd instead of itembutton
