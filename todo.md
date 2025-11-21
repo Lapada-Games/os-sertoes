@@ -12,7 +12,7 @@
 * [x] add arrows indicating enemy path
 * [ ] wave and level labels
 * [x] wave and level systems
-* [ ] transfer price to tower.gd instead of itembutton
+* [x] transfer price to tower.gd instead of itembutton
 * [x] change arrow colors
 * [ ] 
 * [ ] 
