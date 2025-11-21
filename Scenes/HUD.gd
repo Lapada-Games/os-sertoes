@@ -3,9 +3,13 @@ extends CanvasLayer
 signal wave_start
 signal reset
 
-func hide_stuff():
+func hide_sidebar():
 	$Store.visible = false
 	$ControlButtons.visible = false
+
+func show_sidebar():
+	$Store.visible = true
+	$ControlButtons.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -16,9 +20,10 @@ func _process(delta):
 
 
 func _on_play_button_pressed():
-	hide_stuff()
+	hide_sidebar()
 	wave_start.emit()
 
 
 func _on_reset_button_pressed():
+	GameInfo.reset_cash()
 	reset.emit()

@@ -96,8 +96,9 @@ animations = [{
 }]
 
 [node name="Soldier" instance=ExtResource("1_x4bpa")]
+speed = 80
 hp = 150
-reward_coins = 10
+reward_coins = 30
 
 [node name="Sprite2D" parent="EnemyBody" index="0"]
 sprite_frames = SubResource("SpriteFrames_exu1l")

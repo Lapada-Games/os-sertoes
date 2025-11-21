@@ -11,9 +11,9 @@
 * [x] resources to organize waves and cash
 * [x] add arrows indicating enemy path
 * [ ] money animation
-* [-] wave and level systems
-* [ ] 
-* [ ] 
+* [x] wave and level systems
+* [ ] transfer price to tower.gd instead of itembutton
+* [x] change arrow colors
 * [ ] 
 * [ ] 
 
@@ -22,7 +22,7 @@
 * [x] HUD icons
 * [ ] Lore slides
 * [ ] dialog cutscenes
-* [ ] gameover screen
+* [x] gameover screen
 * [ ] give up button
 * [x] Undo or reset button
 * [x] fix bug where player can press the play button while holding a tower

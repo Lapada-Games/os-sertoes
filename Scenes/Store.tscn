@@ -57,3 +57,5 @@ tower_stats = ExtResource("5_egrvn")
 [node name="Father" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
 tower_stats = ExtResource("6_vk26j")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
