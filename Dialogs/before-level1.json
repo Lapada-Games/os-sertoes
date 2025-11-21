@@ -1,0 +1,30 @@
+{
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "captain",
+			"text": "Senhor, tem uns maluco ai revoltado com a republica, que tao querendo fazer a propria comunidade deles pra poder sonegar imposto em paz"
+		},
+		{
+			"id": 2,
+			"speaker": "captain",
+			"text": "E agora vei?"
+		},
+		{
+			"id": 3,
+			"speaker": "governador",
+			"text": "Voce disse sonegar imposto? Agora eles tao lascado!"
+		},
+		{
+			"id": 4,
+			"speaker": "governador",
+			"text": "Mas eles devem ser moralmente fracos, manda so um pequeno grupo de soldados que ja deve resolver a situacao"
+		},
+		{
+			"id": 3,
+			"speaker": "captain",
+			"text": "pode deixar chefe"
+		}
+
+	]
+}

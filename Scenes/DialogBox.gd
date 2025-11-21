@@ -9,12 +9,13 @@ signal on_dialog_finished
 var dialogue = null
 var index = 0
 var finished = false
+var disabled = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	dialogue = load_json_file(scene_text_file).dialogue
 	show_text()
+	on_next_line.emit()
  
 func load_json_file(path: String) -> Variant:
 	var file := FileAccess.open(path, FileAccess.READ)
@@ -34,6 +35,8 @@ func load_json_file(path: String) -> Variant:
 	return json.data
 
 func next_line():
+	if disabled:
+		return
 	if index + 1 > dialogue.size() - 1:
 		on_dialog_finished.emit()
 		if scene_to_go_after_end:
@@ -41,8 +44,10 @@ func next_line():
 		return
 	index += 1
 	show_text()
+	on_next_line.emit()
 	
 func show_text():
+	
 	$RichTextLabel.visible_characters = 0
 	$RichTextLabel.text = dialogue[index].text
 	if dialogue[index].has("speaker"):
@@ -60,6 +65,8 @@ func show_text():
 		$RichTextLabel.size.x = 1220
 	finished = false
 	while $RichTextLabel.visible_characters < len($RichTextLabel.text) and not finished:
+		if disabled:
+			$RichTextLabel.visible_characters = 0
 		$RichTextLabel.visible_characters += 1
 		await get_tree().create_timer(0.04).timeout
 	finished = true
@@ -68,6 +75,12 @@ func get_current_speaker():
 	if dialogue[index].has("speaker"):
 		return dialogue[index].speaker
 	return null
+
+func get_dialog_index():
+	return self.index
+
+func set_disabled(disabled: bool):
+	self.disabled = disabled
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

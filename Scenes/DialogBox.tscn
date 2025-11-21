@@ -9,10 +9,9 @@
 
 [node name="DialogBox" type="CanvasLayer"]
 script = ExtResource("1_e4sdt")
-scene_text_file = "res://Dialogs/teste.json"
 
 [node name="Box" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.862745)
+modulate = Color(1, 1, 1, 0.666667)
 position = Vector2(18, 465)
 texture = ExtResource("2_k6rl8")
 centered = false
