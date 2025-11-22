@@ -43,7 +43,7 @@ one_shot = true
 
 [node name="Arrow3" type="PathFollow2D" parent="."]
 visible = false
-position = Vector2(898.21, 38.7608)
+position = Vector2(898.21, 38.7611)
 rotation = -1.10843
 progress = 1117.46
 

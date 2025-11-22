@@ -84,6 +84,8 @@ func set_disabled(disabled: bool):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if disabled:
+		return
 	if Input.is_action_just_pressed("ui_accept"):
 		if finished:
 			next_line()

@@ -30,4 +30,14 @@ func _on_dialog_box_on_next_line():
 
 
 func _on_dialog_box_on_dialog_finished():
-	print("terminou")
+	get_tree().change_scene_to_file("res://Scenes/Map.tscn")
+
+
+func _on_animation_player_animation_finished(anim_name):
+	# Hard coded animation trigger
+	#if anim_name == "up":
+		#if $DialogBox.get_dialog_index() == 2:
+			#$DialogBox.visible = false
+			#$AnimationPlayer.play("table_hit")
+			#return
+	$DialogBox.visible = true

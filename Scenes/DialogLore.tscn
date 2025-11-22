@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbgdrvdj6hp6w"]
+[gd_scene load_steps=12 format=3 uid="uid://cbgdrvdj6hp6w"]
 
 [ext_resource type="Texture2D" uid="uid://8juek86djmud" path="res://Assets/LoreImages/general_neutral.png" id="1_g3ylx"]
 [ext_resource type="Script" path="res://Scenes/DialogLore.gd" id="1_hhwge"]
 [ext_resource type="PackedScene" uid="uid://commjrcmkwfx6" path="res://Scenes/DialogBox.tscn" id="2_pbi8r"]
+[ext_resource type="Texture2D" uid="uid://8x64fil1tbm3" path="res://Assets/LoreImages/general_angry.png" id="4_le2yx"]
 [ext_resource type="AudioStream" uid="uid://dy50fqe552g5v" path="res://OST/general.mp3" id="4_ti3jp"]
+[ext_resource type="AudioStream" uid="uid://b8bcn5q5usram" path="res://SFX/table_hit.ogg" id="5_pdp4k"]
 
 [sub_resource type="Animation" id="Animation_6qoa3"]
 length = 0.001
@@ -18,6 +20,42 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.833984, 0.833984)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_g3ylx")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_aoj6h"]
@@ -58,10 +96,10 @@ tracks/2/path = NodePath("DialogBox:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_nt5jc"]
@@ -102,16 +140,112 @@ tracks/2/path = NodePath("DialogBox:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_eaded"]
+resource_name = "table_hit"
+length = 1.4
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("table_hit")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.08361),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.983612, 1.08361, 1.38361),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.833984, 0.833984), Vector2(0.874, 0.874), Vector2(0.833984, 0.833984)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.983612, 1.01821, 1.0464, 1.07458, 1.10059, 1.13094, 1.15336, 1.18155, 1.20973, 1.23573, 1.26609, 1.27741, 1.30559, 1.33378, 1.35978, 1.39014),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-9, -18), Vector2(-45, -99), Vector2(-14, -144), Vector2(-14, -34), Vector2(-39, -92), Vector2(-9, -18), Vector2(-45, -99), Vector2(-14, -144), Vector2(-14, -34), Vector2(-39, -92), Vector2(-9, -18), Vector2(-45, -99), Vector2(-14, -144), Vector2(-14, -34), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.983612),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [ExtResource("1_g3ylx"), ExtResource("4_le2yx")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.987599, 1.05931, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DialogBox")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [true],
+"method": &"set_disabled"
+}, {
+"args": [false],
+"method": &"set_disabled"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/path = NodePath("DialogBox:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xv331"]
 _data = {
 "RESET": SubResource("Animation_6qoa3"),
 "down": SubResource("Animation_aoj6h"),
+"table_hit": SubResource("Animation_eaded"),
 "up": SubResource("Animation_nt5jc")
 }
 
@@ -139,6 +273,10 @@ stream = ExtResource("4_ti3jp")
 volume_db = -6.0
 autoplay = true
 
+[node name="table_hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_pdp4k")
+
 [connection signal="on_dialog_finished" from="DialogBox" to="." method="_on_dialog_box_on_dialog_finished"]
 [connection signal="on_next_line" from="DialogBox" to="." method="_on_dialog_box_on_next_line"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="TempTimer" to="." method="_on_temp_timer_timeout"]
