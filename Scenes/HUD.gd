@@ -29,3 +29,7 @@ func update_store_buttons():
 
 func _on_reset_button_pressed():
 	reset.emit()
+
+
+func _on_store_visibility_changed():
+	$Store.update_buttons()

@@ -17,6 +17,8 @@ var cashInfo = [9950, 500, 1000]
 
 var cash = 0
 
+var inflation: int = 1
+
 
 func next_level():
 	self.level += 1

@@ -107,8 +107,8 @@ bg_color = Color(0.6, 1, 0.6, 1)
 [node name="Soldier" type="PathFollow2D"]
 loop = false
 script = ExtResource("1_jgoo7")
-speed = 70
-hp = 70
+speed = 50
+hp = 50
 reward_coins = 10
 
 [node name="EnemyBody" type="CharacterBody2D" parent="."]

@@ -10,7 +10,7 @@
 [sub_resource type="Resource" id="Resource_yqmkf"]
 script = ExtResource("3_blk2p")
 enemy_type = ExtResource("2_nho12")
-quantity = 10
+quantity = 1
 
 [sub_resource type="Resource" id="Resource_g7x4x"]
 script = ExtResource("5_t35vk")
@@ -47,5 +47,5 @@ wave_groups = Array[ExtResource("5_t35vk")]([SubResource("Resource_88h8c"), SubR
 
 [resource]
 script = ExtResource("1_2rya7")
-cash = 999
+cash = 50
 waves = Array[ExtResource("5_q3kyg")]([SubResource("Resource_ge3cw"), SubResource("Resource_o2uki")])

@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://gpjdbomlx7ty"]
 
 [ext_resource type="Script" path="res://Scenes/Lore.gd" id="1_tplj1"]
-[ext_resource type="AudioStream" uid="uid://fhmo7j62ag0w" path="res://OST/fairytale.mp3" id="3_2u72n"]
 [ext_resource type="PackedScene" uid="uid://bcf0j5grrma4e" path="res://Scenes/BookBox.tscn" id="3_g62up"]
+[ext_resource type="AudioStream" uid="uid://b7cs77bway0va" path="res://OST/Green Leaves - Audionautix.mp3" id="3_lymv1"]
 [ext_resource type="Texture2D" uid="uid://k80erhda2tlc" path="res://Assets/LoreImages/book.png" id="4_e8rr6"]
 [ext_resource type="Texture2D" uid="uid://d31imee4ppwwm" path="res://Assets/Misc/paper.png" id="5_xgu13"]
 
@@ -190,8 +190,8 @@ offset_bottom = 840.0
 color = Color(0, 0, 0, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_2u72n")
-volume_db = -6.559
+stream = ExtResource("3_lymv1")
+volume_db = -6.0
 autoplay = true
 
 [node name="BookCover" type="Sprite2D" parent="."]

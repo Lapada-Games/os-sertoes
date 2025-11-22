@@ -11,6 +11,7 @@
 * [x] resources to organize waves and cash
 * [x] add arrows indicating enemy path
 * [ ] wave and level labels
+* [ ] create a table database instead of storing tower prices inside tower
 * [x] wave and level systems
 * [x] transfer price to tower.gd instead of itembutton
 * [x] change arrow colors

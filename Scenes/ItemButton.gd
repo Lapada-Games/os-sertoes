@@ -10,6 +10,8 @@ func _ready():
 	$RichTextLabel.text = "$" + str(tower_instance.price)
 	print(tower_instance)
 	
+func reinstantiate_tower():
+	self.tower_instance = tower_stats.tower.instantiate()
 
 func _on_texture_button_pressed():
 	var tempTower = null
