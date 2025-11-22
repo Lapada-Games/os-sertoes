@@ -35,9 +35,9 @@ func _on_dialog_box_on_dialog_finished():
 
 func _on_animation_player_animation_finished(anim_name):
 	# Hard coded animation trigger
-	#if anim_name == "up":
-		#if $DialogBox.get_dialog_index() == 2:
-			#$DialogBox.visible = false
-			#$AnimationPlayer.play("table_hit")
-			#return
+	if anim_name == "up":
+		if $DialogBox.get_dialog_index() == 2:
+			$DialogBox.visible = false
+			$AnimationPlayer.play("table_hit")
+			return
 	$DialogBox.visible = true

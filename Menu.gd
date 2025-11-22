@@ -17,7 +17,7 @@ func _process(delta):
 		$Fade.visible = true
 		$Fade.color = Color(0, 0, 0, lerp($Fade.color[3], 1.0, 1.333333 * delta))
 		if $Fade.color[3] >= 0.99:
-			get_tree().change_scene_to_file("res://Scenes/DialogLore.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Lore.tscn")
 	if timeDelta > 4.0:
 		can_go_down = true
 	if can_go_down:
