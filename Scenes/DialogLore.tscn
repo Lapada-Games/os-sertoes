@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbgdrvdj6hp6w"]
+[gd_scene load_steps=13 format=3 uid="uid://cbgdrvdj6hp6w"]
 
 [ext_resource type="Texture2D" uid="uid://8juek86djmud" path="res://Assets/LoreImages/general_neutral.png" id="1_g3ylx"]
 [ext_resource type="Script" path="res://Scenes/DialogLore.gd" id="1_hhwge"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://8x64fil1tbm3" path="res://Assets/LoreImages/general_angry.png" id="4_le2yx"]
 [ext_resource type="AudioStream" uid="uid://dy50fqe552g5v" path="res://OST/general.mp3" id="4_ti3jp"]
 [ext_resource type="AudioStream" uid="uid://b8bcn5q5usram" path="res://SFX/table_hit.ogg" id="5_pdp4k"]
+[ext_resource type="AudioStream" uid="uid://dvsffmonrl2ei" path="res://OST/general_angry.mp3" id="5_t2cbc"]
 
 [sub_resource type="Animation" id="Animation_6qoa3"]
 length = 0.001
@@ -56,6 +57,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Theme:stream")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_ti3jp")]
 }
 
 [sub_resource type="Animation" id="Animation_aoj6h"]
@@ -239,6 +252,32 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Theme:stream")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_t2cbc")]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Theme")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xv331"]
