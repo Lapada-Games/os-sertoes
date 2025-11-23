@@ -80,6 +80,10 @@ func get_current_speaker():
 func get_dialog_index():
 	return self.index
 
+func get_dialog_emotion():
+	if dialogue[index].has("emotion"):
+		return dialogue[index]["emotion"]
+
 func set_disabled(disabled: bool):
 	self.disabled = disabled
 

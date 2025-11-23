@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://8juek86djmud" path="res://Assets/LoreImages/general_neutral.png" id="1_g3ylx"]
 [ext_resource type="Script" path="res://Scenes/DialogLore.gd" id="1_hhwge"]
 [ext_resource type="PackedScene" uid="uid://commjrcmkwfx6" path="res://Scenes/DialogBox.tscn" id="2_pbi8r"]
-[ext_resource type="Texture2D" uid="uid://8x64fil1tbm3" path="res://Assets/LoreImages/general_angry.png" id="4_le2yx"]
 [ext_resource type="AudioStream" uid="uid://dy50fqe552g5v" path="res://OST/general.mp3" id="4_ti3jp"]
+[ext_resource type="Texture2D" uid="uid://8x64fil1tbm3" path="res://Assets/LoreImages/general_furious.png" id="5_23q7q"]
 [ext_resource type="AudioStream" uid="uid://b8bcn5q5usram" path="res://SFX/table_hit.ogg" id="5_pdp4k"]
-[ext_resource type="AudioStream" uid="uid://dvsffmonrl2ei" path="res://OST/general_angry.mp3" id="5_t2cbc"]
+[ext_resource type="AudioStream" uid="uid://cdt80wc5rh8n" path="res://OST/general_fury.mp3" id="6_45obr"]
 
 [sub_resource type="Animation" id="Animation_6qoa3"]
 length = 0.001
@@ -60,7 +60,7 @@ tracks/3/keys = {
 }
 tracks/4/type = "value"
 tracks/4/imported = false
-tracks/4/enabled = true
+tracks/4/enabled = false
 tracks/4/path = NodePath("Theme:stream")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
@@ -109,10 +109,10 @@ tracks/2/path = NodePath("DialogBox:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_eaded"]
@@ -166,7 +166,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.983612),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("1_g3ylx"), ExtResource("4_le2yx")]
+"values": [ExtResource("1_g3ylx"), ExtResource("5_23q7q")]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -219,7 +219,7 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_t2cbc")]
+"values": [ExtResource("6_45obr")]
 }
 tracks/8/type = "method"
 tracks/8/imported = false
@@ -274,10 +274,10 @@ tracks/2/path = NodePath("DialogBox:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xv331"]
@@ -298,7 +298,7 @@ centered = false
 
 [node name="DialogBox" parent="." instance=ExtResource("2_pbi8r")]
 visible = false
-scene_text_file = "res://Dialogs/before-level1.json"
+scene_text_file = "res://Dialogs/before-level4.json"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -314,6 +314,11 @@ autoplay = true
 
 [node name="table_hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_pdp4k")
+
+[node name="Fade" type="ColorRect" parent="."]
+offset_right = 1329.0
+offset_bottom = 884.0
+color = Color(0, 0, 0, 0)
 
 [connection signal="on_dialog_finished" from="DialogBox" to="." method="_on_dialog_box_on_dialog_finished"]
 [connection signal="on_next_line" from="DialogBox" to="." method="_on_dialog_box_on_next_line"]

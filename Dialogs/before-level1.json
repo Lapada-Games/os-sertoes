@@ -3,28 +3,72 @@
 		{
 			"id": 1,
 			"speaker": "captain",
-			"text": "Senhor, tem uns maluco ai revoltado com a republica, que tao querendo fazer a propria comunidade deles pra poder sonegar imposto em paz"
+			"text": "Governador, chegaram novos relatórios do sertão."
 		},
 		{
 			"id": 2,
 			"speaker": "captain",
-			"text": "E agora vei?"
-		},
-		{
-			"id": 3,
-			"speaker": "governador",
-			"text": "Voce disse sonegar imposto? Agora eles tao lascado!"
-		},
-		{
-			"id": 4,
-			"speaker": "governador",
-			"text": "Mas eles devem ser moralmente fracos, manda so um pequeno grupo de soldados que ja deve resolver a situacao"
+			"text": "Um tal de Antônio Conselheiro reuniu um povoado inteiro em Canudos. Estão construindo tudo por conta própria..."
 		},
 		{
 			"id": 3,
 			"speaker": "captain",
-			"text": "pode deixar chefe"
+			"text": "...e, digamos, não muito interessados em seguir as regras republicanas."
+		},
+		{
+			"id": 4,
+			"speaker": "governador",
+			"text": "Desinteressados? Você quer dizer o quê exatamente?"
+		},
+		{
+			"id": 5,
+			"speaker": "captain",
+			"text": "Bom... recusam os impostos, ignoram as autoridades locais, e tão começando a achar que podem viver isolados como se fossem um país dentro do país."
+		},
+		{
+			"id": 6,
+			"speaker": "governador",
+			"text": "Entendo. A República ainda está em seus primeiros passos, e já surge um movimento que ameaça sua autoridade. Isso não pode ser ignorado."
+		},
+		{
+			"id": 7,
+			"speaker": "governador",
+			"text": "Mas me diga: eles têm alguma força militar real? Organização? Disciplina?"
+		},
+		{
+			"id": 8,
+			"speaker": "captain",
+			"text": "Pelo que parece… fé, muita. Armas, nem tantas. A maior parte é gente simples, sertanejos. Pelo menos é o que os nossos informantes dizem."
+		},
+		{
+			"id": 9,
+			"speaker": "governador",
+			"text": "Então é isso? Um ajuntamento de fanáticos que acha que pode peitar o governo porque não quer pagar imposto e não gosta de registro oficial?"
+		},
+		{
+			"id": 10,
+			"speaker": "governador",
+			"text": "Bem... se não dermos resposta rápida, vão achar que qualquer um pode fundar seu próprio feudo no meio do nada."
+		},
+		{
+			"id": 11,
+			"speaker": "captain",
+			"text": "Exatamente minha preocupação, senhor. Mas, se me permite a franqueza, não acredito que precisemos de muito. Um destacamento reduzido deve resolver."
+		},
+		{
+			"id": 12,
+			"speaker": "governador",
+			"text": "Concordo. Mandar uma tropa grande seria exagero, e ainda ia parecer que estamos assustados com meia dúzia de rebeldes."
+		},
+		{
+			"id": 13,
+			"speaker": "governador",
+			"text": "Envie um grupo pequeno de soldados. Já deve ser o bastante para resolver a situação."
+		},
+		{
+			"id": 14,
+			"speaker": "captain",
+			"text": "Como desejar. Organizarei a primeira expedição imediatamente."
 		}
-
 	]
 }

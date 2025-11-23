@@ -29,3 +29,5 @@ func _on_on_next_line():
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "page_flip_forward":
 		$AnimationPlayer.play("RESET")
+		if dialogue[index].has("image"):
+			$Figure.texture = load(dialogue[index]["image"])

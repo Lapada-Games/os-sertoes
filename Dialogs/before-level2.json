@@ -1,0 +1,46 @@
+{
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "captain",
+			"text": "Senhor Governador... receio trazer más notícias. As tropas destacadas para Canudos não foram suficientes para conter o movimento."
+		},
+		{
+			"id": 2,
+			"speaker": "governador",
+			"text": "Como assim, General? Eu tinha recebido relatórios de que o arraial estava mal armado, desorganizado, sem capacidade de resistência séria. Como puderam repelir uma força militar treinada?",
+			"emotion": "surprised"
+		},
+		{
+			"id": 3,
+			"speaker": "captain",
+			"text": "Parece que subestimamos completamente a determinação deles. Estão fortificados, conhecem o terreno melhor do que imaginávamos e combatem com uma convicção impressionante."
+		},
+		{
+			"id": 4,
+			"speaker": "governador",
+			"text": "Isso é… inaceitável. A opinião pública já questiona a autoridade do governo. Se essa situação se prolongar, darão força à ideia de que o Estado é incapaz de impor ordem no próprio território.",
+			"emotion": "neutral"
+		},
+		{
+			"id": 5,
+			"speaker": "captain",
+			"text": "Concordo, senhor. Precisamos reconsiderar a estratégia. Outra coluna, mais numerosa e melhor equipada, talvez seja necessária."
+		},
+		{
+			"id": 6,
+			"speaker": "governador",
+			"text": "Muito bem. Autorize a organização de uma nova expedição. Desta vez, mande mais soldados, e soldados mais fortes."
+		},
+		{
+			"id": 7,
+			"speaker": "captain",
+			"text": "Entendido, senhor. Avisarei aos comandos e iniciarei os preparativos imediatamente."
+		},
+		{
+			"id": 8,
+			"speaker": "governador",
+			"text": "Faça isso, General. E desta vez… não falharemos."
+		},
+	]
+}
