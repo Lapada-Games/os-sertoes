@@ -111,7 +111,7 @@ func _on_dialog_box_on_dialog_finished():
 
 func _on_hud_reset():
 	for tower in $Towers.get_children():
-		GameInfo.add_cash(tower.price)
+		GameInfo.add_cash(TowerDatabase.get_price(tower.tower_name))
 		tower.queue_free()
 	$HUD.update_store_buttons()
 
