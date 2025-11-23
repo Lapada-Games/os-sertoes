@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://gpjdbomlx7ty"]
+[gd_scene load_steps=10 format=3 uid="uid://gpjdbomlx7ty"]
 
 [ext_resource type="Script" path="res://Scenes/Lore.gd" id="1_tplj1"]
 [ext_resource type="PackedScene" uid="uid://bcf0j5grrma4e" path="res://Scenes/BookBox.tscn" id="3_g62up"]
 [ext_resource type="AudioStream" uid="uid://b7cs77bway0va" path="res://OST/Green Leaves - Audionautix.mp3" id="3_lymv1"]
 [ext_resource type="Texture2D" uid="uid://k80erhda2tlc" path="res://Assets/LoreImages/book.png" id="4_e8rr6"]
 [ext_resource type="Texture2D" uid="uid://d31imee4ppwwm" path="res://Assets/Misc/paper.png" id="5_xgu13"]
+[ext_resource type="Texture2D" uid="uid://b7gjn4sq5208e" path="res://Assets/Misc/menubg.jpg" id="6_yjbtk"]
 
 [sub_resource type="Animation" id="Animation_y8ay1"]
 length = 0.001
@@ -172,9 +173,16 @@ _data = {
 script = ExtResource("1_tplj1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_right = 1311.0
 offset_bottom = 763.0
 color = Color(0.180392, 0.105882, 0.0705882, 1)
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.833333, 0.833333)
+texture = ExtResource("6_yjbtk")
+centered = false
 
 [node name="BookBox" parent="." instance=ExtResource("3_g62up")]
 visible = false

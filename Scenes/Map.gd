@@ -62,6 +62,8 @@ func end_wave():
 	for tower in $Towers.get_children().filter(func(e): return e is Tower):
 		tower.pause_durability_timer()
 	
+	if wave_index >= len(level_data.waves) / 2:
+		update_tower_prices()
 	$HUD.update_store_buttons()
 	$SpawnTimer.stop()
 	
