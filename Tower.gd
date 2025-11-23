@@ -1,14 +1,13 @@
 class_name Tower
 extends Area2D
 
-
+@export var tower_name: String
+@export_multiline var description: String
 @export var bullet = preload("res://Scenes/Bullet.tscn")
 @export var bullet_effects: Array[BulletEffect]
 #@export var attack_damage: int = 10
 @export var attack_speed: float = 1.0
 @export var range: float = 100.0
-@export var price: int
-@export var tower_name: String
 @export var durability: int = 100
 
 var enemies_in_range: Array[Node2D] = []
@@ -32,7 +31,6 @@ func _ready():
 	$Range/Circle.position = Vector2(-range, -range)
 	$Durability.max_value = durability
 	$Durability.value = durability
-	self.update_price()
 	GameInfo.reset_hp()
 
 func _process(delta):
@@ -62,9 +60,6 @@ func _process(delta):
 		if Input.is_action_just_pressed("click"):
 			if can_place:
 				building = false
-
-func update_price():
-	self.price *= GameInfo.inflation
 
 func _on_range_body_entered(body):
 	if body.name == "EnemyBody":

@@ -2,19 +2,20 @@ extends Node
 
 var tower_data := {
 	"Aldea": {
-		"base_price": 25,
-		"price": 100,
-		"price_growth": 2.0
+		"price": 25,
+		"price_growth": 1.1
 	},
 	"Cangaceiro": {
-		"base_price": 50,
-		"price": 50,
-		"price_growth": 2.0
+		"price": 60,
+		"price_growth": 1.15
 	},
 	"Firecamp": {
-		"base_price": 80,
 		"price": 80,
-		"price_growth": 3.0
+		"price_growth": 1.1
+	},
+	"Father": {
+		"price": 120,
+		"price_growth": 1.15
 	}
 }
 
@@ -23,6 +24,11 @@ func get_tower_info(tower_name: String):
 
 func get_price(tower_name: String) -> int:
 	return tower_data[tower_name]["price"]
+
+func increase_all_prices():
+	for tower in tower_data:
+		var t = tower_data[tower]
+		t["price"] = int(t["price"] * t["price_growth"])
 
 func increase_price(tower_name: String):
 	var t = tower_data[tower_name]

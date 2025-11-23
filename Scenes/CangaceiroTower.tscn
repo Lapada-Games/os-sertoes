@@ -76,10 +76,14 @@ animations = [{
 size = Vector2(27, 20)
 
 [node name="Tower" instance=ExtResource("1_jrtu8")]
+tower_name = "Cangaceiro"
+description = "Dá tiro nos outro
+Dano: 50
+Vel. Ataque: 0.6
+Range: 150"
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_rbio7")])
 attack_speed = 0.7
 range = 150.0
-price = 50
 durability = 60
 
 [node name="Sprite2D" parent="." index="0"]

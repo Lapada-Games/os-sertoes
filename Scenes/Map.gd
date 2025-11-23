@@ -19,6 +19,7 @@ func _ready():
 		$DialogBox.queue_free()
 	GameInfo.reset_hp()
 	GameInfo.set_cash(level_data.cash)
+	$HUD.update_store_buttons()
 	show_wave_arrows(true)
 
 func _process(delta):
@@ -61,8 +62,6 @@ func end_wave():
 	for tower in $Towers.get_children().filter(func(e): return e is Tower):
 		tower.pause_durability_timer()
 	
-	GameInfo.inflation += 1
-	self.update_tower_prices()
 	$HUD.update_store_buttons()
 	$SpawnTimer.stop()
 	
@@ -75,8 +74,7 @@ func end_wave():
 	show_wave_arrows(true)
 
 func update_tower_prices():
-	for tower in $Towers.get_children().filter(func(e): return e is Tower):
-		tower.update_price()
+	TowerDatabase.increase_all_prices()
 
 func spawn_enemy():
 	for group in group_queues:

@@ -96,7 +96,6 @@ animations = [{
 }]
 
 [node name="Soldier" instance=ExtResource("1_sl3qn")]
-speed = 50
 hp = 200
 reward_coins = 20
 

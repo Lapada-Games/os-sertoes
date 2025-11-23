@@ -105,11 +105,15 @@ animations = [{
 radius = 17.6139
 
 [node name="Tower" instance=ExtResource("1_of371")]
+tower_name = "Firecamp"
+description = "Taca fogo nos inimigos fazendo eles queimarem por um curto período de tempo
+Dano: 30 + 10 hit/s
+Vel. Ataque: 0.6
+Range: 90"
 bullet = ExtResource("2_knuvl")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_hl7g7"), SubResource("Resource_e1sf2")])
 attack_speed = 0.5
 range = 90.0
-price = 80
 durability = 90
 
 [node name="Sprite2D" parent="." index="0"]
