@@ -51,7 +51,7 @@ animations = [{
 }]
 
 [node name="Tower" instance=ExtResource("1_sjlwl")]
-tower_name = "Father"
+tower_name = "Padre"
 description = "O poder do Espirito Santo desacelera os inimigos."
 bullet = ExtResource("2_k4wbe")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_oig46"), SubResource("Resource_eysdl")])

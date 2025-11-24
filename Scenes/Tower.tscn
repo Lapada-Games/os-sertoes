@@ -101,7 +101,7 @@ bg_color = Color(0, 1, 1, 1)
 
 [node name="Tower" type="Area2D"]
 script = ExtResource("1_c3fk5")
-tower_name = "Aldea"
+tower_name = "Aldeã"
 description = "Taca pedra nos outro
 Dano: 20
 Vel. Ataque: 1

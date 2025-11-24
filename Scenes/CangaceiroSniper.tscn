@@ -1,0 +1,101 @@
+[gd_scene load_steps=16 format=3 uid="uid://c31ol0wg4rwme"]
+
+[ext_resource type="PackedScene" uid="uid://dy0roh66tg0ai" path="res://Scenes/Tower.tscn" id="1_5b1el"]
+[ext_resource type="PackedScene" uid="uid://c018ugj2t7bnm" path="res://Scenes/SniperBullet.tscn" id="2_1no51"]
+[ext_resource type="Texture2D" uid="uid://by38aofvsnyyr" path="res://Assets/Characters/sprites/cangaceiro_attack.png" id="2_g66uj"]
+[ext_resource type="Texture2D" uid="uid://dy2ppdle1kuxm" path="res://Assets/Characters/sprites/cangaceiro_idle.png" id="2_n10ud"]
+[ext_resource type="Script" path="res://Resources/BulletEffects/damage_effect.gd" id="2_rshs7"]
+[ext_resource type="AudioStream" uid="uid://bqvf54r0o53hq" path="res://SFX/shotgun.wav" id="6_ytpfq"]
+
+[sub_resource type="Resource" id="Resource_5gaqr"]
+script = ExtResource("2_rshs7")
+damage = 100
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs4pu"]
+atlas = ExtResource("2_g66uj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij6oh"]
+atlas = ExtResource("2_g66uj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pj7lt"]
+atlas = ExtResource("2_g66uj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st36g"]
+atlas = ExtResource("2_g66uj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vipea"]
+atlas = ExtResource("2_g66uj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l2ws"]
+atlas = ExtResource("2_n10ud")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kud5r"]
+atlas = ExtResource("2_n10ud")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_glaks"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs4pu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij6oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj7lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st36g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vipea")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l2ws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kud5r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="Tower" instance=ExtResource("1_5b1el")]
+tower_name = "Cangaceiro Sniper"
+description = "Cangaceiro que atira de longe
+Dano: 100
+Vel. Ataque: 0.1
+Range: 500"
+bullet = ExtResource("2_1no51")
+bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_5gaqr")])
+attack_speed = 0.25
+range = 500.0
+durability = 60
+
+[node name="Sprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_glaks")
+animation = &"attack"
+frame_progress = 0.374343
+
+[node name="shoot_SFX" parent="." index="4"]
+stream = ExtResource("6_ytpfq")
+volume_db = -2.409
+
+[node name="Durability" parent="." index="5"]
+offset_left = -14.0
+offset_top = 44.0
+offset_right = 18.0
+offset_bottom = 49.0

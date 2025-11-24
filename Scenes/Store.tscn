@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c30rssbwpe74k"]
+[gd_scene load_steps=13 format=3 uid="uid://c30rssbwpe74k"]
 
 [ext_resource type="PackedScene" uid="uid://d3lhsfx1ajedo" path="res://Scenes/ItemButton.tscn" id="1_4lqvk"]
 [ext_resource type="Script" path="res://Scenes/Store.gd" id="1_soda6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://f00ncyw00lh8" path="res://Assets/Characters/sprites/firecamp.png" id="8_fx2k8"]
 [ext_resource type="PackedScene" uid="uid://bdygaghjqbi2t" path="res://Scenes/Father.tscn" id="9_lot5n"]
 [ext_resource type="Texture2D" uid="uid://de87fapblk676" path="res://Assets/Characters/sprites/pade1.png" id="10_l5guy"]
+[ext_resource type="PackedScene" uid="uid://c31ol0wg4rwme" path="res://Scenes/CangaceiroSniper.tscn" id="11_1h2pg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojtr0"]
 bg_color = Color(0.956863, 0.843137, 0.737255, 0.588235)
@@ -65,5 +66,10 @@ button_texture = ExtResource("8_fx2k8")
 layout_mode = 2
 tower_scene = ExtResource("9_lot5n")
 button_texture = ExtResource("10_l5guy")
+
+[node name="CangaceiroSniper" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2
+tower_scene = ExtResource("11_1h2pg")
+button_texture = ExtResource("6_c7fil")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

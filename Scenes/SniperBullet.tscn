@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c018ugj2t7bnm"]
+
+[ext_resource type="PackedScene" uid="uid://bua53fikrab6s" path="res://Scenes/Bullet.tscn" id="1_n8rem"]
+
+[node name="Bullet" instance=ExtResource("1_n8rem")]
+speed = 1000

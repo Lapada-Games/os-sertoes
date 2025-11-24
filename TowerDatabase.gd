@@ -1,7 +1,7 @@
 extends Node
 
 var tower_data := {
-	"Aldea": {
+	"Aldeã": {
 		"price": 25,
 		"price_growth": 1.1
 	},
@@ -9,13 +9,17 @@ var tower_data := {
 		"price": 60,
 		"price_growth": 1.15
 	},
-	"Firecamp": {
+	"Fogueira": {
 		"price": 80,
 		"price_growth": 1.1
 	},
-	"Father": {
+	"Padre": {
 		"price": 120,
 		"price_growth": 1.15
+	},
+	"Cangaceiro Sniper": {
+		"price": 200,
+		"price_growth": 1.1
 	}
 }
 

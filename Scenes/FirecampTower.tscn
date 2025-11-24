@@ -105,7 +105,7 @@ animations = [{
 radius = 17.6139
 
 [node name="Tower" instance=ExtResource("1_of371")]
-tower_name = "Firecamp"
+tower_name = "Fogueira"
 description = "Taca fogo nos inimigos fazendo eles queimarem por um curto período de tempo
 Dano: 30 + 10 hit/s
 Vel. Ataque: 0.6
