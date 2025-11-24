@@ -15,8 +15,8 @@
 * [x] wave and level systems
 * [x] transfer price to tower.gd instead of itembutton
 * [x] change arrow colors
-* [ ] cangaceiro de elite
-* [ ] 
+* [-] cangaceiro de elite
+* [ ] consertar o botão reset
 
 # Less priority
 
