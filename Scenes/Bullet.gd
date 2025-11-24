@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Bullet
 
-# TODO: remove these useless values. except for speed?
 @export var speed = 300
 @export var effects: Array[BulletEffect]
 @export var area_radius: int = 0

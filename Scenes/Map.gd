@@ -62,8 +62,9 @@ func end_wave():
 	for tower in $Towers.get_children().filter(func(e): return e is Tower):
 		tower.pause_durability_timer()
 	
+	# TODO: change this later
 	if wave_index >= len(level_data.waves) / 2:
-		update_tower_prices()
+		TowerDatabase.increase_all_prices()
 	$HUD.update_store_buttons()
 	$SpawnTimer.stop()
 	
@@ -74,9 +75,6 @@ func end_wave():
 	wave_index += 1
 	current_wave = level_data.waves[wave_index]
 	show_wave_arrows(true)
-
-func update_tower_prices():
-	TowerDatabase.increase_all_prices()
 
 func spawn_enemy():
 	for group in group_queues:

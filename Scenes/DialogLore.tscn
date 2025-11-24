@@ -298,7 +298,7 @@ centered = false
 
 [node name="DialogBox" parent="." instance=ExtResource("2_pbi8r")]
 visible = false
-scene_text_file = "res://Dialogs/before-level2.json"
+scene_text_file = "res://Dialogs/before-level4.json"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -81,7 +81,6 @@ func shoot(target: Vector2):
 	get_parent().add_child(tempbullet)
 
 func find_new_target():
-	# TODO: # Clean up the list by removing invalid/dead enemies
 	if enemies_in_range.is_empty():
 		current_target = null
 		return

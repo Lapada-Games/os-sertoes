@@ -11,8 +11,6 @@ func show_sidebar():
 	$Store.visible = true
 	$ControlButtons.visible = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-# TODO: remove stuff that is not necessary to be executed every frame
 func _process(delta):
 	$HP.text = str(GameInfo.HP)
 	$HBoxContainer/Cash.text = str(GameInfo.get_cash())
