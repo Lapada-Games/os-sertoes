@@ -31,3 +31,7 @@ func _on_reset_button_pressed():
 
 func _on_store_visibility_changed():
 	$Store.update_buttons()
+
+
+func _on_control_buttons_visibility_changed():
+	$ControlButtons/ResetButton.text = "Limpar\n(+$" + str(get_parent().get_total_tower_values()) + ")"

@@ -97,6 +97,11 @@ func show_wave_arrows(visible: bool):
 	for group in current_wave.wave_groups:
 		get_node(group.path).set_visibility(visible)
 
+func get_total_tower_values():
+	var sum: int = 0
+	for tower in $Towers.get_children().filter(func(e): return e is Tower):
+		sum += int(float(tower.durability) / float(tower.total_durability) * tower.paid_price)
+	return sum
 func _on_hud_wave_start():
 	start_wave()
 
@@ -108,10 +113,16 @@ func _on_dialog_box_on_dialog_finished():
 
 
 func _on_hud_reset():
-	for tower in $Towers.get_children():
-		GameInfo.add_cash(TowerDatabase.get_price(tower.tower_name))
+	for tower in $Towers.get_children().filter(func(e): return e is Tower):
+		# calculates the price based on the tower durability
+		# the lower the durability, the lower the price
+		var devalued_price = int(float(tower.durability) / float(tower.total_durability) * tower.paid_price)
+		GameInfo.add_cash(devalued_price)
 		tower.queue_free()
 	$HUD.update_store_buttons()
+	await get_tree().process_frame
+	$HUD/ControlButtons/ResetButton.text = "Limpar\n(+$" + str(self.get_total_tower_values()) + ")"
+
 
 
 func _on_path_2d_child_exiting_tree(node):

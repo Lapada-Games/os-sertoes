@@ -3,23 +3,23 @@ extends Node
 var tower_data := {
 	"Aldeã": {
 		"price": 25,
-		"price_growth": 1.1
+		"price_growth": 1.25
 	},
 	"Cangaceiro": {
 		"price": 60,
 		"price_growth": 1.15
 	},
 	"Fogueira": {
-		"price": 80,
+		"price": 90,
 		"price_growth": 1.1
 	},
 	"Padre": {
 		"price": 120,
-		"price_growth": 1.15
+		"price_growth": 1.05
 	},
 	"Cangaceiro Sniper": {
 		"price": 200,
-		"price_growth": 1.1
+		"price_growth": 1.01
 	}
 }
 
@@ -37,3 +37,4 @@ func increase_all_prices():
 func increase_price(tower_name: String):
 	var t = tower_data[tower_name]
 	t["price"] = int(t["price"] * t["price_growth"])
+

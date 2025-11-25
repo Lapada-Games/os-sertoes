@@ -9,6 +9,8 @@ extends Area2D
 @export var attack_speed: float = 1.0
 @export var range: float = 100.0
 @export var durability: int = 100
+@onready var total_durability = durability
+@onready var paid_price = TowerDatabase.get_price(tower_name)
 
 var enemies_in_range: Array[Node2D] = []
 var current_target: Node2D = null

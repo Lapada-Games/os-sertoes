@@ -20,8 +20,6 @@ func _on_texture_button_pressed():
 	tempTower.building_state_changed.connect(get_parent().get_parent()._on_tower_building_state_changed)
 	tempTower.building = true
 	get_tree().get_root().get_node("Map").get_node("Towers").add_child(tempTower)
-
-
 func _on_texture_button_mouse_entered():
 	tooltip.set_text("[center]" + tower_instance.tower_name + "[/center]\n" + tower_instance.description)
 	tooltip.visible = true
