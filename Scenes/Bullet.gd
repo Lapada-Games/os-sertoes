@@ -5,10 +5,12 @@ class_name Bullet
 @export var effects: Array[BulletEffect]
 @export var area_radius: int = 0
 @export var sfx_name: String
-
+@onready var anim = $Sprite2D
 var target: Node2D
 
+
 func _ready():
+	anim.play("Bite")
 	$Range/CollisionShape2D.shape.radius = self.area_radius
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
