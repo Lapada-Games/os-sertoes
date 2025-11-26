@@ -27,6 +27,7 @@ func _process(delta):
 	pass
 
 func start_wave():
+	$HUD.play_wave_popup_animation(wave_index)
 	wave_started = true
 	current_wave = level_data.waves[wave_index]
 	$Prebattle.stop()
@@ -126,6 +127,9 @@ func _on_hud_reset():
 
 
 func _on_path_2d_child_exiting_tree(node):
+	print($Path2D.all_enemies_defeated())
+	if not node is Enemy:
+		return
 	if GameInfo.HP < 1:
 		# Move the scene change to the end of the frame
 		call_deferred("change_scene", "res://Scenes/game_over.tscn")
