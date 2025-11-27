@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dnxcrhf20a022"]
 
-[ext_resource type="Script" path="res://Scenes/Bullet.gd" id="1_1ha1i"]
+[ext_resource type="Script" path="res://Scenes/Bite.gd" id="1_68e28"]
 [ext_resource type="Texture2D" uid="uid://dwb07uonodmsu" path="res://Assets/Misc/mordida.png" id="2_5o81p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dh1me"]
@@ -46,9 +46,9 @@ radius = 7.0
 radius = 31.0644
 
 [node name="Bullet" type="CharacterBody2D"]
-script = ExtResource("1_1ha1i")
+script = ExtResource("1_68e28")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_lblpo")
 animation = &"Bite"
