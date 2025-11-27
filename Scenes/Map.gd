@@ -136,15 +136,16 @@ func _on_hud_reset():
 
 
 func _on_path_2d_child_exiting_tree(node):
-	print($Path2D.all_enemies_defeated())
+	print($Path2D.all_enemies_defeated(), $Path2D2.all_enemies_defeated())
 	if not node is Enemy:
 		return
 	if GameInfo.HP < 1:
 		# Move the scene change to the end of the frame
 		call_deferred("change_scene", "res://Scenes/game_over.tscn")
 		return # Stop the function here so we don't check the win condition
-
-	if node is Enemy and $Path2D.all_enemies_defeated() and $Path2D2.all_enemies_defeated() and not enemies_remaining():
+	
+	await get_tree().process_frame # this line does some magic that makes the shit work (i guess)
+	if $Path2D.all_enemies_defeated() and $Path2D2.all_enemies_defeated() and not enemies_remaining():
 		print("ganhou!")
 		end_wave()
 

@@ -144,11 +144,11 @@ tower_name = "Cangaceiro Sniper"
 description = "Cangaceiro que atira de longe
 Dano: 100
 Vel. Ataque: 0.1
-Range: 400"
+Range: 500"
 bullet = ExtResource("2_1no51")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_5gaqr")])
 attack_speed = 0.25
-range = 400.0
+range = 500.0
 durability = 60
 
 [node name="Sprite2D" parent="." index="0"]
