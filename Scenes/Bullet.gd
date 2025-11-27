@@ -5,8 +5,9 @@ class_name Bullet
 @export var effects: Array[BulletEffect]
 @export var area_radius: int = 0
 @export var sfx_name: String
-
+	
 var target: Node2D
+
 
 func _ready():
 	$Range/CollisionShape2D.shape.radius = self.area_radius
