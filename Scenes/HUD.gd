@@ -29,6 +29,9 @@ func play_wave_popup_animation(wave_number):
 			$WaveCounter.text = "[center]Ataque " + str(wave_number + 1) + "[/center]"
 	$AnimationPlayer.play("wave")
 
+func _ready():
+	$Day.text = "Dia " + str(GameInfo.level)
+
 func _process(delta):
 	$HP.text = str(GameInfo.HP)
 	$HBoxContainer/Cash.text = str(GameInfo.get_cash())

@@ -10,13 +10,20 @@
 * [x] tower durability and a way to pause it
 * [x] resources to organize waves and cash
 * [x] add arrows indicating enemy path
-* [ ] wave and level labels
+* [x] wave and level labels
 * [x] create a table database instead of storing tower prices inside tower
 * [x] wave and level systems
 * [x] transfer price to tower.gd instead of itembutton
 * [x] change arrow colors
 * [x] cangaceiro sniper
 * [x] consertar o botão reset
+* [ ] shield elite soldier
+* [ ] add more levels
+* [ ] matadeira
+* [ ] global enemy reward scale?
+* [ ] 
+* [ ] 
+* [ ] 
 
 # Less priority
 

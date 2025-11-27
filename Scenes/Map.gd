@@ -136,7 +136,7 @@ func _on_path_2d_child_exiting_tree(node):
 		call_deferred("change_scene", "res://Scenes/game_over.tscn")
 		return # Stop the function here so we don't check the win condition
 
-	if node is Enemy and $Path2D.all_enemies_defeated() and $Path2D2.all_enemies_defeated():
+	if node is Enemy and $Path2D.all_enemies_defeated() and $Path2D2.all_enemies_defeated() and current_wave.wave_groups[0].enemies.is_empty() and current_wave.wave_groups[1].enemies.is_empty():
 		print("ganhou!")
 		end_wave()
 
