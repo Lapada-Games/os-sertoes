@@ -22,7 +22,7 @@ var tower_data := {
 		"price_growth": 1.05
 	},
 	"Cangaceiro Sniper": {
-		"price": 200,
+		"price": 150,
 		"price_growth": 1.01
 	}
 }

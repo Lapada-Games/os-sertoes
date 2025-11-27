@@ -9,7 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_5gaqr"]
 script = ExtResource("2_rshs7")
-damage = 100
+damage = 250
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5xfql"]
 atlas = ExtResource("4_d00n3")
@@ -163,7 +163,7 @@ metadata/_edit_lock_ = true
 
 [node name="shoot_SFX" parent="." index="4"]
 stream = ExtResource("6_i8yw0")
-volume_db = -2.409
+volume_db = -8.0
 
 [node name="Durability" parent="." index="5"]
 offset_left = -14.0

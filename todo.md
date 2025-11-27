@@ -30,10 +30,9 @@
 * [x] HUD icons
 * [x] Lore slides
 * [x] dialog cutscenes
-* [ ] bullet sound effects
+* [x] bullet sound effects
 * [ ] replace rock on cangaceiro to actual bullet
 * [x] gameover screen
-* [ ] give up button
 * [x] Undo or reset button
 * [x] fix bug where player can press the play button while holding a tower
 * [ ] skip button in dialog cutscenes
