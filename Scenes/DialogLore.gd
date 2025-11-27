@@ -63,3 +63,7 @@ func _on_animation_player_animation_finished(anim_name):
 	if emotion:
 		last_emotion = emotion
 
+
+
+func _on_play_button_pressed():
+	fade = true

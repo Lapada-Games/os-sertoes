@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbgdrvdj6hp6w"]
+[gd_scene load_steps=15 format=3 uid="uid://cbgdrvdj6hp6w"]
 
 [ext_resource type="Texture2D" uid="uid://8juek86djmud" path="res://Assets/LoreImages/general_neutral.png" id="1_g3ylx"]
 [ext_resource type="Script" path="res://Scenes/DialogLore.gd" id="1_hhwge"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b8bcn5q5usram" path="res://SFX/table_hit.ogg" id="5_pdp4k"]
 [ext_resource type="Texture2D" uid="uid://c258i3blgrf6s" path="res://Assets/LoreImages/general_angry.png" id="5_px5pq"]
 [ext_resource type="AudioStream" uid="uid://cdt80wc5rh8n" path="res://OST/general_fury.mp3" id="6_45obr"]
+[ext_resource type="Theme" uid="uid://vvc105ilij0l" path="res://Assets/Misc/buttons/btn_theme.tres" id="9_mejk4"]
 
 [sub_resource type="Animation" id="Animation_6qoa3"]
 length = 0.001
@@ -321,7 +322,16 @@ offset_right = 1329.0
 offset_bottom = 884.0
 color = Color(0, 0, 0, 0)
 
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 1149.0
+offset_top = 14.0
+offset_right = 1259.0
+offset_bottom = 64.0
+theme = ExtResource("9_mejk4")
+text = "Pular..."
+
 [connection signal="on_dialog_finished" from="DialogBox" to="." method="_on_dialog_box_on_dialog_finished"]
 [connection signal="on_next_line" from="DialogBox" to="." method="_on_dialog_box_on_next_line"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="TempTimer" to="." method="_on_temp_timer_timeout"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
