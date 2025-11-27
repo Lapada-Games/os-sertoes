@@ -1,0 +1,65 @@
+{
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "captain",
+			"text": "Senhor Governador, o senhor não vai acreditar, mas sofremos outra derrota. A expedição não conseguiu romper as defesas de Canudos. Nossas tropas recuaram outra vez."
+		},
+		{
+			"id": 2,
+			"speaker": "governador",
+			"text": "EU NÃO CONSIGO ACREDITAR!!!",
+			"emotion": "angry"
+		},
+		{
+			"id": 2,
+			"speaker": "governador",
+			"text": "QUE PALHAÇADA É ESSA?!",
+			"emotion": "angry"
+		},
+		{
+			"id": 3,
+			"speaker": "governador",
+			"text": "Como é que um arraial perdido no sertão está fazendo o nosso exército parecer um bando de recrutas desorientados?!",
+			"emotion": "angry"
+		},
+		{
+			"id": 4,
+			"speaker": "captain",
+			"text": "Excelência, eles são mais organizados do que parecia, estão bem entrincheirados e..."
+		},
+		{
+			"id": 5,
+			"speaker": "governador",
+			"text": "JÁ CHEGA! Já não quero mais relatórios cheios de desculpas!",
+			"emotion": "furious"
+		},
+		{
+			"id": 6,
+			"speaker": "captain",
+			"text": "Compreendo, senhor, mas precisamos de mais poder de fogo se quisermos..."
+		},
+		{
+			"id": 7,
+			"speaker": "governador",
+			"text": "ENTÃO MANDE A MATADEIRA!",
+			"emotion": "furious"
+			
+		},
+		{
+			"id": 8,
+			"speaker": "captain",
+			"text": "A Matadeira… tem certeza, Excelência?"
+		},
+		{
+			"id": 9,
+			"speaker": "governador",
+			"text": "Tenho absoluta certeza! Se é para acabar com essa rebelião de uma vez por todas, quero aquela peça apontada para Canudos amanhã mesmo!"
+		},
+		{
+			"id": 10,
+			"speaker": "captain",
+			"text": "Como desejar, senhor. Prepararei imediatamente o transporte e o destacamento."
+		},
+	]
+}

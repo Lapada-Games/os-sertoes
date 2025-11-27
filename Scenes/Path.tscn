@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0jlqcwnie8k8"]
+
+[ext_resource type="Curve2D" uid="uid://ug0vvtwuq3nl" path="res://Resources/LevelData/Paths/Path1.tres" id="1_adhbl"]
+[ext_resource type="Texture2D" uid="uid://frj7q8pb7yal" path="res://Assets/Misc/arrow.png" id="2_4sf0u"]
+[ext_resource type="Script" path="res://Scenes/Path.gd" id="2_aj8sj"]
+
+[node name="Path2D" type="Path2D"]
+curve = ExtResource("1_adhbl")
+script = ExtResource("2_aj8sj")
+arrow_color = Color(1, 0, 0, 1)
+
+[node name="Arrow1" type="PathFollow2D" parent="."]
+visible = false
+position = Vector2(985.753, 583.955)
+rotation = -2.22976
+progress = 361.58
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow1"]
+position = Vector2(1.22635, -1.57985)
+rotation = 0.0153732
+scale = Vector2(2.61538, 2.61538)
+texture = ExtResource("2_4sf0u")
+
+[node name="_Timer_63559" type="Timer" parent="Arrow1"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Arrow2" type="PathFollow2D" parent="."]
+visible = false
+position = Vector2(711.598, 263.013)
+rotation = -1.16063
+progress = 821.21
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow2"]
+position = Vector2(1.22635, -1.57985)
+rotation = 0.0153732
+scale = Vector2(2.61538, 2.61538)
+texture = ExtResource("2_4sf0u")
+
+[node name="_Timer_63560" type="Timer" parent="Arrow2"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Arrow3" type="PathFollow2D" parent="."]
+visible = false
+position = Vector2(898.21, 38.7611)
+rotation = -1.10843
+progress = 1117.46
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow3"]
+position = Vector2(1.22635, -1.57985)
+rotation = 0.0153732
+scale = Vector2(2.61538, 2.61538)
+texture = ExtResource("2_4sf0u")
+
+[node name="_Timer_63561" type="Timer" parent="Arrow3"]
+wait_time = 0.2
+one_shot = true

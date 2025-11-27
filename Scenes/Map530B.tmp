@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctlnsv7r3syn7"]
+
+[ext_resource type="Texture2D" uid="uid://bpdp15k5bejr" path="res://Assets/Scenario/scene.png" id="1_2gg6k"]
+[ext_resource type="Script" path="res://Scenes/Map.gd" id="1_ms0u8"]
+[ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Enemy.tscn" id="3_mksqp"]
+[ext_resource type="PackedScene" uid="uid://c4yhjj6tnm7f3" path="res://Scenes/HUD.tscn" id="4_3hc8h"]
+[ext_resource type="AudioStream" uid="uid://cymwv6py2j7dm" path="res://OST/prebattle.mp3" id="5_47qgm"]
+
+[sub_resource type="Curve2D" id="Curve2D_gqbme"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1302, 990, 0, 0, 0, 0, 969, 561, 0, 0, 0, 0, 939, 485, 0, 0, 0, 0, 851, 407, 0, 0, 0, 0, 705, 316, 0, 0, 0, 0, 766, 177, 0, 0, 0, 0, 868, 92, 0, 0, 0, 0, 914, 6)
+}
+point_count = 8
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_ms0u8")
+
+[node name="HUD" parent="." instance=ExtResource("4_3hc8h")]
+layer = 2
+
+[node name="bg" type="Sprite2D" parent="."]
+scale = Vector2(0.833984, 0.833984)
+texture = ExtResource("1_2gg6k")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_gqbme")
+
+[node name="Enemy" parent="Path2D" instance=ExtResource("3_mksqp")]
+position = Vector2(1302, 990)
+rotation = -2.23087
+speed = null
+hp = null
+reward_coins = null
+
+[node name="Enemy2" parent="Path2D" instance=ExtResource("3_mksqp")]
+position = Vector2(1246.76, 918.83)
+rotation = -2.23087
+progress = 90.09
+speed = null
+hp = null
+reward_coins = null
+
+[node name="Enemy3" parent="Path2D" instance=ExtResource("3_mksqp")]
+position = Vector2(1191.52, 847.668)
+rotation = -2.23087
+progress = 180.18
+speed = null
+hp = null
+reward_coins = null
+
+[node name="Enemy4" parent="Path2D" instance=ExtResource("3_mksqp")]
+position = Vector2(1141.67, 783.445)
+rotation = -2.23087
+progress = 261.48
+speed = null
+hp = null
+reward_coins = null
+
+[node name="Enemy5" parent="Path2D" instance=ExtResource("3_mksqp")]
+position = Vector2(1091.82, 719.221)
+rotation = -2.23087
+progress = 342.78
+speed = null
+hp = null
+reward_coins = null
+
+[node name="Enemy6" parent="Path2D" instance=ExtResource("3_mksqp")]
+position = Vector2(1041.96, 654.998)
+rotation = -2.23087
+progress = 424.08
+speed = null
+hp = null
+reward_coins = null
+
+[node name="Enemy7" parent="Path2D" instance=ExtResource("3_mksqp")]
+position = Vector2(992.104, 590.764)
+rotation = -2.23087
+progress = 505.38
+speed = null
+hp = null
+reward_coins = null
+
+[node name="WaveTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_47qgm")
+volume_db = -7.495
+autoplay = true
+
+[node name="Towers" type="Node2D" parent="."]
+
+[connection signal="child_exiting_tree" from="Path2D" to="." method="_on_path_2d_child_exiting_tree"]

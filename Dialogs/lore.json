@@ -2,16 +2,28 @@
 	"dialogue": [
 		{
 			"id": 1,
-			"text": "No coração do sertão baiano, um povo simples ergueu sua morada… Canudos.\nLiderados por Antônio Conselheiro, eles sonhavam com justiça, fé e liberdade — longe das mãos do Império e da República nascente."
+			"text": "No coração do sertão baiano, um povo simples ergueu sua morada… Canudos.",
+			"image": "res://Assets/LoreImages/0.png"
 		},
 		{
 			"id": 2,
-			"text": "Mas a esperança logo seria vista como ameaça.\nPara o governo, Canudos representava rebeldia.\nPara os sertanejos, era o último refúgio de fé."
+			"text": "Liderados por Antônio Conselheiro, eles sonhavam com justiça, fé e liberdade. Ele falava de um lugar onde todos seriam irmãos e cuidariam uns dos outros.",
+			"image": "res://Assets/LoreImages/1.png"
 		},
 		{
 			"id": 3,
-			"speaker": "antonio",
-			"text": "Tropas imperiais marcham rumo ao sertão…\nA poeira levanta. O cerco se aproxima.\nE a guerra está prestes a começar."
+			"text": "O povo de Canudos não gostava da nova República. Para eles, o antigo rei parecia mais próximo de Deus e das tradições que tanto amavam.",
+			"image": "res://Assets/LoreImages/2.png"
 		},
+		{
+			"id": 4,
+			"text": "O grande motivo da revolta era a cobrança de impostos altos. O sertão já era muito pobre, e os novos impostos pareciam um roubo para quem mal tinha o que comer.",
+			"image": "res://Assets/LoreImages/3.png"
+		},
+		{
+			"id": 4,
+			"text": "Mas a esperança de Canudos logo seria vista como uma ameaça. Para o governo, aquele vilarejo representava uma perigosa rebeldia.",
+			"image": "res://Assets/LoreImages/4.png"
+		}
 	]
 }

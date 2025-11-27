@@ -1,0 +1,129 @@
+[gd_scene load_steps=22 format=3 uid="uid://cguseulwsyvcf"]
+
+[ext_resource type="PackedScene" uid="uid://dy0roh66tg0ai" path="res://Scenes/Tower.tscn" id="1_of371"]
+[ext_resource type="Texture2D" uid="uid://db7us0l1c7r42" path="res://Assets/Characters/sprites/firecamp_attack.png" id="2_676ka"]
+[ext_resource type="PackedScene" uid="uid://dvj5qmqrxgs0" path="res://Scenes/Fireball.tscn" id="2_knuvl"]
+[ext_resource type="Script" path="res://Resources/BulletEffects/damage_effect.gd" id="3_rwvak"]
+[ext_resource type="Texture2D" uid="uid://dxfl4ihnx8nda" path="res://Assets/Characters/sprites/firecamp_idle.png" id="3_vdk8e"]
+[ext_resource type="Script" path="res://Resources/BulletEffects/fire_effect.gd" id="4_chhxj"]
+[ext_resource type="AudioStream" uid="uid://donwtknat5f15" path="res://SFX/fireball.mp3" id="5_uh7vj"]
+
+[sub_resource type="Resource" id="Resource_hl7g7"]
+script = ExtResource("3_rwvak")
+damage = 10
+
+[sub_resource type="Resource" id="Resource_e1sf2"]
+script = ExtResource("4_chhxj")
+duration = 3.0
+dps = 20
+tick_rate = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4anc"]
+atlas = ExtResource("2_676ka")
+region = Rect2(0, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl3vc"]
+atlas = ExtResource("2_676ka")
+region = Rect2(28, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r10eb"]
+atlas = ExtResource("2_676ka")
+region = Rect2(56, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mtkc"]
+atlas = ExtResource("2_676ka")
+region = Rect2(84, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw4ry"]
+atlas = ExtResource("2_676ka")
+region = Rect2(112, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lb02g"]
+atlas = ExtResource("3_vdk8e")
+region = Rect2(0, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76xac"]
+atlas = ExtResource("3_vdk8e")
+region = Rect2(28, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5jdo"]
+atlas = ExtResource("3_vdk8e")
+region = Rect2(56, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f0ly"]
+atlas = ExtResource("3_vdk8e")
+region = Rect2(84, 0, 28, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_548b1"]
+atlas = ExtResource("3_vdk8e")
+region = Rect2(112, 0, 28, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vidyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4anc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl3vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r10eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mtkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lw4ry")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lb02g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76xac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5jdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f0ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_548b1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iitvq"]
+radius = 17.6139
+
+[node name="Tower" instance=ExtResource("1_of371")]
+tower_name = "Fogueira"
+description = "Taca fogo nos inimigos fazendo eles queimarem por um curto período de tempo
+Dano: 30 + 10 hit/s
+Vel. Ataque: 0.6
+Range: 90"
+bullet = ExtResource("2_knuvl")
+bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_hl7g7"), SubResource("Resource_e1sf2")])
+attack_speed = 0.5
+range = 90.0
+durability = 90
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(2.21429, 2.21429)
+sprite_frames = SubResource("SpriteFrames_vidyk")
+frame_progress = 0.200017
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, 23)
+shape = SubResource("CircleShape2D_iitvq")
+
+[node name="shoot_SFX" parent="." index="4"]
+stream = ExtResource("5_uh7vj")

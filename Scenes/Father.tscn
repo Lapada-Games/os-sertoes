@@ -1,0 +1,69 @@
+[gd_scene load_steps=13 format=3 uid="uid://bdygaghjqbi2t"]
+
+[ext_resource type="PackedScene" uid="uid://dy0roh66tg0ai" path="res://Scenes/Tower.tscn" id="1_sjlwl"]
+[ext_resource type="PackedScene" uid="uid://dapa7o6vb764s" path="res://Scenes/HolyWater.tscn" id="2_k4wbe"]
+[ext_resource type="Script" path="res://Resources/BulletEffects/damage_effect.gd" id="2_n6v1r"]
+[ext_resource type="Script" path="res://Resources/BulletEffects/freeze_effect.gd" id="3_4mr6m"]
+[ext_resource type="Texture2D" uid="uid://css33w064swjn" path="res://Assets/Characters/sprites/painaldinho.png" id="4_qo8br"]
+[ext_resource type="Texture2D" uid="uid://ddrdjsuaqom0f" path="res://Assets/Characters/sprites/painaldinho_idle.png" id="6_wybfw"]
+
+[sub_resource type="Resource" id="Resource_oig46"]
+script = ExtResource("2_n6v1r")
+damage = 10
+
+[sub_resource type="Resource" id="Resource_eysdl"]
+script = ExtResource("3_4mr6m")
+cooldown_percentage = 0.5
+duration = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgdy0"]
+atlas = ExtResource("4_qo8br")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cqu3"]
+atlas = ExtResource("6_wybfw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jci87"]
+atlas = ExtResource("6_wybfw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l4uux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgdy0")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cqu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jci87")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="Tower" instance=ExtResource("1_sjlwl")]
+tower_name = "Padre"
+description = "O poder do Espirito Santo desacelera os inimigos."
+bullet = ExtResource("2_k4wbe")
+bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_oig46"), SubResource("Resource_eysdl")])
+attack_speed = 0.4
+durability = 90
+
+[node name="Sprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_l4uux")
+frame_progress = 0.498916
+
+[node name="Durability" parent="." index="5"]
+offset_left = -17.0
+offset_top = 40.0
+offset_right = 15.0
+offset_bottom = 45.0

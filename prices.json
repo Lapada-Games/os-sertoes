@@ -1,0 +1,30 @@
+[
+    {
+        "queue": [
+            {
+                "enemy_type": "enemy.enemy_type",
+                "remaining": "enemy.quantity"
+            },
+            {
+                "enemy_type": "enemy.enemy_type",
+                "remaining": "enemy.quantity"
+            }
+        ],
+        "path": "path",
+        "index": 0
+    },
+    {
+        "queue": [
+            {
+                "enemy_type": "enemy.enemy_type",
+                "remaining": "enemy.quantity"
+            },
+            {
+                "enemy_type": "enemy.enemy_type",
+                "remaining": "enemy.quantity"
+            }
+        ],
+        "path": "path2",
+        "index": 0
+    }
+]

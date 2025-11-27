@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://cx83eccfehks0"]
+
+[ext_resource type="Script" path="res://AudioManager.gd" id="1_u3pw5"]
+[ext_resource type="AudioStream" uid="uid://ctqi7sqy2af3j" path="res://SFX/splash.ogg" id="2_61cjo"]
+[ext_resource type="AudioStream" uid="uid://cymwv6py2j7dm" path="res://OST/prebattle.mp3" id="2_codj5"]
+[ext_resource type="AudioStream" uid="uid://dt7cqi64qll1h" path="res://OST/battle_01.ogg" id="3_u1fnr"]
+[ext_resource type="AudioStream" uid="uid://c3pucedxop5ci" path="res://SFX/fizz.ogg" id="3_wnp3t"]
+[ext_resource type="AudioStream" uid="uid://0wn2wjmacw5b" path="res://SFX/applause.ogg" id="6_by7ic"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_u3pw5")
+
+[node name="pre_battle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_codj5")
+volume_db = -4.0
+
+[node name="battle_theme1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_u1fnr")
+volume_db = -4.0
+
+[node name="splash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_61cjo")
+volume_db = -4.0
+
+[node name="fizz" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wnp3t")
+volume_db = -4.0
+
+[node name="applause" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_by7ic")
+volume_db = -8.0

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvj5qmqrxgs0"]
+
+[ext_resource type="PackedScene" uid="uid://bua53fikrab6s" path="res://Scenes/Bullet.tscn" id="1_0p1ng"]
+[ext_resource type="Texture2D" uid="uid://crfcoavknvgfq" path="res://Assets/Misc/fireballspread.png" id="2_75efh"]
+[ext_resource type="Texture2D" uid="uid://bnwb8k3f58ix3" path="res://Assets/Misc/fireball.png" id="2_fjti2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_muh6d"]
+radius = 14.0357
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w3gvc"]
+radius = 70.0
+
+[node name="Bullet" instance=ExtResource("1_0p1ng")]
+speed = 330
+area_radius = 70
+
+[node name="Fireballspread" type="Sprite2D" parent="." index="0"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(-1, 3)
+texture = ExtResource("2_75efh")
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(1, 0)
+scale = Vector2(0.71875, 0.71875)
+texture = ExtResource("2_fjti2")
+
+[node name="CollisionShape2D" parent="." index="2"]
+shape = SubResource("CircleShape2D_muh6d")
+
+[node name="CollisionShape2D" parent="Range" index="0"]
+shape = SubResource("CircleShape2D_w3gvc")

@@ -1,0 +1,54 @@
+{
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "captain",
+			"text": "Senhor Governador... A segunda expedição também falhou. Nossas tropas foram repelidas novamente."
+		},
+		{
+			"id": 2,
+			"speaker": "governador",
+			"text": "O QUÊ?! IMPOSSÍVEL!!!",
+			"emotion": "angry"
+		},
+		{
+			"id": 3,
+			"speaker": "governador",
+			"text": "Como um ajuntamento de sertanejos consegue deter forças oficiais do Estado?",
+			"emotion": "angry"
+		},
+		{
+			"id": 4,
+			"speaker": "captain",
+			"text": "Eles estão bem entrincheirados, senhor. O terreno é difícil, a população é fiel ao líder deles, e lutam com uma determinação que não vimos nas outras campanhas."
+		},
+		{
+			"id": 5,
+			"speaker": "governador",
+			"text": "Isso é uma afronta direta à autoridade da República!",
+			"emotion": "angry"
+		},
+		{
+			"id": 6,
+			"speaker": "governador",
+			"text": "Já tivemos duas derrotas! Duas! O país inteiro vai achar que somos incapazes de lidar com um foco rebelde no interior do sertão. Não admitirei mais humilhações.",
+			"emotion": "angry"
+		},
+		{
+			"id": 7,
+			"speaker": "captain",
+			"text": "Então autorizo a preparação de uma nova expedição, mais robusta e..."
+		},
+		{
+			"id": 8,
+			"speaker": "governador",
+			"text": "Não. Desta vez não será “mais uma”. Será definitiva. Quero uma força que acabe com essa insurreição de uma vez por todas!",
+			"emotion": "angry"
+		},
+				{
+			"id": 9,
+			"speaker": "captain",
+			"text": "Sim, senhor. Farei os preparativos imediatamente."
+		},
+	]
+}

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dapa7o6vb764s"]
+
+[ext_resource type="PackedScene" uid="uid://bua53fikrab6s" path="res://Scenes/Bullet.tscn" id="1_f6c42"]
+[ext_resource type="Texture2D" uid="uid://cpgeyovt2c4yu" path="res://Assets/Misc/agua-benta.png" id="2_t32xu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_41l2k"]
+radius = 70.0
+
+[node name="Bullet" instance=ExtResource("1_f6c42")]
+area_radius = 70
+sfx_name = "splash"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(3.25, 3.25)
+texture = ExtResource("2_t32xu")
+
+[node name="CollisionShape2D" parent="Range" index="0"]
+shape = SubResource("CircleShape2D_41l2k")

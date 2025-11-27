@@ -1,0 +1,147 @@
+[gd_scene load_steps=19 format=3 uid="uid://d3intu4yo7hob"]
+
+[ext_resource type="Script" path="res://Scenes/Enemy.gd" id="1_jgoo7"]
+[ext_resource type="Texture2D" uid="uid://b4kvs1pnrcxnn" path="res://Assets/Characters/sprites/soldiers/soldier1.png" id="2_b3k1b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfltm"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(0, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltgbe"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(40, 0, 40, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqyqw"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(84, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kule"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(130, 0, 43, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g04bf"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(176, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5okj"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(217, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wndr"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(256, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp64a"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(297, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8psbt"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(341, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8n7c"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(384, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba8op"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(427, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_580pe"]
+atlas = ExtResource("2_b3k1b")
+region = Rect2(468, 0, 42, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4nbvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfltm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltgbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqyqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kule")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g04bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5okj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wndr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp64a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8psbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8n7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba8op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_580pe")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhamp"]
+size = Vector2(58, 58)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63w8j"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w34dy"]
+bg_color = Color(0.6, 1, 0.6, 1)
+
+[node name="Soldier" type="PathFollow2D"]
+loop = false
+script = ExtResource("1_jgoo7")
+speed = 50
+hp = 50
+
+[node name="EnemyBody" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="EnemyBody"]
+scale = Vector2(1.6, 1.6)
+sprite_frames = SubResource("SpriteFrames_4nbvk")
+animation = &"walking"
+autoplay = "walking"
+frame_progress = 0.864253
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyBody"]
+shape = SubResource("RectangleShape2D_yhamp")
+
+[node name="HP" type="ProgressBar" parent="."]
+offset_left = -16.0
+offset_top = 39.0
+offset_right = 16.0
+offset_bottom = 44.0
+pivot_offset = Vector2(16, 2)
+theme_override_styles/background = SubResource("StyleBoxFlat_63w8j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_w34dy")
+value = 19.6
+show_percentage = false
+
+[node name="BurnTimerDPS" type="Timer" parent="."]
+
+[node name="BurnTimerTotal" type="Timer" parent="."]
+one_shot = true
+
+[node name="WetTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="BurnTimerDPS" to="." method="_on_burn_timer_dps_timeout"]
+[connection signal="timeout" from="BurnTimerTotal" to="." method="_on_burn_timer_total_timeout"]
+[connection signal="timeout" from="WetTimer" to="." method="_on_wet_timer_timeout"]

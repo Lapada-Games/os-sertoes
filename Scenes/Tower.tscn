@@ -1,0 +1,168 @@
+[gd_scene load_steps=22 format=3 uid="uid://dy0roh66tg0ai"]
+
+[ext_resource type="Script" path="res://Tower.gd" id="1_c3fk5"]
+[ext_resource type="Texture2D" uid="uid://bte6betnsctom" path="res://Assets/Characters/sprites/Girl_attack.png" id="2_vldvw"]
+[ext_resource type="Script" path="res://Resources/BulletEffects/damage_effect.gd" id="2_xqq3r"]
+[ext_resource type="Texture2D" uid="uid://brmd75gq2s2wk" path="res://Assets/Characters/sprites/Girl_idle.png" id="3_fxixu"]
+[ext_resource type="Texture2D" uid="uid://frj7q8pb7yal" path="res://Assets/Misc/arrow.png" id="3_uwj5u"]
+[ext_resource type="AudioStream" uid="uid://bqjxk6sa0o6cg" path="res://SFX/shoot_rock.ogg" id="5_5qsvp"]
+
+[sub_resource type="Resource" id="Resource_slgtf"]
+script = ExtResource("2_xqq3r")
+damage = 25
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dabr8"]
+atlas = ExtResource("2_vldvw")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0f5g"]
+atlas = ExtResource("2_vldvw")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2lrb"]
+atlas = ExtResource("2_vldvw")
+region = Rect2(96, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83666"]
+atlas = ExtResource("2_vldvw")
+region = Rect2(144, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lfoc"]
+atlas = ExtResource("3_fxixu")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wle6o"]
+atlas = ExtResource("3_fxixu")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3gdk"]
+atlas = ExtResource("3_fxixu")
+region = Rect2(96, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33qog"]
+atlas = ExtResource("3_fxixu")
+region = Rect2(144, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d7m71"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dabr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0f5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2lrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83666")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lfoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wle6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3gdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33qog")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3b5ni"]
+size = Vector2(23, 17)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mexpq"]
+radius = 100.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4blvj"]
+bg_color = Color(0.6, 1, 0.227451, 0.431373)
+corner_radius_top_left = 450
+corner_radius_top_right = 450
+corner_radius_bottom_right = 450
+corner_radius_bottom_left = 450
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xha0v"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ueelt"]
+bg_color = Color(0, 1, 1, 1)
+
+[node name="Tower" type="Area2D"]
+script = ExtResource("1_c3fk5")
+tower_name = "Aldeã"
+description = "Taca pedra nos outro
+Dano: 20
+Vel. Ataque: 1
+Range: 100"
+bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_slgtf")])
+durability = 50
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.66667, 2.66667)
+sprite_frames = SubResource("SpriteFrames_d7m71")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0849393
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 25.5)
+shape = SubResource("RectangleShape2D_3b5ni")
+
+[node name="Range" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_mexpq")
+
+[node name="Circle" type="Panel" parent="Range"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4blvj")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_uwj5u")
+offset = Vector2(36, 0)
+
+[node name="shoot_SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5qsvp")
+volume_db = -10.0
+
+[node name="Durability" type="ProgressBar" parent="."]
+offset_left = -16.0
+offset_top = 34.0
+offset_right = 16.0
+offset_bottom = 39.0
+pivot_offset = Vector2(16, 2)
+theme_override_styles/background = SubResource("StyleBoxFlat_xha0v")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ueelt")
+show_percentage = false
+
+[node name="DurabilityTimer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
+[connection signal="timeout" from="DurabilityTimer" to="." method="_on_durability_timer_timeout"]

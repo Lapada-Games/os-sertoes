@@ -1,0 +1,50 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://vvc105ilij0l"]
+
+[ext_resource type="FontFile" uid="uid://0q3aq0atrryd" path="res://Assets/Fonts/Merienda-Regular.ttf" id="1_ig6wh"]
+[ext_resource type="StyleBox" uid="uid://dgaidy4wige41" path="res://Assets/Misc/buttons/style_box_btn.tres" id="1_ongxf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xmy4l"]
+bg_color = Color(0.686275, 0.619608, 0.556863, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.560784, 0.337255, 0.231373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdex3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.933333, 0.764706, 0.603922, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.560784, 0.337255, 0.231373, 1)
+corner_detail = 5
+
+[resource]
+Button/colors/font_color = Color(0.560784, 0.337255, 0.231373, 1)
+Button/colors/font_disabled_color = Color(0.8, 0.791733, 0.784, 1)
+Button/colors/font_focus_color = Color(0.4, 0.239216, 0.164706, 1)
+Button/colors/font_hover_color = Color(0.4, 0.239216, 0.164706, 1)
+Button/colors/font_hover_pressed_color = Color(0.4, 0.239216, 0.164706, 1)
+Button/colors/font_outline_color = Color(0.4, 0.239216, 0.164706, 1)
+Button/colors/font_pressed_color = Color(0.4, 0.239216, 0.164706, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_ig6wh")
+Button/styles/disabled = SubResource("StyleBoxFlat_xmy4l")
+Button/styles/focus = ExtResource("1_ongxf")
+Button/styles/hover = ExtResource("1_ongxf")
+Button/styles/normal = SubResource("StyleBoxFlat_mdex3")
+Button/styles/pressed = ExtResource("1_ongxf")

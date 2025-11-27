@@ -1,0 +1,106 @@
+[gd_scene load_steps=16 format=3 uid="uid://dtqpetklnhonq"]
+
+[ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Soldier.tscn" id="1_x4bpa"]
+[ext_resource type="Texture2D" uid="uid://r6i1uelavrrr" path="res://Assets/Characters/sprites/soldiers/soldier2.png" id="2_hfp81"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xw0w3"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(0, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h170i"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(42, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m8jc"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(84, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8upen"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(131, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxj7j"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(176, 0, 41, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy6a2"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(218, 0, 41, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmran"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(255, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_473xq"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(298, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61npq"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(341, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2a16"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(384, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8kum"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(426, 0, 42, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kbg4"]
+atlas = ExtResource("2_hfp81")
+region = Rect2(468, 0, 42, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_exu1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xw0w3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h170i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m8jc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8upen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxj7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy6a2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmran")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_473xq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61npq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2a16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8kum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kbg4")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 12.0
+}]
+
+[node name="Soldier" instance=ExtResource("1_x4bpa")]
+speed = 80
+hp = 150
+reward_coins = 30
+
+[node name="Sprite2D" parent="EnemyBody" index="0"]
+sprite_frames = SubResource("SpriteFrames_exu1l")
+frame = 6
+frame_progress = 0.421705

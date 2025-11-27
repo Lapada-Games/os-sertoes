@@ -1,0 +1,7 @@
+extends Resource
+class_name ItemTowerStats
+
+@export var item_name: String
+@export_multiline var description: String
+@export var tower: PackedScene
+@export var texture: Texture2D

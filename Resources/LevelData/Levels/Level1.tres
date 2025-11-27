@@ -1,0 +1,109 @@
+[gd_resource type="Resource" script_class="Level" load_steps=27 format=3 uid="uid://f1kxoykll174"]
+
+[ext_resource type="Script" path="res://Resources/LevelData/Levels/level.gd" id="1_2rya7"]
+[ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Soldier.tscn" id="2_nho12"]
+[ext_resource type="Script" path="res://Resources/LevelData/Waves/wave_enemy.gd" id="3_blk2p"]
+[ext_resource type="PackedScene" uid="uid://p0us3kgvw71s" path="res://Scenes/ShieldSoldier.tscn" id="4_bnfkg"]
+[ext_resource type="Script" path="res://Resources/LevelData/Waves/wave.gd" id="5_q3kyg"]
+[ext_resource type="Script" path="res://Resources/LevelData/Waves/wave_group.gd" id="5_t35vk"]
+
+[sub_resource type="Resource" id="Resource_yqmkf"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("2_nho12")
+quantity = 15
+
+[sub_resource type="Resource" id="Resource_g7x4x"]
+script = ExtResource("5_t35vk")
+path = NodePath("Path2D")
+enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_yqmkf")])
+
+[sub_resource type="Resource" id="Resource_ge3cw"]
+script = ExtResource("5_q3kyg")
+wave_groups = Array[ExtResource("5_t35vk")]([SubResource("Resource_g7x4x")])
+
+[sub_resource type="Resource" id="Resource_lxq06"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("4_bnfkg")
+quantity = 2
+
+[sub_resource type="Resource" id="Resource_6a1sr"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("2_nho12")
+quantity = 5
+
+[sub_resource type="Resource" id="Resource_08w4h"]
+script = ExtResource("5_t35vk")
+path = NodePath("Path2D2")
+enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_lxq06"), SubResource("Resource_6a1sr")])
+
+[sub_resource type="Resource" id="Resource_o2uki"]
+script = ExtResource("5_q3kyg")
+wave_groups = Array[ExtResource("5_t35vk")]([SubResource("Resource_08w4h")])
+
+[sub_resource type="Resource" id="Resource_tn1pj"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("2_nho12")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_q35ja"]
+script = ExtResource("5_t35vk")
+path = NodePath("Path2D")
+enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_tn1pj")])
+
+[sub_resource type="Resource" id="Resource_quyw2"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("4_bnfkg")
+quantity = 2
+
+[sub_resource type="Resource" id="Resource_tx70a"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("2_nho12")
+quantity = 5
+
+[sub_resource type="Resource" id="Resource_ms6jq"]
+script = ExtResource("5_t35vk")
+path = NodePath("Path2D2")
+enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_quyw2"), SubResource("Resource_tx70a")])
+
+[sub_resource type="Resource" id="Resource_ohw7i"]
+script = ExtResource("5_q3kyg")
+wave_groups = Array[ExtResource("5_t35vk")]([SubResource("Resource_q35ja"), SubResource("Resource_ms6jq")])
+
+[sub_resource type="Resource" id="Resource_yr78s"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("4_bnfkg")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_fhsxa"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("2_nho12")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_qea4f"]
+script = ExtResource("5_t35vk")
+path = NodePath("Path2D")
+enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_yr78s"), SubResource("Resource_fhsxa")])
+
+[sub_resource type="Resource" id="Resource_0bdt3"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("4_bnfkg")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_s2qnl"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("2_nho12")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_1rgms"]
+script = ExtResource("5_t35vk")
+path = NodePath("Path2D2")
+enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_0bdt3"), SubResource("Resource_s2qnl")])
+
+[sub_resource type="Resource" id="Resource_cbx1n"]
+script = ExtResource("5_q3kyg")
+wave_groups = Array[ExtResource("5_t35vk")]([SubResource("Resource_qea4f"), SubResource("Resource_1rgms")])
+
+[resource]
+script = ExtResource("1_2rya7")
+cash = 999999
+waves = Array[ExtResource("5_q3kyg")]([SubResource("Resource_ge3cw"), SubResource("Resource_o2uki"), SubResource("Resource_ohw7i"), SubResource("Resource_cbx1n")])

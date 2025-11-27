@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://dnxcrhf20a022"]
+
+[ext_resource type="Script" path="res://Scenes/Bite.gd" id="1_68e28"]
+[ext_resource type="Texture2D" uid="uid://dwb07uonodmsu" path="res://Assets/Misc/mordida.png" id="2_5o81p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dh1me"]
+atlas = ExtResource("2_5o81p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljpm7"]
+atlas = ExtResource("2_5o81p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koofx"]
+atlas = ExtResource("2_5o81p")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e3u6"]
+atlas = ExtResource("2_5o81p")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lblpo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dh1me")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljpm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koofx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e3u6")
+}],
+"loop": true,
+"name": &"Bite",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iepyl"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4k32"]
+radius = 31.0644
+
+[node name="Bullet" type="CharacterBody2D"]
+script = ExtResource("1_68e28")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_lblpo")
+animation = &"Bite"
+autoplay = "Bite"
+frame_progress = 0.690724
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iepyl")
+disabled = true
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_e4k32")
