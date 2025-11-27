@@ -16,6 +16,7 @@ level_data = ExtResource("2_2smn3")
 
 [node name="DialogBox" parent="." instance=ExtResource("2_7u5e1")]
 layer = 4
+visible = false
 scene_text_file = "res://Dialogs/tutorial_dialog.json"
 
 [node name="HUD" parent="." instance=ExtResource("4_3hc8h")]

@@ -21,7 +21,7 @@
 * [ ] add more levels
 * [ ] matadeira
 * [ ] global enemy reward scale?
-* [ ] 
+* [ ] change antonio sprite
 * [ ] 
 * [ ] 
 

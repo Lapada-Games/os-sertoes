@@ -8,7 +8,7 @@ var spawn_time = 1 # enemy per second
 var wave_started = false
 var enemy_counter = 0
 var group_queues: Array = []
-var enemy_queue: Array = [] # queue for the first path2D node
+var enemies_defeated = 0
 var remaining_time: int
 @onready var current_wave: Wave = level_data.waves[wave_index]
 #@onready var arrows: Array[Node] = $Path2D.get_children().filter(func(e): return e.name.begins_with("Arrow")) + $Path2D2.get_children().filter(func(e): return e.name.begins_with("Arrow"))
@@ -79,21 +79,29 @@ func end_wave():
 	show_wave_arrows(true)
 
 func spawn_enemy():
+	enemy_counter += 1
 	for group in group_queues:
 		var enemy_queue = group["queue"]
-		var enemy_counter = group["index"]
+		var enemy_index = group["index"]
 		var path = group["path"]
 		
-		if enemy_counter >= enemy_queue.size():
+		if enemy_index >= enemy_queue.size():
 			continue # the group is finished
 		
-		var entry = enemy_queue[enemy_counter]
+		var entry = enemy_queue[enemy_index]
 		var tempEnemy = entry["enemy_type"].instantiate()
 		get_node(path).add_child(tempEnemy)
 		entry["remaining"] -= 1
 		if entry["remaining"] <= 0:
 			group["index"] += 1
-	
+
+func enemies_remaining() -> bool:
+	var sum = 0
+	for group in group_queues:
+		var enemy_queue = group["queue"]
+		for enemy in enemy_queue:
+			sum += enemy["remaining"]
+	return sum > 0
 
 func show_wave_arrows(visible: bool):
 	for group in current_wave.wave_groups:
@@ -136,7 +144,7 @@ func _on_path_2d_child_exiting_tree(node):
 		call_deferred("change_scene", "res://Scenes/game_over.tscn")
 		return # Stop the function here so we don't check the win condition
 
-	if node is Enemy and $Path2D.all_enemies_defeated() and $Path2D2.all_enemies_defeated() and current_wave.wave_groups[0].enemies.is_empty() and current_wave.wave_groups[1].enemies.is_empty():
+	if node is Enemy and $Path2D.all_enemies_defeated() and $Path2D2.all_enemies_defeated() and not enemies_remaining():
 		print("ganhou!")
 		end_wave()
 
