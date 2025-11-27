@@ -30,7 +30,8 @@
 * [x] HUD icons
 * [x] Lore slides
 * [x] dialog cutscenes
-* [ ] money animation
+* [ ] bullet sound effects
+* [ ] replace rock on cangaceiro to actual bullet
 * [x] gameover screen
 * [ ] give up button
 * [x] Undo or reset button

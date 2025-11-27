@@ -1,13 +1,13 @@
 extends Node
 
 var tower_data := {
-	"Doggo": {
+	"Cachorro": {
 		"price": 20,
-		"price_growth": 1.25
+		"price_growth": 1.3
 	},
 	"Aldeã": {
 		"price": 25,
-		"price_growth": 1.25
+		"price_growth": 1.3
 	},
 	"Cangaceiro": {
 		"price": 60,

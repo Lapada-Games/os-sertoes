@@ -48,19 +48,16 @@ theme_override_constants/v_separation = 100
 
 [node name="Doggo" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
-mouse_filter = 0
 tower_scene = ExtResource("5_2lp0o")
 button_texture = ExtResource("6_t3lue")
 
 [node name="Aldea" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
-mouse_filter = 0
 tower_scene = ExtResource("3_s2af6")
 button_texture = ExtResource("4_olcsf")
 
 [node name="Cangaceiro" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
-mouse_filter = 0
 tower_scene = ExtResource("5_0nasf")
 button_texture = ExtResource("6_c7fil")
 
@@ -75,6 +72,11 @@ tower_scene = ExtResource("9_lot5n")
 button_texture = ExtResource("10_l5guy")
 
 [node name="CangaceiroSniper" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2
+tower_scene = ExtResource("11_1h2pg")
+button_texture = ExtResource("6_c7fil")
+
+[node name="CangaceiroSniper2" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
 tower_scene = ExtResource("11_1h2pg")
 button_texture = ExtResource("6_c7fil")

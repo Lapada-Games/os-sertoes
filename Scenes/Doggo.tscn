@@ -9,7 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_slgtf"]
 script = ExtResource("2_rl77b")
-damage = 20
+damage = 15
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axnyi"]
 atlas = ExtResource("3_rjt1s")
@@ -115,10 +115,10 @@ bg_color = Color(0, 1, 1, 1)
 
 [node name="Tower" type="Area2D"]
 script = ExtResource("1_lm1rs")
-tower_name = "Doggo"
-description = "Taca pedra nos outro
-Dano: 20
-Vel. Ataque: 1
+tower_name = "Cachorro"
+description = "Morde os outro
+Dano: 15
+Vel. Ataque: 2
 Range: 100"
 bullet = ExtResource("2_17e60")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_slgtf")])

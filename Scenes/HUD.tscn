@@ -60,40 +60,6 @@ _data = {
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_l2ovv")
 
-[node name="Store" parent="." instance=ExtResource("1_8g53j")]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.993
-anchor_bottom = 0.118
-offset_left = 483.0
-offset_top = 4.0
-offset_right = 451.397
-offset_bottom = 0.0619965
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = -100
-metadata/_edit_group_ = true
-
-[node name="Coin" type="Sprite2D" parent="HBoxContainer"]
-position = Vector2(-25, 26)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("3_ht2d0")
-
-[node name="Cash" type="RichTextLabel" parent="HBoxContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_fonts/normal_font = ExtResource("2_83p4q")
-theme_override_font_sizes/normal_font_size = 36
-text = "1000"
-scroll_active = false
-
 [node name="HP" type="RichTextLabel" parent="."]
 offset_left = 628.554
 offset_top = 8.0
@@ -135,8 +101,6 @@ theme_override_font_sizes/normal_font_size = 160
 bbcode_enabled = true
 text = "[center]Primeiro Ataque[/center]"
 
-[node name="ToolTip" parent="." instance=ExtResource("3_m8k2m")]
-
 [node name="Heart" type="Sprite2D" parent="."]
 position = Vector2(602, 43)
 scale = Vector2(1.25, 1.25)
@@ -167,13 +131,50 @@ theme = ExtResource("7_dodsb")
 text = "Limpar
 ($0)"
 
+[node name="Store" parent="." instance=ExtResource("1_8g53j")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.993
+anchor_bottom = 0.118
+offset_left = 483.0
+offset_top = 4.0
+offset_right = 451.397
+offset_bottom = 0.0619965
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = -100
+
+[node name="Coin" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(-25, 26)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("3_ht2d0")
+
+[node name="Cash" type="RichTextLabel" parent="HBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = ExtResource("2_83p4q")
+theme_override_font_sizes/normal_font_size = 36
+text = "1000"
+scroll_active = false
+
+[node name="ToolTip" parent="." instance=ExtResource("3_m8k2m")]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_7til5")
 }
 
 [connection signal="reset" from="." to="Store" method="_on_hud_reset"]
-[connection signal="visibility_changed" from="Store" to="." method="_on_store_visibility_changed"]
 [connection signal="visibility_changed" from="ControlButtons" to="." method="_on_control_buttons_visibility_changed"]
 [connection signal="pressed" from="ControlButtons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="ControlButtons/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="visibility_changed" from="Store" to="." method="_on_store_visibility_changed"]
