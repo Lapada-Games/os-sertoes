@@ -76,7 +76,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lw4ry")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 8.0
 }, {

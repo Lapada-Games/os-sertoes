@@ -1,77 +1,143 @@
-[gd_scene load_steps=16 format=3 uid="uid://c31ol0wg4rwme"]
+[gd_scene load_steps=26 format=3 uid="uid://c31ol0wg4rwme"]
 
 [ext_resource type="PackedScene" uid="uid://dy0roh66tg0ai" path="res://Scenes/Tower.tscn" id="1_5b1el"]
 [ext_resource type="PackedScene" uid="uid://c018ugj2t7bnm" path="res://Scenes/SniperBullet.tscn" id="2_1no51"]
-[ext_resource type="Texture2D" uid="uid://by38aofvsnyyr" path="res://Assets/Characters/sprites/cangaceiro_attack.png" id="2_g66uj"]
-[ext_resource type="Texture2D" uid="uid://dy2ppdle1kuxm" path="res://Assets/Characters/sprites/cangaceiro_idle.png" id="2_n10ud"]
 [ext_resource type="Script" path="res://Resources/BulletEffects/damage_effect.gd" id="2_rshs7"]
-[ext_resource type="AudioStream" uid="uid://bqvf54r0o53hq" path="res://SFX/shotgun.wav" id="6_ytpfq"]
+[ext_resource type="Texture2D" uid="uid://buk2gou5cjojj" path="res://Assets/Characters/sprites/cangaceiro_sniper/cangaceiro_sniper_attack.png" id="4_d00n3"]
+[ext_resource type="Texture2D" uid="uid://c8pee5ovscqaf" path="res://Assets/Characters/sprites/cangaceiro_sniper/cangaceiro_sniper_idle.png" id="5_42rxs"]
+[ext_resource type="AudioStream" uid="uid://bssd7tmby0bko" path="res://SFX/sniper_shot.ogg" id="6_i8yw0"]
 
 [sub_resource type="Resource" id="Resource_5gaqr"]
 script = ExtResource("2_rshs7")
 damage = 100
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hs4pu"]
-atlas = ExtResource("2_g66uj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xfql"]
+atlas = ExtResource("4_d00n3")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ij6oh"]
-atlas = ExtResource("2_g66uj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_id4eh"]
+atlas = ExtResource("4_d00n3")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pj7lt"]
-atlas = ExtResource("2_g66uj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2nfr"]
+atlas = ExtResource("4_d00n3")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_st36g"]
-atlas = ExtResource("2_g66uj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut1ka"]
+atlas = ExtResource("4_d00n3")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vipea"]
-atlas = ExtResource("2_g66uj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqfxl"]
+atlas = ExtResource("4_d00n3")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8l2ws"]
-atlas = ExtResource("2_n10ud")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xawo"]
+atlas = ExtResource("4_d00n3")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weyc8"]
+atlas = ExtResource("4_d00n3")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdxy6"]
+atlas = ExtResource("4_d00n3")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0i42"]
+atlas = ExtResource("5_42rxs")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kud5r"]
-atlas = ExtResource("2_n10ud")
+[sub_resource type="AtlasTexture" id="AtlasTexture_apfj8"]
+atlas = ExtResource("5_42rxs")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_glaks"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8agl8"]
+atlas = ExtResource("5_42rxs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqwtk"]
+atlas = ExtResource("5_42rxs")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyxcw"]
+atlas = ExtResource("5_42rxs")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvvxt"]
+atlas = ExtResource("5_42rxs")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoqii"]
+atlas = ExtResource("5_42rxs")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb8lw"]
+atlas = ExtResource("5_42rxs")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r55yr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hs4pu")
+"texture": SubResource("AtlasTexture_5xfql")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ij6oh")
+"texture": SubResource("AtlasTexture_id4eh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pj7lt")
+"texture": SubResource("AtlasTexture_d2nfr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_st36g")
+"texture": SubResource("AtlasTexture_ut1ka")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vipea")
+"texture": SubResource("AtlasTexture_yqfxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xawo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weyc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdxy6")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8l2ws")
+"texture": SubResource("AtlasTexture_h0i42")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kud5r")
+"texture": SubResource("AtlasTexture_apfj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8agl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqwtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyxcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvvxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoqii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb8lw")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 3.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix68q"]
+size = Vector2(36.75, 17)
 
 [node name="Tower" instance=ExtResource("1_5b1el")]
 tower_name = "Cangaceiro Sniper"
@@ -86,12 +152,17 @@ range = 400.0
 durability = 60
 
 [node name="Sprite2D" parent="." index="0"]
-sprite_frames = SubResource("SpriteFrames_glaks")
-animation = &"attack"
-frame_progress = 0.374343
+sprite_frames = SubResource("SpriteFrames_r55yr")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-13.375, 34.5)
+shape = SubResource("RectangleShape2D_ix68q")
+
+[node name="CollisionShape2D" parent="Range" index="0"]
+metadata/_edit_lock_ = true
 
 [node name="shoot_SFX" parent="." index="4"]
-stream = ExtResource("6_ytpfq")
+stream = ExtResource("6_i8yw0")
 volume_db = -2.409
 
 [node name="Durability" parent="." index="5"]

@@ -56,9 +56,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rbhly")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 8.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -88,8 +88,8 @@ durability = 60
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_ddkm3")
-animation = &"attack"
-frame_progress = 0.0
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(3.5, 33)

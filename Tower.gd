@@ -28,6 +28,7 @@ signal building_state_changed(is_building: bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Range/CollisionShape2D.shape = CircleShape2D.new()
 	$Range/CollisionShape2D.shape.radius = range
 	$Range/Circle.size = Vector2(range * 2, range * 2)
 	$Range/Circle.position = Vector2(-range, -range)
@@ -39,8 +40,8 @@ func _process(delta):
 	if not building:
 		$Range/Circle.visible = false # TODO: replace this to somewhere else
 		time_since_last_shot += delta
+		#$Sprite2D.animation = "idle"
 		if current_target == null:
-			$Sprite2D.animation = "idle"
 			find_new_target()
 		
 		if current_target != null:
@@ -74,7 +75,7 @@ func _on_range_body_exited(body):
 			current_target = null
 
 func shoot(target: Vector2):
-	$Sprite2D.animation = "attack"
+	$Sprite2D.play("attack")
 	$shoot_SFX.play()
 	var tempbullet: Bullet = bullet.instantiate()
 	tempbullet.target = current_target
@@ -110,3 +111,8 @@ func _on_durability_timer_timeout():
 	if self.durability <= 0:
 		queue_free()
 	$Durability.value = durability
+
+
+func _on_sprite_2d_animation_finished():
+	if $Sprite2D.animation == "attack":
+		$Sprite2D.play("idle")
