@@ -27,6 +27,7 @@ func _process(delta):
 	pass
 
 func start_wave():
+	$HUD.play_wave_popup_animation(wave_index)
 	wave_started = true
 	current_wave = level_data.waves[wave_index]
 	$Prebattle.stop()
@@ -62,14 +63,15 @@ func end_wave():
 	for tower in $Towers.get_children().filter(func(e): return e is Tower):
 		tower.pause_durability_timer()
 	
-	# TODO: change this later
-	if wave_index >= len(level_data.waves) / 2:
+	# TODO: maybe change this later
+	if wave_index == len(level_data.waves) / 2:
 		TowerDatabase.increase_all_prices()
 	$HUD.update_store_buttons()
 	$SpawnTimer.stop()
 	
 	if wave_index + 1 > len(level_data.waves) - 1:
-		call_deferred("change_scene", "res://Scenes/Menu.tscn")
+		GameInfo.next_level()
+		call_deferred("change_scene", "res://Scenes/DialogLore.tscn")
 		return
 	enemy_counter = 0
 	wave_index += 1
@@ -126,12 +128,15 @@ func _on_hud_reset():
 
 
 func _on_path_2d_child_exiting_tree(node):
+	print($Path2D.all_enemies_defeated())
+	if not node is Enemy:
+		return
 	if GameInfo.HP < 1:
 		# Move the scene change to the end of the frame
 		call_deferred("change_scene", "res://Scenes/game_over.tscn")
 		return # Stop the function here so we don't check the win condition
 
-	if $Path2D.all_enemies_defeated() and $Path2D2.all_enemies_defeated():
+	if node is Enemy and $Path2D.all_enemies_defeated() and $Path2D2.all_enemies_defeated():
 		print("ganhou!")
 		end_wave()
 

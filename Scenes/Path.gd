@@ -16,4 +16,4 @@ func set_visibility(visible: bool):
 		arrow.visible = visible
 
 func all_enemies_defeated():
-	return len(self.get_children().filter(func(element): return not element.name.begins_with("Arrow"))) <= 1
+	return len(self.get_children().filter(func(element): return element is Enemy)) <= 1
