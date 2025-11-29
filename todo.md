@@ -17,12 +17,12 @@
 * [x] change arrow colors
 * [x] cangaceiro sniper
 * [x] consertar o botão reset
-* [ ] shield elite soldier
+* [x] shield elite soldier
 * [ ] add more levels
 * [ ] matadeira
 * [ ] global enemy reward scale?
-* [ ] change antonio sprite
-* [ ] 
+* [x] change antonio sprite
+* [ ] rethink the inflation system to be based on the amount of towers instead
 * [ ] 
 
 # Less priority
@@ -35,6 +35,6 @@
 * [x] gameover screen
 * [x] Undo or reset button
 * [x] fix bug where player can press the play button while holding a tower
-* [ ] skip button in dialog cutscenes
+* [x] skip button in dialog cutscenes
 * [ ] skip button in lore scene
 * [ ]

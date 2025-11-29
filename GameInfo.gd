@@ -2,7 +2,7 @@ extends Node
 
 const DEBUG = false
 
-var level = 1
+var level = 2
 const MAX_HP = 5
 var HP = MAX_HP
 # There will be multiple waves per level
@@ -19,6 +19,8 @@ var cash = 0
 
 var inflation: int = 1
 
+#func _ready():
+	#TowerDatabase.increase_all_prices()
 
 func next_level():
 	self.level += 1

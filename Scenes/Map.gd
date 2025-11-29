@@ -10,11 +10,15 @@ var enemy_counter = 0
 var group_queues: Array = []
 var enemies_defeated = 0
 var remaining_time: int
-@onready var current_wave: Wave = level_data.waves[wave_index]
+var current_wave: Wave
 #@onready var arrows: Array[Node] = $Path2D.get_children().filter(func(e): return e.name.begins_with("Arrow")) + $Path2D2.get_children().filter(func(e): return e.name.begins_with("Arrow"))
 
 # TODO: load level wave data based on the current level 
 func _ready():
+	if GameInfo.level >= 3:
+		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+	level_data = load("res://Resources/LevelData/Levels/Level" + str(GameInfo.level) + ".tres")
+	current_wave = level_data.waves[wave_index]
 	if GameInfo.DEBUG:
 		$DialogBox.queue_free()
 	GameInfo.reset_hp()
@@ -64,8 +68,8 @@ func end_wave():
 		tower.pause_durability_timer()
 	
 	# TODO: maybe change this later
-	if wave_index == len(level_data.waves) / 2:
-		TowerDatabase.increase_all_prices()
+	#if wave_index == int(len(level_data.waves) / 2):
+		#TowerDatabase.increase_all_prices()
 	$HUD.update_store_buttons()
 	$SpawnTimer.stop()
 	

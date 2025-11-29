@@ -34,7 +34,6 @@ func _ready():
 	$Range/Circle.position = Vector2(-range, -range)
 	$Durability.max_value = durability
 	$Durability.value = durability
-	GameInfo.reset_hp()
 
 func _process(delta):
 	if not building:

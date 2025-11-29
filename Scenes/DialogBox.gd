@@ -16,9 +16,10 @@ var disabled = false
 func _ready():
 	if not scene_text_file:
 		return
-	dialogue = load_json_file(scene_text_file).dialogue
-	show_text()
-	on_next_line.emit()
+	if scene_text_file:
+		dialogue = load_json_file(scene_text_file).dialogue
+		show_text()
+		on_next_line.emit()
 
 func set_dialogue(file_path: String):
 	dialogue = load_json_file(file_path).dialogue
