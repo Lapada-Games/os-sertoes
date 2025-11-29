@@ -20,6 +20,7 @@ var building = false:
 	set(value):
 		if building != value:
 			building = value
+			$Range/Circle.visible = building
 			emit_signal("building_state_changed", building)
 var can_place = true
 var has_shooted = false
@@ -37,7 +38,7 @@ func _ready():
 
 func _process(delta):
 	if not building:
-		$Range/Circle.visible = false # TODO: replace this to somewhere else
+		
 		time_since_last_shot += delta
 		#$Sprite2D.animation = "idle"
 		if current_target == null:

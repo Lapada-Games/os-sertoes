@@ -11,9 +11,7 @@ var group_queues: Array = []
 var enemies_defeated = 0
 var remaining_time: int
 var current_wave: Wave
-#@onready var arrows: Array[Node] = $Path2D.get_children().filter(func(e): return e.name.begins_with("Arrow")) + $Path2D2.get_children().filter(func(e): return e.name.begins_with("Arrow"))
 
-# TODO: load level wave data based on the current level 
 func _ready():
 	if GameInfo.level >= 3:
 		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
