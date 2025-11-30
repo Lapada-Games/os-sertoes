@@ -13,9 +13,14 @@ var remaining_time: int
 var current_wave: Wave
 
 func _ready():
-	if GameInfo.level >= 3:
-		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
-	level_data = load("res://Resources/LevelData/Levels/Level" + str(GameInfo.level) + ".tres")
+	#if GameInfo.level >= 3:
+		#get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+	if GameInfo.level == 2:
+		$Theme.stream = load("res://OST/battle_01.ogg")
+	elif GameInfo.level == 4:
+		$Theme.stream = load("res://OST/matadeira.mp3")
+		$MatadeiraZoomTimer.start()
+	#level_data = load("res://Resources/LevelData/Levels/Level" + str(GameInfo.level) + ".tres")
 	current_wave = level_data.waves[wave_index]
 	if GameInfo.DEBUG:
 		$DialogBox.queue_free()
@@ -35,6 +40,8 @@ func start_wave():
 	$Prebattle.stop()
 	$Theme.play()
 	for tower in $Towers.get_children().filter(func(e): return e is Tower):
+		if GameInfo.level == 4:
+			tower.durability *= 4
 		tower.start_durability_timer()
 	show_wave_arrows(false)
 	
@@ -138,7 +145,11 @@ func _on_hud_reset():
 
 
 func _on_path_2d_child_exiting_tree(node):
-	print($Path2D.all_enemies_defeated(), $Path2D2.all_enemies_defeated())
+	if node.name == "Matadeira":
+		$Fade.visible = true
+		$HUD.visible = false
+		return
+	
 	if not node is Enemy:
 		return
 	if GameInfo.HP < 1:
@@ -158,3 +169,7 @@ func change_scene(scene_path: String):
 
 
 
+
+
+func _on_matadeira_zoom_timer_timeout():
+	$AnimationPlayer.play("zoom_matadeira")

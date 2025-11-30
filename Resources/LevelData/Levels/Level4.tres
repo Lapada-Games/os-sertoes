@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="Level" load_steps=17 format=3 uid="uid://lv8dt538ap63"]
+
+[ext_resource type="Script" path="res://Resources/LevelData/Levels/level.gd" id="1_4e8kh"]
+[ext_resource type="Script" path="res://Resources/LevelData/Waves/wave.gd" id="2_vd218"]
+[ext_resource type="PackedScene" uid="uid://b4bfpsqyy3yub" path="res://Scenes/Matadeira.tscn" id="3_8smkn"]
+[ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Soldier.tscn" id="3_72rq2"]
+[ext_resource type="Script" path="res://Resources/LevelData/Waves/wave_enemy.gd" id="4_pe4t4"]
+[ext_resource type="PackedScene" uid="uid://c0qwem0ufnhqs" path="res://Scenes/EliteShieldSoldier.tscn" id="5_jut62"]
+[ext_resource type="Script" path="res://Resources/LevelData/Waves/wave_group.gd" id="5_oj40i"]
+[ext_resource type="PackedScene" uid="uid://dtqpetklnhonq" path="res://Scenes/EliteSoldier.tscn" id="8_e7lkj"]
+
+[sub_resource type="Resource" id="Resource_83wwd"]
+script = ExtResource("4_pe4t4")
+enemy_type = ExtResource("3_8smkn")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_i3gey"]
+script = ExtResource("4_pe4t4")
+enemy_type = ExtResource("5_jut62")
+quantity = 20
+
+[sub_resource type="Resource" id="Resource_82fei"]
+script = ExtResource("5_oj40i")
+path = NodePath("Path2D")
+enemies = Array[ExtResource("4_pe4t4")]([SubResource("Resource_83wwd"), SubResource("Resource_i3gey")])
+
+[sub_resource type="Resource" id="Resource_hyomx"]
+script = ExtResource("4_pe4t4")
+enemy_type = ExtResource("3_72rq2")
+quantity = 3
+
+[sub_resource type="Resource" id="Resource_schw3"]
+script = ExtResource("4_pe4t4")
+enemy_type = ExtResource("8_e7lkj")
+quantity = 40
+
+[sub_resource type="Resource" id="Resource_fyhw8"]
+script = ExtResource("4_pe4t4")
+enemy_type = ExtResource("5_jut62")
+quantity = 20
+
+[sub_resource type="Resource" id="Resource_f2jdc"]
+script = ExtResource("5_oj40i")
+path = NodePath("Path2D2")
+enemies = Array[ExtResource("4_pe4t4")]([SubResource("Resource_hyomx"), SubResource("Resource_schw3"), SubResource("Resource_fyhw8")])
+
+[sub_resource type="Resource" id="Resource_yfe5g"]
+script = ExtResource("2_vd218")
+wave_groups = Array[ExtResource("5_oj40i")]([SubResource("Resource_82fei"), SubResource("Resource_f2jdc")])
+
+[resource]
+script = ExtResource("1_4e8kh")
+cash = 10000
+waves = Array[ExtResource("2_vd218")]([SubResource("Resource_yfe5g")])

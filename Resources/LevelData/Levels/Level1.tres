@@ -29,7 +29,7 @@ quantity = 2
 [sub_resource type="Resource" id="Resource_6a1sr"]
 script = ExtResource("3_blk2p")
 enemy_type = ExtResource("2_nho12")
-quantity = 5
+quantity = 10
 
 [sub_resource type="Resource" id="Resource_08w4h"]
 script = ExtResource("5_t35vk")
