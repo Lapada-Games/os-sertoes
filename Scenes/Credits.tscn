@@ -24,82 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://cpdr3cq6gh5ee" path="res://Assets/LoreImages/gameplay.png" id="18_cgjru"]
 [ext_resource type="Texture2D" uid="uid://d0lxu8y0umd45" path="res://Assets/Characters/sprites/cangaceiro_sniper/cangaceiro_sniper.png" id="21_3itw4"]
 
-[sub_resource type="Animation" id="Animation_3f74h"]
-resource_name = "slideshow"
-length = 90.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fade:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 4.8, 5.3, 5.8, 10.6, 11.1, 11.6, 15.2, 15.7, 16.2, 21.6, 22.1, 22.6, 25.5, 26, 26.5, 31, 32),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("slide:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 5.3, 11.1, 15.7, 22.1, 26),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("1_bm33r"), ExtResource("2_bdscr"), ExtResource("2_6h8fe"), ExtResource("3_uojtt"), ExtResource("5_d40eo"), ExtResource("6_8thdm")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CenterContainer/RichTextLabel:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 5.3, 11.1, 15.7, 22.1, 26),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": ["A república foi impiedosa e implacável. Eles usaram todos os recursos diabólicos para exterminar o povo inocente.", "Não sobrou ninguém. Nenhuma pessoa. Todos foram exterminados.", "Não se sabe como Antônio Conselheiro morreu ao certo, mas havia boatos… Explosões, inanição…  ", "Mas todos lutaram até o fim. Antônio, o viajante, os cangaceiros e a população. Ninguém será esquecido. Nenhuma luta será apagada. Elas ficarão registradas na história para sempre. E continuarão a ser divulgadas.", "A guerra sempre traz perdas, é cruel e implacável. Seus resultados são catastróficos. E nunca é a melhor resposta para os problemas.", "Em memória a todas as vítimas da Guerra de Canudos."]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("slide:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(31, 31.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("CreditsRow:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(32, 88.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 974), Vector2(0, -2329)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("CreditsRow/CenterContainer/Control/Button:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(89.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="Animation" id="Animation_clhv4"]
 length = 0.001
 tracks/0/type = "value"
@@ -163,6 +87,82 @@ tracks/4/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_3f74h"]
+resource_name = "slideshow"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4.8, 5.3, 5.8, 10.6, 11.1, 11.6, 15.2, 15.7, 16.2, 21.6, 22.1, 22.6, 25.5, 26, 26.5, 31, 32),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("slide:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.3, 11.1, 15.7, 22.1, 26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_bm33r"), ExtResource("2_bdscr"), ExtResource("2_6h8fe"), ExtResource("3_uojtt"), ExtResource("5_d40eo"), ExtResource("6_8thdm")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.3, 11.1, 15.7, 22.1, 26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["A república foi impiedosa e implacável. Eles usaram todos os recursos diabólicos para exterminar o povo inocente.", "Não sobrou ninguém. Nenhuma pessoa. Todos foram exterminados.", "Não se sabe como Antônio Conselheiro morreu ao certo, mas havia boatos… Explosões, inanição…  ", "Mas todos lutaram até o fim. Antônio, o viajante, os cangaceiros e a população. Ninguém será esquecido. Nenhuma luta será apagada. Elas ficarão registradas na história para sempre. E continuarão a ser divulgadas.", "A guerra sempre traz perdas, é cruel e implacável. Seus resultados são catastróficos. E nunca é a melhor resposta para os problemas.", "Em memória a todas as vítimas da Guerra de Canudos."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("slide:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(31, 31.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CreditsRow:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(32, 88.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 974), Vector2(0, -2405)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CreditsRow/CenterContainer/Control/Button:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(89.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v3m5f"]
 _data = {
 "RESET": SubResource("Animation_clhv4"),
@@ -175,6 +175,7 @@ anchors_preset = 0
 script = ExtResource("1_ee2og")
 
 [node name="bg" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1302.0
 offset_bottom = 772.0
 color = Color(0, 0, 0, 1)
@@ -196,6 +197,7 @@ fit_content = true
 scroll_active = false
 
 [node name="slide" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(268, 351)
 scale = Vector2(0.608173, 0.608173)
 texture = ExtResource("1_bm33r")
@@ -251,6 +253,7 @@ João Felipe Ribeiro
 Programação
 João Felipe Ribeiro de Melo
 João Pedro Ribeiro Mendes
+Bianca Oriá
 
 
 
@@ -263,6 +266,7 @@ Bianca Oriá
 Character Design
 João Pedro Ribeiro Mendes
 Bianca Oriá
+Lorenna Aguiar
 
 
 
@@ -273,7 +277,7 @@ Prof. Maria Andréia Formico Rodrigues
 
 Ferramentas utilizadas
 Godot Engine
-Aseprite / Photoshop
+Aseprite
 Audacity
 GitHub
 GIMP

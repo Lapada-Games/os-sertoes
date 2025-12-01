@@ -9,10 +9,11 @@ extends Control
 func _ready():
 	$TextureButton/TextureRect.texture = button_texture
 	update_button()
-	#print(tower_instance.tower_name)
+	$TextureButton/InflationArrow.visible = false
 
 func update_button():
 	$RichTextLabel.text = "$" + str(TowerDatabase.get_tower_info(tower_instance.tower_name)["price"])
+	$TextureButton/InflationArrow.visible = TowerDatabase.get_tower_info(tower_instance.tower_name)["price"] > TowerDatabase.get_tower_info(tower_instance.tower_name)["base_price"]
 
 func _on_texture_button_pressed():
 	GameInfo.subtract_cash(TowerDatabase.get_price(tower_instance.tower_name))

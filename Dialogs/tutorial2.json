@@ -1,0 +1,19 @@
+{
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "Antonio",
+			"text": "Sobrevivemos ao primeiro ataque da República!"
+		},
+		{
+			"id": 2,
+			"speaker": "Antonio",
+			"text": "Mas não vamos nos acomodar. Vamos continuar reforçando as nossas defesas para o próximo ataque."
+		},
+		{
+			"id": 3,
+			"speaker": "Antonio",
+			"text": "Não fugimos, resistimos!"
+		}
+	]
+}

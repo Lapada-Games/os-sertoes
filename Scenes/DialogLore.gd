@@ -49,7 +49,10 @@ func _on_animation_player_animation_finished(anim_name):
 		elif emotion == "angry":
 			$Sprite2D.texture = load("res://Assets/LoreImages/general_angry.png")
 			if last_emotion != emotion and last_emotion != "furious":
-				$Theme.stream = load("res://OST/general_angry.mp3")
+				if GameInfo.level == 4:
+					$Theme.stream = load("res://OST/suspense.mp3")
+				else:
+					$Theme.stream = load("res://OST/general_angry.mp3")
 				$Theme.play()
 		elif emotion == "furious":
 			if last_emotion != emotion:

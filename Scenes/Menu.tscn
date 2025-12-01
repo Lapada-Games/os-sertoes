@@ -68,7 +68,7 @@ theme_override_colors/default_color = Color(0.282353, 0.160784, 0.0509804, 1)
 theme_override_fonts/normal_font = ExtResource("8_u3jkb")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[center]Modo História[/center]"
+text = "[center]Jogar[/center]"
 scroll_active = false
 
 [node name="Endless" type="TextureButton" parent="VBoxContainer"]
@@ -77,7 +77,6 @@ texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 mouse_default_cursor_shape = 2
-disabled = true
 texture_normal = ExtResource("5_2vilm")
 texture_pressed = ExtResource("6_g5rgy")
 texture_hover = ExtResource("7_cwfoe")
@@ -89,14 +88,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.772
-offset_top = 24.0
-offset_bottom = 1.22
+offset_top = 18.0
+offset_bottom = -4.78
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.282353, 0.160784, 0.0509804, 1)
 theme_override_fonts/normal_font = ExtResource("8_u3jkb")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[center]Modo endless (em breve)[/center]"
+text = "[center]Créditos[/center]"
 scroll_active = false
 
 [node name="Quit" type="TextureButton" parent="VBoxContainer"]
@@ -144,4 +143,5 @@ offset_bottom = 840.0
 color = Color(0, 0, 0, 0)
 
 [connection signal="pressed" from="VBoxContainer/ModoHistoria" to="." method="_on_modo_historia_pressed"]
+[connection signal="pressed" from="VBoxContainer/Endless" to="." method="_on_endless_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

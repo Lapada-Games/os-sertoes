@@ -11,13 +11,22 @@ var group_queues: Array = []
 var enemies_defeated = 0
 var remaining_time: int
 var current_wave: Wave
+var tower_count = {}
 
 func _ready():
+	TowerDatabase.reset_all_prices()
 	#if GameInfo.level >= 3:
 		#get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+	if GameInfo.level == 1:
+		$DialogBox.set_dialogue("res://Dialogs/tutorial_dialog.json")
 	if GameInfo.level == 2:
+		$DialogBox.set_dialogue("res://Dialogs/tutorial2.json")
 		$Theme.stream = load("res://OST/battle_01.ogg")
+	elif GameInfo.level == 3:
+		$DialogBox.set_dialogue("res://Dialogs/tutorial3.json")
+		$Theme.stream = load("res://OST/battle03.ogg")
 	elif GameInfo.level == 4:
+		$DialogBox.set_dialogue("res://Dialogs/tutorial4.json")
 		$Theme.stream = load("res://OST/matadeira.mp3")
 		
 	#level_data = load("res://Resources/LevelData/Levels/Level" + str(GameInfo.level) + ".tres")
@@ -69,7 +78,7 @@ func end_wave():
 	$HUD.show_sidebar()
 	# pausing the timer in each tower
 	$Theme.stream_paused = true
-	$Prebattle.play()
+	
 	AudioManager.play_sfx("applause")
 	for tower in $Towers.get_children().filter(func(e): return e is Tower):
 		tower.pause_durability_timer()
@@ -82,8 +91,17 @@ func end_wave():
 	
 	if wave_index + 1 > len(level_data.waves) - 1:
 		GameInfo.next_level()
-		call_deferred("change_scene", "res://Scenes/DialogLore.tscn")
+		$HUD.visible = false
+		var timer = Timer.new()
+		timer.one_shot = true
+		timer.timeout.connect(func(): get_tree().change_scene_to_file("res://Scenes/DialogLore.tscn"))
+		add_child(timer)
+		$AnimationPlayer.play("fade")
+		timer.start(4.0)
 		return
+	else:
+		$Prebattle.play()
+	
 	enemy_counter = 0
 	wave_index += 1
 	current_wave = level_data.waves[wave_index]
@@ -134,6 +152,8 @@ func _on_dialog_box_on_dialog_finished():
 
 
 func _on_hud_reset():
+	TowerDatabase.reset_all_prices()
+	tower_count = {}
 	for tower in $Towers.get_children().filter(func(e): return e is Tower):
 		# calculates the price based on the tower durability
 		# the lower the durability, the lower the price
@@ -180,3 +200,20 @@ func change_scene(scene_path: String):
 
 func _on_matadeira_zoom_timer_timeout():
 	$AnimationPlayer.play("zoom_matadeira")
+
+func get_new_price(ttype: String) -> int:
+	var base = TowerDatabase.tower_data[ttype].base_price
+	var increment = TowerDatabase.tower_data[ttype].price_growth
+	var count = tower_count.get(ttype, 0)
+
+	var effective = max(0, count - 2)
+	return base + effective * increment
+
+func _on_towers_child_entered_tree(node):
+	if not node is Tower:
+		return
+	var tower_price = TowerDatabase.get_price(node.tower_name)
+	node.paid_price = tower_price
+	tower_count[node.tower_name] = tower_count.get(node.tower_name, 0) + 1
+	TowerDatabase.set_price(node.tower_name, get_new_price(node.tower_name))
+	$HUD/Store.update_buttons()

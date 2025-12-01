@@ -2,7 +2,7 @@ extends Node
 
 const DEBUG = false
 
-var level = 4
+var level = 3
 const MAX_HP = 5
 var HP = MAX_HP
 # There will be multiple waves per level

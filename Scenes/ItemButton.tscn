@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3lhsfx1ajedo"]
+[gd_scene load_steps=8 format=3 uid="uid://d3lhsfx1ajedo"]
 
 [ext_resource type="Texture2D" uid="uid://cx8x63so3biqr" path="res://Assets/Misc/buttons/square.png" id="1_e88nf"]
 [ext_resource type="Script" path="res://Scenes/ItemButton.gd" id="1_g11cd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dwqnb6w4x5ag5" path="res://Assets/Misc/buttons/square_disabled.png" id="3_877ru"]
 [ext_resource type="FontFile" uid="uid://0q3aq0atrryd" path="res://Assets/Fonts/Merienda-Regular.ttf" id="3_mqgtj"]
 [ext_resource type="Texture2D" uid="uid://bv8itntmryovn" path="res://Assets/Characters/sprites/Girl.png" id="5_cqs3v"]
+[ext_resource type="Texture2D" uid="uid://frj7q8pb7yal" path="res://Assets/Misc/arrow.png" id="6_4i3od"]
 
 [node name="ItemButton" type="Control"]
 layout_mode = 3
@@ -39,6 +40,17 @@ mouse_filter = 2
 texture = ExtResource("5_cqs3v")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="InflationArrow" type="TextureRect" parent="TextureButton"]
+visible = false
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 41.0
+offset_top = 24.0
+offset_right = 62.0
+offset_bottom = 44.0
+rotation = -1.57079
+texture = ExtResource("6_4i3od")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0

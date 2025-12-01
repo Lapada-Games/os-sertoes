@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://ctlnsv7r3syn7"]
+[gd_scene load_steps=14 format=3 uid="uid://ctlnsv7r3syn7"]
 
 [ext_resource type="Texture2D" uid="uid://bpdp15k5bejr" path="res://Assets/Scenario/scene.png" id="1_2gg6k"]
 [ext_resource type="Script" path="res://Scenes/Map.gd" id="1_ms0u8"]
 [ext_resource type="PackedScene" uid="uid://commjrcmkwfx6" path="res://Scenes/DialogBox.tscn" id="2_7u5e1"]
-[ext_resource type="Resource" uid="uid://lv8dt538ap63" path="res://Resources/LevelData/Levels/Level4.tres" id="2_vsq1q"]
+[ext_resource type="Resource" uid="uid://bsugtlgvlnut4" path="res://Resources/LevelData/Levels/LevelTeste.tres" id="2_otdfg"]
 [ext_resource type="PackedScene" uid="uid://c4yhjj6tnm7f3" path="res://Scenes/HUD.tscn" id="4_3hc8h"]
 [ext_resource type="AudioStream" uid="uid://cymwv6py2j7dm" path="res://OST/prebattle.mp3" id="5_47qgm"]
 [ext_resource type="PackedScene" uid="uid://d0jlqcwnie8k8" path="res://Scenes/Path.tscn" id="6_a766w"]
@@ -89,20 +89,47 @@ tracks/2/keys = {
 "values": [Vector2(0, 0), Vector2(600, 2)]
 }
 
+[sub_resource type="Animation" id="Animation_hggy2"]
+resource_name = "fade"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xhkyk"]
 _data = {
 "RESET": SubResource("Animation_8oocm"),
+"fade": SubResource("Animation_hggy2"),
 "zoom_matadeira": SubResource("Animation_x4yq3")
 }
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_ms0u8")
-level_data = ExtResource("2_vsq1q")
+level_data = ExtResource("2_otdfg")
 
 [node name="DialogBox" parent="." instance=ExtResource("2_7u5e1")]
 layer = 4
-visible = false
-scene_text_file = "res://Dialogs/tutorial_dialog.json"
 
 [node name="HUD" parent="." instance=ExtResource("4_3hc8h")]
 layer = 2
@@ -219,4 +246,5 @@ color = Color(0, 0, 0, 1)
 [connection signal="child_exiting_tree" from="Path2D" to="." method="_on_path_2d_child_exiting_tree"]
 [connection signal="child_exiting_tree" from="Path2D2" to="." method="_on_path_2d_child_exiting_tree"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="child_entered_tree" from="Towers" to="." method="_on_towers_child_entered_tree"]
 [connection signal="timeout" from="MatadeiraZoomTimer" to="." method="_on_matadeira_zoom_timer_timeout"]

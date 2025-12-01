@@ -3,20 +3,23 @@ extends Control
 var timeDelta = 0.0
 var buttonRevealIndex = 0
 
+var lore = false
 var fade = false
 var can_go_down = false
 var can_go_up = false
-
 var target = -800.0
 var bg_speed = 0.15
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
 	if fade:
-		#$Fade.visible = true
-		#$Fade.color = Color(0, 0, 0, lerp($Fade.color[3], 1.0, 1.333333 * delta))
-		#if $Fade.color[3] >= 0.99:
-			#get_tree().change_scene_to_file("res://Scenes/Lore.tscn")
+		$Fade.visible = true
+		$Fade.color = Color(0, 0, 0, lerp($Fade.color[3], 1.0, 1.333333 * delta))
+		if $Fade.color[3] >= 0.99:
+			get_tree().change_scene_to_file("res://Scenes/Credits.tscn")
+
+	
+	if lore:
 		for button in $VBoxContainer.get_children():
 			button.modulate = Color(1, 1, 1, lerp(button.modulate[3], 0.0, 2.0 * delta))
 		$Logo.modulate = Color(1, 1, 1, lerp($Logo.modulate[3], 0.0, 2.0 * delta))
@@ -45,7 +48,7 @@ func _on_modo_historia_pressed():
 		button.disabled = true
 	$Theme.stop()
 	$clickSfx.play()
-	fade = true
+	lore = true
 	target = 0.0
 	bg_speed = 2.0
 	can_go_down = false
@@ -54,3 +57,11 @@ func _on_modo_historia_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 
+
+
+func _on_endless_pressed():
+	for button in $VBoxContainer.get_children():
+		button.disabled = true
+	$Theme.stop()
+	$clickSfx.play()
+	fade = true

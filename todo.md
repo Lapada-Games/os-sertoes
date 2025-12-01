@@ -19,16 +19,16 @@
 * [x] consertar o botão reset
 * [x] shield elite soldier
 * [x] add level 2
-* [ ] add level 3
-* [ ] add level 4 (with matadeira)
-* [ ] matadeira sprite
+* [x] add level 3
+* [x] add level 4 (with matadeira)
+* [x] matadeira sprite
 * [x] change antonio sprite
-* [ ] rethink the inflation system to be based on the amount of towers instead (or fuck it)
-* [ ] find a great song for the final level
-* [ ] credits screen
+* [x] rethink the inflation system to be based on the amount of towers instead (or fuck it)
+* [x] find a great song for the final level
+* [x] credits screen
 
 # Less priority
-* [ ] replace the endless mode button with credits instead
+* [x] replace the endless mode button with credits instead
 * [x] HUD icons
 * [x] Lore slides
 * [x] dialog cutscenes
@@ -38,5 +38,5 @@
 * [x] Undo or reset button
 * [x] fix bug where player can press the play button while holding a tower
 * [x] skip button in dialog cutscenes
-* [ ] skip button in lore scene
+* [x] skip button in lore scene
 * [ ] dying animation for enemies and towers
