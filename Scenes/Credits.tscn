@@ -1,0 +1,392 @@
+[gd_scene load_steps=27 format=3 uid="uid://dkduf4bsqqkw8"]
+
+[ext_resource type="FontFile" uid="uid://0q3aq0atrryd" path="res://Assets/Fonts/Merienda-Regular.ttf" id="1_8w1xm"]
+[ext_resource type="Texture2D" uid="uid://ds8owxo8ajt0l" path="res://Assets/LoreImages/ending/0.png" id="1_bm33r"]
+[ext_resource type="Script" path="res://Scenes/Credits.gd" id="1_ee2og"]
+[ext_resource type="Texture2D" uid="uid://cku3qatx2mdsf" path="res://Assets/Misc/logo.png" id="1_u22s5"]
+[ext_resource type="Texture2D" uid="uid://bn2ys0m2102oi" path="res://Assets/LoreImages/ending/1.png" id="2_6h8fe"]
+[ext_resource type="Texture2D" uid="uid://q52n77gtwdxt" path="res://Assets/LoreImages/ending/3.png" id="2_bdscr"]
+[ext_resource type="Theme" uid="uid://vvc105ilij0l" path="res://Assets/Misc/buttons/btn_theme.tres" id="2_dnesm"]
+[ext_resource type="Texture2D" uid="uid://brx7264vfrstp" path="res://Assets/LoreImages/0.png" id="2_lbatu"]
+[ext_resource type="Texture2D" uid="uid://crd6hqqu6ypgv" path="res://Assets/LoreImages/1.png" id="3_t1cy4"]
+[ext_resource type="Texture2D" uid="uid://c38un01nlcfiu" path="res://Assets/LoreImages/ending/unnamed.png" id="3_uojtt"]
+[ext_resource type="Texture2D" uid="uid://8juek86djmud" path="res://Assets/LoreImages/general_neutral.png" id="4_d6yhf"]
+[ext_resource type="Texture2D" uid="uid://cyd27b65hjfo8" path="res://Assets/Characters/antonio.png" id="5_aex6i"]
+[ext_resource type="Texture2D" uid="uid://b0hwxevtfvov4" path="res://Assets/LoreImages/ending/4.png" id="5_d40eo"]
+[ext_resource type="Texture2D" uid="uid://cpm1eycmvoaxs" path="res://Assets/LoreImages/ending/5.png" id="6_8thdm"]
+[ext_resource type="Texture2D" uid="uid://f00ncyw00lh8" path="res://Assets/Characters/sprites/firecamp.png" id="6_cjkp0"]
+[ext_resource type="Texture2D" uid="uid://dwes5iblhe1u4" path="res://Assets/Characters/sprites/doggo1.png" id="7_cn4rk"]
+[ext_resource type="AudioStream" uid="uid://cbitqpow7yrwh" path="res://OST/credits.mp3" id="7_xu024"]
+[ext_resource type="Texture2D" uid="uid://d151rn03fs0v7" path="res://Assets/LoreImages/illustration.png" id="9_0hrlh"]
+[ext_resource type="Texture2D" uid="uid://dba1fnep3q2qu" path="res://Assets/Characters/sprites/cangaceiro.png" id="15_j8u80"]
+[ext_resource type="Texture2D" uid="uid://bv8itntmryovn" path="res://Assets/Characters/sprites/Girl.png" id="16_7oklw"]
+[ext_resource type="Texture2D" uid="uid://de87fapblk676" path="res://Assets/Characters/sprites/pade1.png" id="17_7xjbw"]
+[ext_resource type="Texture2D" uid="uid://cpdr3cq6gh5ee" path="res://Assets/LoreImages/gameplay.png" id="18_cgjru"]
+[ext_resource type="Texture2D" uid="uid://d0lxu8y0umd45" path="res://Assets/Characters/sprites/cangaceiro_sniper/cangaceiro_sniper.png" id="21_3itw4"]
+
+[sub_resource type="Animation" id="Animation_3f74h"]
+resource_name = "slideshow"
+length = 90.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4.8, 5.3, 5.8, 10.6, 11.1, 11.6, 15.2, 15.7, 16.2, 21.6, 22.1, 22.6, 25.5, 26, 26.5, 31, 32),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("slide:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.3, 11.1, 15.7, 22.1, 26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_bm33r"), ExtResource("2_bdscr"), ExtResource("2_6h8fe"), ExtResource("3_uojtt"), ExtResource("5_d40eo"), ExtResource("6_8thdm")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5.3, 11.1, 15.7, 22.1, 26),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["A república foi impiedosa e implacável. Eles usaram todos os recursos diabólicos para exterminar o povo inocente.", "Não sobrou ninguém. Nenhuma pessoa. Todos foram exterminados.", "Não se sabe como Antônio Conselheiro morreu ao certo, mas havia boatos… Explosões, inanição…  ", "Mas todos lutaram até o fim. Antônio, o viajante, os cangaceiros e a população. Ninguém será esquecido. Nenhuma luta será apagada. Elas ficarão registradas na história para sempre. E continuarão a ser divulgadas.", "A guerra sempre traz perdas, é cruel e implacável. Seus resultados são catastróficos. E nunca é a melhor resposta para os problemas.", "Em memória a todas as vítimas da Guerra de Canudos."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("slide:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(31, 31.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CreditsRow:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(32, 88.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 974), Vector2(0, -2329)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CreditsRow/CenterContainer/Control/Button:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(89.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_clhv4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("slide:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_bm33r")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CenterContainer/RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["A república foi impiedosa e implacável. Eles usaram todos os recursos diabólicos para exterminar o povo inocente."]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CreditsRow:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 974)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CreditsRow/CenterContainer/Control/Button:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v3m5f"]
+_data = {
+"RESET": SubResource("Animation_clhv4"),
+"slideshow": SubResource("Animation_3f74h")
+}
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ee2og")
+
+[node name="bg" type="ColorRect" parent="."]
+offset_right = 1302.0
+offset_bottom = 772.0
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 12.0
+offset_right = 1271.0
+offset_bottom = 713.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer"]
+custom_minimum_size = Vector2(571.2, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/normal_font_size = 24
+text = "A república foi impiedosa e implacável. Eles usaram todos os recursos diabólicos para exterminar o povo inocente."
+fit_content = true
+scroll_active = false
+
+[node name="slide" type="Sprite2D" parent="."]
+position = Vector2(268, 351)
+scale = Vector2(0.608173, 0.608173)
+texture = ExtResource("1_bm33r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v3m5f")
+}
+autoplay = "slideshow"
+
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1304.0
+offset_bottom = 770.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="CreditsRow" type="Control" parent="."]
+z_index = 1
+anchors_preset = 0
+offset_top = 974.0
+offset_right = 1328.0
+offset_bottom = 3365.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CreditsRow"]
+layout_mode = 2
+offset_top = -178.0
+offset_right = 1294.0
+offset_bottom = 1420.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 2
+
+[node name="Control" type="Control" parent="CreditsRow/CenterContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsRow/CenterContainer/Control"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+offset_left = -200.0
+offset_top = -484.0
+offset_right = 200.0
+offset_bottom = 597.0
+theme_override_fonts/normal_font = ExtResource("1_8w1xm")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "[center]
+Directed by 
+João Felipe Ribeiro
+
+
+
+Programação
+João Felipe Ribeiro de Melo
+João Pedro Ribeiro Mendes
+
+
+
+Arte
+Lorenna Aguiar
+Bianca Oriá
+
+
+
+Character Design
+João Pedro Ribeiro Mendes
+Bianca Oriá
+
+
+
+Orientação
+Prof. Maria Andréia Formico Rodrigues
+
+
+
+Ferramentas utilizadas
+Godot Engine
+Aseprite / Photoshop
+Audacity
+GitHub
+GIMP
+
+
+
+Agradecimentos Especiais
+Universidade de Fortaleza – UNIFOR
+Docentes do Centro de Ciências Tecnológicas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Obrigado por jogar!
+[/center]"
+fit_content = true
+
+[node name="Button" type="Button" parent="CreditsRow/CenterContainer/Control"]
+visible = false
+layout_mode = 0
+offset_left = -93.0
+offset_top = 2228.19
+offset_right = 71.0
+offset_bottom = 2274.19
+theme = ExtResource("2_dnesm")
+text = "Voltar ao menu"
+
+[node name="Logo" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+position = Vector2(-2, -697)
+texture = ExtResource("1_u22s5")
+
+[node name="Sprite2D" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+position = Vector2(-397, -393)
+scale = Vector2(0.239258, 0.239258)
+texture = ExtResource("2_lbatu")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+position = Vector2(419, -279)
+scale = Vector2(0.248047, 0.248047)
+texture = ExtResource("3_t1cy4")
+
+[node name="GeneralNeutral" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+position = Vector2(-441, 30)
+scale = Vector2(0.194336, 0.194336)
+texture = ExtResource("4_d6yhf")
+
+[node name="Antonio" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+position = Vector2(-501, 410)
+scale = Vector2(0.364258, 0.364258)
+texture = ExtResource("5_aex6i")
+
+[node name="Doggo1" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+texture_filter = 1
+position = Vector2(-348, -154)
+scale = Vector2(4.1875, 4.1875)
+texture = ExtResource("7_cn4rk")
+
+[node name="Pade1" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+texture_filter = 1
+position = Vector2(-508, -169)
+scale = Vector2(4.34375, 4.34375)
+texture = ExtResource("17_7xjbw")
+
+[node name="Gameplay" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+position = Vector2(440, 473)
+scale = Vector2(0.202179, 0.202179)
+texture = ExtResource("18_cgjru")
+
+[node name="Illustration" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+position = Vector2(427, 105)
+scale = Vector2(0.177476, 0.177476)
+texture = ExtResource("9_0hrlh")
+
+[node name="Cangaceiro" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+texture_filter = 1
+position = Vector2(-476, 792)
+scale = Vector2(5.10938, 5.10938)
+texture = ExtResource("15_j8u80")
+
+[node name="Girl" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+texture_filter = 1
+position = Vector2(-465, 1015)
+scale = Vector2(6.03, 6.03)
+texture = ExtResource("16_7oklw")
+
+[node name="Firecamp" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+texture_filter = 1
+position = Vector2(334, 725)
+scale = Vector2(3.67857, 3.67857)
+texture = ExtResource("6_cjkp0")
+
+[node name="CangaceiroSniper" type="Sprite2D" parent="CreditsRow/CenterContainer/Control"]
+texture_filter = 1
+position = Vector2(381, 966)
+scale = Vector2(5.15625, 5.15625)
+texture = ExtResource("21_3itw4")
+
+[node name="Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xu024")
+autoplay = true
+
+[connection signal="pressed" from="CreditsRow/CenterContainer/Control/Button" to="." method="_on_button_pressed"]

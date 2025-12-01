@@ -19,7 +19,7 @@ func _ready():
 		$Theme.stream = load("res://OST/battle_01.ogg")
 	elif GameInfo.level == 4:
 		$Theme.stream = load("res://OST/matadeira.mp3")
-		$MatadeiraZoomTimer.start()
+		
 	#level_data = load("res://Resources/LevelData/Levels/Level" + str(GameInfo.level) + ".tres")
 	current_wave = level_data.waves[wave_index]
 	if GameInfo.DEBUG:
@@ -34,6 +34,8 @@ func _process(delta):
 	pass
 
 func start_wave():
+	if GameInfo.level == 4:
+		$MatadeiraZoomTimer.start()
 	$HUD.play_wave_popup_animation(wave_index)
 	wave_started = true
 	current_wave = level_data.waves[wave_index]
@@ -148,6 +150,11 @@ func _on_path_2d_child_exiting_tree(node):
 	if node.name == "Matadeira":
 		$Fade.visible = true
 		$HUD.visible = false
+		var timer: Timer = Timer.new()
+		timer.one_shot = true
+		timer.timeout.connect(func(): get_tree().change_scene_to_file("res://Scenes/Credits.tscn"))
+		add_child(timer)
+		timer.start(1.5)
 		return
 	
 	if not node is Enemy:

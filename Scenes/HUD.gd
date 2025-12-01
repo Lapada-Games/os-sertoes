@@ -55,4 +55,5 @@ func _on_store_visibility_changed():
 
 
 func _on_control_buttons_visibility_changed():
+	await get_tree().process_frame
 	$ControlButtons/ResetButton.text = "Limpar\n(+$" + str(get_parent().get_total_tower_values()) + ")"
