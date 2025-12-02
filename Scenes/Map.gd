@@ -96,7 +96,8 @@ func end_wave():
 		timer.one_shot = true
 		timer.timeout.connect(func(): get_tree().change_scene_to_file("res://Scenes/DialogLore.tscn"))
 		add_child(timer)
-		$AnimationPlayer.play("fade")
+		if GameInfo.level != 4:
+			$AnimationPlayer.play("fade")
 		timer.start(4.0)
 		return
 	else:
