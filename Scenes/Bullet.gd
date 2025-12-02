@@ -5,8 +5,9 @@ class_name Bullet
 @export var effects: Array[BulletEffect]
 @export var area_radius: int = 0
 @export var sfx_name: String
-
+	
 var target: Node2D
+
 
 func _ready():
 	$Range/CollisionShape2D.shape.radius = self.area_radius
@@ -20,7 +21,7 @@ func _physics_process(delta):
 	if target != null:
 		var direction = (target.global_position - global_position).normalized()
 		velocity = direction * speed
-	
+		look_at(target.global_position)
 		move_and_slide()
 	
 		if global_position.distance_to(target.global_position) < 10:

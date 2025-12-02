@@ -1,0 +1,19 @@
+{
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "Antonio",
+			"text": "Agora temos muitos recursos!"
+		},
+		{
+			"id": 2,
+			"speaker": "Antonio",
+			"text": "Nada pode nos deter!"
+		},
+		{
+			"id": 3,
+			"speaker": "Antonio",
+			"text": "Nós não fugimos, resistimos!"
+		}
+	]
+}

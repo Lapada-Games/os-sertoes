@@ -18,13 +18,42 @@
 		{
 			"id": 3,
 			"speaker": "Antonio",
-			"text": "Seja o nosso estrategista, construa defesas e prepare-se para enfrentar ondas de soldados armados."
+			"text": "Seja o nosso estrategista, construa defesas e prepare-se para enfrentar ondas de soldados armados, mas cuidado! Gerencie nossos recursos com parcimônia porque estão ficando cada vez mais escassos com a inflação!"
+		},
+		{
+			"id": 3,
+			"speaker": "Antonio",
+			"text": "Agora, deixe eu te explicar algumas coisas importantes…"
+		},
+		{
+			"id": 3,
+			"speaker": "Antonio",
+			"text": "Vou te dar todos os recursos que nós temos para que você comece nos ajudando a proteger o arraial. Você só poderá posicionar unidades enquanto as moedas forem suficientes."
+		},
+		{
+			"id": 3,
+			"speaker": "Antonio",
+			"text": "A quantidade de corações ali em cima representa a quantidade de vidas que você tem. A cada intruso que invadir a cidade, você perderá uma vida. Se elas zerarem… Bem… Canudos será tomada e perderemos a guerra."
+		},
+		{
+			"id": 3,
+			"speaker": "Antonio",
+			"text": "As setas indicam a direção que os inimigos estão vindo. Atente-se a elas para posicionar as unidades de defesa."
+		},
+		{
+			"id": 3,
+			"speaker": "Antonio",
+			"text": "Para iniciar o enfrentamento da onda, é só clicar em iniciar e se você tiver se arrependido das unidades que selecionou, é só clicar em limpar, mas cuidado ao fazer isso. A inflação poderá afetar o valor das unidades que você tentar estornar."
+		},
+		{
+			"id": 3,
+			"speaker": "Antonio",
+			"text": "Ufa! Acho que isso é tudo. Agora vou te deixar começar o planejamento estratégico."
 		},
 		{
 			"id": 3,
 			"speaker": "Antonio",
 			"text": "Boa sorte!"
 		}
-
 	]
 }

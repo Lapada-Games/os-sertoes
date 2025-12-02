@@ -29,7 +29,7 @@ quantity = 2
 [sub_resource type="Resource" id="Resource_6a1sr"]
 script = ExtResource("3_blk2p")
 enemy_type = ExtResource("2_nho12")
-quantity = 5
+quantity = 10
 
 [sub_resource type="Resource" id="Resource_08w4h"]
 script = ExtResource("5_t35vk")
@@ -39,16 +39,6 @@ enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_lxq06"), SubResou
 [sub_resource type="Resource" id="Resource_o2uki"]
 script = ExtResource("5_q3kyg")
 wave_groups = Array[ExtResource("5_t35vk")]([SubResource("Resource_08w4h")])
-
-[sub_resource type="Resource" id="Resource_tn1pj"]
-script = ExtResource("3_blk2p")
-enemy_type = ExtResource("2_nho12")
-quantity = 5
-
-[sub_resource type="Resource" id="Resource_q35ja"]
-script = ExtResource("5_t35vk")
-path = NodePath("Path2D")
-enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_tn1pj")])
 
 [sub_resource type="Resource" id="Resource_quyw2"]
 script = ExtResource("3_blk2p")
@@ -65,9 +55,19 @@ script = ExtResource("5_t35vk")
 path = NodePath("Path2D2")
 enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_quyw2"), SubResource("Resource_tx70a")])
 
+[sub_resource type="Resource" id="Resource_tn1pj"]
+script = ExtResource("3_blk2p")
+enemy_type = ExtResource("2_nho12")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_q35ja"]
+script = ExtResource("5_t35vk")
+path = NodePath("Path2D")
+enemies = Array[ExtResource("3_blk2p")]([SubResource("Resource_tn1pj")])
+
 [sub_resource type="Resource" id="Resource_ohw7i"]
 script = ExtResource("5_q3kyg")
-wave_groups = Array[ExtResource("5_t35vk")]([SubResource("Resource_q35ja"), SubResource("Resource_ms6jq")])
+wave_groups = Array[ExtResource("5_t35vk")]([SubResource("Resource_ms6jq"), SubResource("Resource_q35ja")])
 
 [sub_resource type="Resource" id="Resource_yr78s"]
 script = ExtResource("3_blk2p")
@@ -105,5 +105,5 @@ wave_groups = Array[ExtResource("5_t35vk")]([SubResource("Resource_qea4f"), SubR
 
 [resource]
 script = ExtResource("1_2rya7")
-cash = 300
+cash = 50
 waves = Array[ExtResource("5_q3kyg")]([SubResource("Resource_ge3cw"), SubResource("Resource_o2uki"), SubResource("Resource_ohw7i"), SubResource("Resource_cbx1n")])

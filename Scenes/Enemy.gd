@@ -5,11 +5,14 @@ class_name Enemy
 @export var hp = 100
 @export var reward_coins = 5
 @export var world_damage = 1
+@export var invincible = false
 var burning: bool = false
 var is_wet: bool = false
 var last_speed = speed
 
 func _ready():
+	if invincible:
+		$HP.visible = false
 	$HP.max_value = hp
 	$HP.value = hp
 
@@ -28,6 +31,8 @@ func _process(delta):
 	$HP.global_position = $EnemyBody.global_position + Vector2(0, 40)
 
 func damage(amount: int):
+	if invincible:
+		return
 	hp -= amount
 	if hp <= 0:
 		GameInfo.add_cash(self.reward_coins)
@@ -35,6 +40,8 @@ func damage(amount: int):
 	$HP.value = hp
 
 func burn(duration: float, dps: int, tick_rate: float):
+	if invincible:
+		return
 	if burning:
 		$BurnTimerTotal.start()
 		return
@@ -54,6 +61,8 @@ func burn(duration: float, dps: int, tick_rate: float):
 	set_meta("burn_dps", dps)
 
 func wet(cooldown_percentage: float, duration: int):
+	if invincible:
+		return
 	if is_wet:
 		$WetTimer.stop()
 		$WetTimer.start()

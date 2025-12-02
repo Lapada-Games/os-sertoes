@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Level" load_steps=9 format=3 uid="uid://bsugtlgvlnut4"]
+
+[ext_resource type="Script" path="res://Resources/LevelData/Levels/level.gd" id="1_4fjfh"]
+[ext_resource type="Script" path="res://Resources/LevelData/Waves/wave.gd" id="2_u6l7w"]
+[ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Soldier.tscn" id="3_j1llj"]
+[ext_resource type="Script" path="res://Resources/LevelData/Waves/wave_enemy.gd" id="4_satg5"]
+[ext_resource type="Script" path="res://Resources/LevelData/Waves/wave_group.gd" id="5_etnoi"]
+
+[sub_resource type="Resource" id="Resource_6yrse"]
+script = ExtResource("4_satg5")
+enemy_type = ExtResource("3_j1llj")
+quantity = 1
+
+[sub_resource type="Resource" id="Resource_dwcnp"]
+script = ExtResource("5_etnoi")
+path = NodePath("Path2D")
+enemies = Array[ExtResource("4_satg5")]([SubResource("Resource_6yrse")])
+
+[sub_resource type="Resource" id="Resource_4xsgv"]
+script = ExtResource("2_u6l7w")
+wave_groups = Array[ExtResource("5_etnoi")]([SubResource("Resource_dwcnp")])
+
+[resource]
+script = ExtResource("1_4fjfh")
+cash = 99999
+waves = Array[ExtResource("2_u6l7w")]([SubResource("Resource_4xsgv")])

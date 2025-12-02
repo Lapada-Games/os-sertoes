@@ -1,0 +1,19 @@
+{
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "Antonio",
+			"text": "A República deve estar furiosa com a nossa vitória..."
+		},
+		{
+			"id": 2,
+			"speaker": "Antonio",
+			"text": "Acredito que eles irão mandar tropas muito mais fortes para tentar nos derrubar."
+		},
+		{
+			"id": 3,
+			"speaker": "Antonio",
+			"text": "Mas não fugimos, resistimos!"
+		}
+	]
+}

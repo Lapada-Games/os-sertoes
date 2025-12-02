@@ -34,7 +34,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xgdy0")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -60,7 +60,6 @@ durability = 90
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_l4uux")
-frame_progress = 0.498916
 
 [node name="Durability" parent="." index="5"]
 offset_left = -17.0

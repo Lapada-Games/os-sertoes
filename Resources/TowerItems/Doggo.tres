@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemTowerStats" load_steps=4 format=3 uid="uid://df2khrohua321"]
+
+[ext_resource type="Script" path="res://Resources/TowerItems/ItemTowerStats.gd" id="1_u4qv6"]
+[ext_resource type="Texture2D" uid="uid://dwes5iblhe1u4" path="res://Assets/Characters/sprites/doggo1.png" id="2_jr4e3"]
+[ext_resource type="PackedScene" uid="uid://dgfepdl1xklug" path="res://Scenes/Doggo.tscn" id="3_k8x0g"]
+
+[resource]
+script = ExtResource("1_u4qv6")
+item_name = "Doggo"
+description = "Morde os inimigos
+Dano: 20
+Vel. Ataque: 3
+Range: 100"
+tower = ExtResource("3_k8x0g")
+texture = ExtResource("2_jr4e3")

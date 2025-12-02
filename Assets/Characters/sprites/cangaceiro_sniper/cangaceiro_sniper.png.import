@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://bh0fpwuuucuf8"
+=======
+uid="uid://d0lxu8y0umd45"
+>>>>>>> c6f4f400d2a2b562e934b0ed5223a25982572f1b
 path="res://.godot/imported/cangaceiro_sniper.png-7829b06b756bf42b17a8844c2fbffcce.ctex"
 metadata={
 "vram_texture": false

@@ -10,7 +10,7 @@
 
 [sub_resource type="Resource" id="Resource_hl7g7"]
 script = ExtResource("3_rwvak")
-damage = 10
+damage = 15
 
 [sub_resource type="Resource" id="Resource_e1sf2"]
 script = ExtResource("4_chhxj")
@@ -76,7 +76,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lw4ry")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 8.0
 }, {
@@ -106,15 +106,15 @@ radius = 17.6139
 
 [node name="Tower" instance=ExtResource("1_of371")]
 tower_name = "Fogueira"
-description = "Taca fogo nos inimigos fazendo eles queimarem por um curto período de tempo
-Dano: 30 + 10 hit/s
-Vel. Ataque: 0.6
+description = "Taca fogo nos inimigos fazendo eles queimarem por um curto período de tempo. Porém tem baixa durabilidade.
+Dano: 30 + 15 hit/s
+Vel. Ataque: 0.5
 Range: 90"
 bullet = ExtResource("2_knuvl")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_hl7g7"), SubResource("Resource_e1sf2")])
 attack_speed = 0.5
 range = 90.0
-durability = 90
+durability = 40
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(2.21429, 2.21429)

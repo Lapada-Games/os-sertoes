@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://d2a02suma3hmr"
+=======
+uid="uid://cn6fuovsrfm37"
+>>>>>>> c6f4f400d2a2b562e934b0ed5223a25982572f1b
 path="res://.godot/imported/life-on-mars-32x.png-8bd9ad16e010518a32bdfad0fa970763.ctex"
 metadata={
 "vram_texture": false

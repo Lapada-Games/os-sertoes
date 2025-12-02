@@ -1,15 +1,86 @@
-[gd_resource type="Resource" script_class="Level" load_steps=5 format=3 uid="uid://b15fj1cxcikqg"]
+[gd_resource type="Resource" script_class="Level" load_steps=23 format=3 uid="uid://b15fj1cxcikqg"]
 
 [ext_resource type="Script" path="res://Resources/LevelData/Levels/level.gd" id="1_job6l"]
-[ext_resource type="Curve2D" uid="uid://ug0vvtwuq3nl" path="res://Resources/LevelData/Paths/Path1.tres" id="4_d6wjl"]
+[ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Soldier.tscn" id="3_w50bc"]
+[ext_resource type="Script" path="res://Resources/LevelData/Waves/wave_enemy.gd" id="4_wayay"]
 [ext_resource type="Script" path="res://Resources/LevelData/Waves/wave.gd" id="5_nvfyn"]
+[ext_resource type="PackedScene" uid="uid://dtqpetklnhonq" path="res://Scenes/EliteSoldier.tscn" id="5_xmviv"]
+[ext_resource type="Script" path="res://Resources/LevelData/Waves/wave_group.gd" id="6_wbrcq"]
+[ext_resource type="PackedScene" uid="uid://p0us3kgvw71s" path="res://Scenes/ShieldSoldier.tscn" id="7_xpduy"]
+
+[sub_resource type="Resource" id="Resource_qfo1b"]
+script = ExtResource("4_wayay")
+enemy_type = ExtResource("3_w50bc")
+quantity = 20
+
+[sub_resource type="Resource" id="Resource_g8qok"]
+script = ExtResource("4_wayay")
+enemy_type = ExtResource("5_xmviv")
+quantity = 8
+
+[sub_resource type="Resource" id="Resource_of7rj"]
+script = ExtResource("6_wbrcq")
+path = NodePath("Path2D")
+enemies = Array[ExtResource("4_wayay")]([SubResource("Resource_qfo1b"), SubResource("Resource_g8qok")])
 
 [sub_resource type="Resource" id="Resource_y78sq"]
 script = ExtResource("5_nvfyn")
-path = ExtResource("4_d6wjl")
-enemies = Array[Resource("res://Resources/LevelData/Waves/wave_enemy.gd")]([])
+wave_groups = Array[ExtResource("6_wbrcq")]([SubResource("Resource_of7rj")])
+
+[sub_resource type="Resource" id="Resource_su3cv"]
+script = ExtResource("4_wayay")
+enemy_type = ExtResource("7_xpduy")
+quantity = 3
+
+[sub_resource type="Resource" id="Resource_yko02"]
+script = ExtResource("4_wayay")
+enemy_type = ExtResource("5_xmviv")
+quantity = 5
+
+[sub_resource type="Resource" id="Resource_lot2c"]
+script = ExtResource("6_wbrcq")
+path = NodePath("Path2D")
+enemies = Array[ExtResource("4_wayay")]([SubResource("Resource_su3cv"), SubResource("Resource_yko02")])
+
+[sub_resource type="Resource" id="Resource_rh8y7"]
+script = ExtResource("4_wayay")
+enemy_type = ExtResource("7_xpduy")
+quantity = 3
+
+[sub_resource type="Resource" id="Resource_oh60k"]
+script = ExtResource("4_wayay")
+enemy_type = ExtResource("5_xmviv")
+quantity = 5
+
+[sub_resource type="Resource" id="Resource_oe8g3"]
+script = ExtResource("6_wbrcq")
+path = NodePath("Path2D2")
+enemies = Array[ExtResource("4_wayay")]([SubResource("Resource_rh8y7"), SubResource("Resource_oh60k")])
+
+[sub_resource type="Resource" id="Resource_0k7n3"]
+script = ExtResource("5_nvfyn")
+wave_groups = Array[ExtResource("6_wbrcq")]([SubResource("Resource_lot2c"), SubResource("Resource_oe8g3")])
+
+[sub_resource type="Resource" id="Resource_j2552"]
+script = ExtResource("4_wayay")
+enemy_type = ExtResource("3_w50bc")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_84vve"]
+script = ExtResource("4_wayay")
+enemy_type = ExtResource("5_xmviv")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_vx84t"]
+script = ExtResource("6_wbrcq")
+path = NodePath("Path2D2")
+enemies = Array[ExtResource("4_wayay")]([SubResource("Resource_j2552"), SubResource("Resource_84vve")])
+
+[sub_resource type="Resource" id="Resource_no2y5"]
+script = ExtResource("5_nvfyn")
+wave_groups = Array[ExtResource("6_wbrcq")]([SubResource("Resource_vx84t")])
 
 [resource]
 script = ExtResource("1_job6l")
 cash = 300
-waves = Array[ExtResource("5_nvfyn")]([SubResource("Resource_y78sq"), null, null, null])
+waves = Array[ExtResource("5_nvfyn")]([SubResource("Resource_y78sq"), SubResource("Resource_0k7n3"), SubResource("Resource_no2y5")])

@@ -1,16 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://c30rssbwpe74k"]
+[gd_scene load_steps=16 format=3 uid="uid://c30rssbwpe74k"]
 
 [ext_resource type="PackedScene" uid="uid://d3lhsfx1ajedo" path="res://Scenes/ItemButton.tscn" id="1_4lqvk"]
 [ext_resource type="Script" path="res://Scenes/Store.gd" id="1_soda6"]
 [ext_resource type="PackedScene" uid="uid://dy0roh66tg0ai" path="res://Scenes/Tower.tscn" id="3_s2af6"]
 [ext_resource type="Texture2D" uid="uid://bv8itntmryovn" path="res://Assets/Characters/sprites/Girl.png" id="4_olcsf"]
 [ext_resource type="PackedScene" uid="uid://da7sody3x2y10" path="res://Scenes/CangaceiroTower.tscn" id="5_0nasf"]
+[ext_resource type="PackedScene" uid="uid://dgfepdl1xklug" path="res://Scenes/Doggo.tscn" id="5_2lp0o"]
 [ext_resource type="Texture2D" uid="uid://dba1fnep3q2qu" path="res://Assets/Characters/sprites/cangaceiro.png" id="6_c7fil"]
+[ext_resource type="Texture2D" uid="uid://dwes5iblhe1u4" path="res://Assets/Characters/sprites/doggo1.png" id="6_t3lue"]
 [ext_resource type="PackedScene" uid="uid://cguseulwsyvcf" path="res://Scenes/FirecampTower.tscn" id="7_4yjkl"]
 [ext_resource type="Texture2D" uid="uid://f00ncyw00lh8" path="res://Assets/Characters/sprites/firecamp.png" id="8_fx2k8"]
 [ext_resource type="PackedScene" uid="uid://bdygaghjqbi2t" path="res://Scenes/Father.tscn" id="9_lot5n"]
 [ext_resource type="Texture2D" uid="uid://de87fapblk676" path="res://Assets/Characters/sprites/pade1.png" id="10_l5guy"]
 [ext_resource type="PackedScene" uid="uid://c31ol0wg4rwme" path="res://Scenes/CangaceiroSniper.tscn" id="11_1h2pg"]
+[ext_resource type="Texture2D" uid="uid://d0lxu8y0umd45" path="res://Assets/Characters/sprites/cangaceiro_sniper/cangaceiro_sniper.png" id="14_gefjs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojtr0"]
 bg_color = Color(0.956863, 0.843137, 0.737255, 0.588235)
@@ -41,19 +44,21 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-mouse_filter = 2
 theme_override_constants/h_separation = 70
 theme_override_constants/v_separation = 100
 
+[node name="Doggo" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
+layout_mode = 2
+tower_scene = ExtResource("5_2lp0o")
+button_texture = ExtResource("6_t3lue")
+
 [node name="Aldea" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
-mouse_filter = 0
 tower_scene = ExtResource("3_s2af6")
 button_texture = ExtResource("4_olcsf")
 
 [node name="Cangaceiro" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
-mouse_filter = 0
 tower_scene = ExtResource("5_0nasf")
 button_texture = ExtResource("6_c7fil")
 
@@ -70,6 +75,6 @@ button_texture = ExtResource("10_l5guy")
 [node name="CangaceiroSniper" parent="FlowContainer" instance=ExtResource("1_4lqvk")]
 layout_mode = 2
 tower_scene = ExtResource("11_1h2pg")
-button_texture = ExtResource("6_c7fil")
+button_texture = ExtResource("14_gefjs")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

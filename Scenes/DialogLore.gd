@@ -6,9 +6,8 @@ var last_emotion: String
 var fade: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$DialogBox.set_dialogue("res://Dialogs/before-level" + str(GameInfo.level) + ".json")
 	last_speaker = $DialogBox.get_current_speaker()
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -50,7 +49,10 @@ func _on_animation_player_animation_finished(anim_name):
 		elif emotion == "angry":
 			$Sprite2D.texture = load("res://Assets/LoreImages/general_angry.png")
 			if last_emotion != emotion and last_emotion != "furious":
-				$Theme.stream = load("res://OST/general_angry.mp3")
+				if GameInfo.level == 4:
+					$Theme.stream = load("res://OST/suspense.mp3")
+				else:
+					$Theme.stream = load("res://OST/general_angry.mp3")
 				$Theme.play()
 		elif emotion == "furious":
 			if last_emotion != emotion:
@@ -63,3 +65,8 @@ func _on_animation_player_animation_finished(anim_name):
 	
 	if emotion:
 		last_emotion = emotion
+
+
+
+func _on_play_button_pressed():
+	fade = true

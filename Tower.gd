@@ -9,7 +9,9 @@ extends Area2D
 @export var attack_speed: float = 1.0
 @export var range: float = 100.0
 @export var durability: int = 100
+@onready var total_durability = durability
 
+var paid_price: int
 var enemies_in_range: Array[Node2D] = []
 var current_target: Node2D = null
 var time_since_last_shot: float = 0.0
@@ -18,6 +20,7 @@ var building = false:
 	set(value):
 		if building != value:
 			building = value
+			$Range/Circle.visible = building
 			emit_signal("building_state_changed", building)
 var can_place = true
 var has_shooted = false
@@ -26,19 +29,19 @@ signal building_state_changed(is_building: bool)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Range/CollisionShape2D.shape = CircleShape2D.new()
 	$Range/CollisionShape2D.shape.radius = range
 	$Range/Circle.size = Vector2(range * 2, range * 2)
 	$Range/Circle.position = Vector2(-range, -range)
 	$Durability.max_value = durability
 	$Durability.value = durability
-	GameInfo.reset_hp()
 
 func _process(delta):
 	if not building:
-		$Range/Circle.visible = false # TODO: replace this to somewhere else
+		
 		time_since_last_shot += delta
+		#$Sprite2D.animation = "idle"
 		if current_target == null:
-			$Sprite2D.animation = "idle"
 			find_new_target()
 		
 		if current_target != null:
@@ -72,7 +75,7 @@ func _on_range_body_exited(body):
 			current_target = null
 
 func shoot(target: Vector2):
-	$Sprite2D.animation = "attack"
+	$Sprite2D.play("attack")
 	$shoot_SFX.play()
 	var tempbullet: Bullet = bullet.instantiate()
 	tempbullet.target = current_target
@@ -108,3 +111,8 @@ func _on_durability_timer_timeout():
 	if self.durability <= 0:
 		queue_free()
 	$Durability.value = durability
+
+
+func _on_sprite_2d_animation_finished():
+	if $Sprite2D.animation == "attack":
+		$Sprite2D.play("idle")

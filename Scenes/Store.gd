@@ -14,7 +14,7 @@ func update_buttons():
 	var buttons = $FlowContainer.get_children()
 	for b in buttons:
 		if b.tower_instance:
-			b.get_node("TextureButton").disabled = GameInfo.get_cash() < TowerDatabase.get_price(b.tower_instance.tower_name)
+			b.get_node("TextureButton").disabled = is_building || GameInfo.get_cash() < TowerDatabase.get_price(b.tower_instance.tower_name)
 			b.update_button()
 
 func _on_visibility_changed():

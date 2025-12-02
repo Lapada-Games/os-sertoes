@@ -14,10 +14,18 @@ var disabled = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	dialogue = load_json_file(scene_text_file).dialogue
+	if not scene_text_file:
+		return
+	if scene_text_file:
+		dialogue = load_json_file(scene_text_file).dialogue
+		show_text()
+		on_next_line.emit()
+
+func set_dialogue(file_path: String):
+	dialogue = load_json_file(file_path).dialogue
 	show_text()
 	on_next_line.emit()
- 
+
 func load_json_file(path: String) -> Variant:
 	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null:
@@ -44,16 +52,15 @@ func next_line():
 			#get_tree().change_scene_to_packed(scene_to_go_after_end)
 		return
 	index += 1
-	show_text()
 	on_next_line.emit()
+	show_text()
 	
 func show_text():
-	
-	$RichTextLabel.visible_characters = 0
+	$RichTextLabel.visible_characters = -1
 	$RichTextLabel.text = dialogue[index].text
 	if dialogue[index].has("speaker"):
-		$character.visible = true
 		$character.texture = load("res://Assets/Characters/" + dialogue[index].speaker.to_lower() + ".png")
+		$character.visible = true
 		if dialogue[index].has("flip"):
 			$character.flip_h = not dialogue[index].flip
 		else:

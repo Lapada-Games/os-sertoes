@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4bfpsqyy3yub"]
+
+[ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Soldier.tscn" id="1_6tap3"]
+[ext_resource type="Texture2D" uid="uid://dacuw34vpiq2p" path="res://Assets/Characters/matadeira.png" id="2_vh1ii"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrq2y"]
+atlas = ExtResource("2_vh1ii")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwt7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrq2y")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[node name="Matadeira" instance=ExtResource("1_6tap3")]
+z_index = 2
+speed = 14
+invincible = true
+
+[node name="Sprite2D" parent="EnemyBody" index="0"]
+sprite_frames = SubResource("SpriteFrames_hwt7n")
+frame_progress = 0.0
+flip_h = false
