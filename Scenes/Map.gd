@@ -29,7 +29,7 @@ func _ready():
 		$DialogBox.set_dialogue("res://Dialogs/tutorial4.json")
 		$Theme.stream = load("res://OST/matadeira.mp3")
 		
-	#level_data = load("res://Resources/LevelData/Levels/Level" + str(GameInfo.level) + ".tres")
+	level_data = load("res://Resources/LevelData/Levels/Level" + str(GameInfo.level) + ".tres")
 	current_wave = level_data.waves[wave_index]
 	if GameInfo.DEBUG:
 		$DialogBox.queue_free()
