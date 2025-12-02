@@ -50,5 +50,5 @@ wave_groups = Array[ExtResource("5_oj40i")]([SubResource("Resource_82fei"), SubR
 
 [resource]
 script = ExtResource("1_4e8kh")
-cash = 5000
+cash = 3000
 waves = Array[ExtResource("2_vd218")]([SubResource("Resource_yfe5g")])

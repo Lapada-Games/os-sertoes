@@ -26,6 +26,8 @@
 * [x] rethink the inflation system to be based on the amount of towers instead (or fuck it)
 * [x] find a great song for the final level
 * [x] credits screen
+* [ ] teaser
+* [ ] 
 
 # Less priority
 * [x] replace the endless mode button with credits instead
