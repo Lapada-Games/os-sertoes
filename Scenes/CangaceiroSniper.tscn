@@ -149,7 +149,7 @@ bullet = ExtResource("2_1no51")
 bullet_effects = Array[Resource("res://Resources/BulletEffects/bullet_effect.gd")]([SubResource("Resource_5gaqr")])
 attack_speed = 0.25
 range = 500.0
-durability = 60
+durability = 120
 
 [node name="Sprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_r55yr")

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Level" load_steps=15 format=3 uid="uid://fdn5lqm1w6r4"]
+[gd_resource type="Resource" script_class="Level" load_steps=21 format=3 uid="uid://fdn5lqm1w6r4"]
 
 [ext_resource type="Script" path="res://Resources/LevelData/Levels/level.gd" id="1_hcat4"]
 [ext_resource type="Script" path="res://Resources/LevelData/Waves/wave.gd" id="2_f0fxa"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0qwem0ufnhqs" path="res://Scenes/EliteShieldSoldier.tscn" id="6_pq5s7"]
 [ext_resource type="PackedScene" uid="uid://p0us3kgvw71s" path="res://Scenes/ShieldSoldier.tscn" id="7_wyd1i"]
 
-[sub_resource type="Resource" id="Resource_a3nn1"]
+[sub_resource type="Resource" id="Resource_ibibf"]
 script = ExtResource("5_6jnu6")
 enemy_type = ExtResource("4_uxtca")
 quantity = 10
@@ -21,7 +21,7 @@ quantity = 5
 [sub_resource type="Resource" id="Resource_xxhsn"]
 script = ExtResource("3_uxawx")
 path = NodePath("Path2D")
-enemies = Array[ExtResource("5_6jnu6")]([SubResource("Resource_a3nn1"), SubResource("Resource_b8w4r")])
+enemies = Array[ExtResource("5_6jnu6")]([SubResource("Resource_ibibf"), SubResource("Resource_b8w4r")])
 
 [sub_resource type="Resource" id="Resource_dmijq"]
 script = ExtResource("5_6jnu6")
@@ -42,7 +42,36 @@ enemies = Array[ExtResource("5_6jnu6")]([SubResource("Resource_dmijq"), SubResou
 script = ExtResource("2_f0fxa")
 wave_groups = Array[ExtResource("3_uxawx")]([SubResource("Resource_xxhsn"), SubResource("Resource_h2teq")])
 
+[sub_resource type="Resource" id="Resource_emp4w"]
+script = ExtResource("5_6jnu6")
+enemy_type = ExtResource("4_uxtca")
+quantity = 20
+
+[sub_resource type="Resource" id="Resource_wyn7n"]
+script = ExtResource("5_6jnu6")
+enemy_type = ExtResource("4_uxtca")
+quantity = 10
+
+[sub_resource type="Resource" id="Resource_yjin6"]
+script = ExtResource("3_uxawx")
+path = NodePath("Path2D")
+enemies = Array[ExtResource("5_6jnu6")]([SubResource("Resource_emp4w"), SubResource("Resource_wyn7n")])
+
+[sub_resource type="Resource" id="Resource_m2x5p"]
+script = ExtResource("5_6jnu6")
+enemy_type = ExtResource("4_uxtca")
+quantity = 15
+
+[sub_resource type="Resource" id="Resource_58a4y"]
+script = ExtResource("3_uxawx")
+path = NodePath("Path2D2")
+enemies = Array[ExtResource("5_6jnu6")]([SubResource("Resource_m2x5p")])
+
+[sub_resource type="Resource" id="Resource_yb3ku"]
+script = ExtResource("2_f0fxa")
+wave_groups = Array[ExtResource("3_uxawx")]([SubResource("Resource_yjin6"), SubResource("Resource_58a4y")])
+
 [resource]
 script = ExtResource("1_hcat4")
 cash = 500
-waves = Array[ExtResource("2_f0fxa")]([SubResource("Resource_rbgcj")])
+waves = Array[ExtResource("2_f0fxa")]([SubResource("Resource_rbgcj"), SubResource("Resource_yb3ku")])

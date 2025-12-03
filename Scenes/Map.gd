@@ -90,7 +90,6 @@ func end_wave():
 	$SpawnTimer.stop()
 	
 	if wave_index + 1 > len(level_data.waves) - 1:
-		GameInfo.next_level()
 		$HUD.visible = false
 		var timer = Timer.new()
 		timer.one_shot = true
@@ -98,6 +97,7 @@ func end_wave():
 		add_child(timer)
 		if GameInfo.level != 4:
 			$AnimationPlayer.play("fade")
+		GameInfo.next_level()		
 		timer.start(4.0)
 		return
 	else:
