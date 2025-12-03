@@ -8,7 +8,7 @@ var fade = false
 var can_go_down = false
 var can_go_up = false
 var target = -800.0
-var bg_speed = 0.15
+var bg_speed = 0.5
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
@@ -25,10 +25,10 @@ func _process(delta):
 		$Logo.modulate = Color(1, 1, 1, lerp($Logo.modulate[3], 0.0, 2.0 * delta))
 		if $BG.position.y > -2.0:
 			get_tree().change_scene_to_file("res://Scenes/Lore.tscn")
-	if timeDelta > 4.0:
+	if timeDelta > 0.0:
 		can_go_down = true
 	if can_go_down:
-		$Logo.position.y = lerp(float($Logo.position.y), 240.0, 1 * delta)
+		$Logo.position.y = lerp(float($Logo.position.y), 350.0, 1 * delta)
 	$BG.position.y = lerp(float($BG.position.y), target, bg_speed * delta)
 	
 	if $Logo.position.y >= 200:

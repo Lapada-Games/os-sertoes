@@ -304,7 +304,7 @@ offset_bottom = 884.0
 color = Color(0, 0, 0, 0)
 
 [node name="DialogBox" parent="." instance=ExtResource("2_pbi8r")]
-visible = false
+layer = -1
 
 [node name="PlayButton" type="Button" parent="DialogBox"]
 light_mask = 3

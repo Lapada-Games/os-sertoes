@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctlnsv7r3syn7"]
+[gd_scene load_steps=15 format=3 uid="uid://ctlnsv7r3syn7"]
 
 [ext_resource type="Texture2D" uid="uid://bpdp15k5bejr" path="res://Assets/Scenario/scene.png" id="1_2gg6k"]
 [ext_resource type="Script" path="res://Scenes/Map.gd" id="1_ms0u8"]
@@ -77,6 +77,46 @@ tracks/1/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_3uu43"]
+resource_name = "gameplay_showcase"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.3, 1.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(293, 166), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="Animation" id="Animation_x4yq3"]
 resource_name = "zoom_matadeira"
 length = 5.0
@@ -121,6 +161,7 @@ tracks/2/keys = {
 _data = {
 "RESET": SubResource("Animation_8oocm"),
 "fade": SubResource("Animation_hggy2"),
+"gameplay_showcase": SubResource("Animation_3uu43"),
 "zoom_matadeira": SubResource("Animation_x4yq3")
 }
 

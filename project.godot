@@ -25,7 +25,13 @@ TowerDatabase="*res://TowerDatabase.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="viewport"
+
+[editor]
+
+movie_writer/mjpeg_quality=1.0
+movie_writer/movie_file="C:/Users/magon/Videos/teaser-os-sertoes/gameplay.avi"
 
 [file_customization]
 

@@ -39,8 +39,9 @@ func _ready():
 	show_wave_arrows(true)
 
 func _process(delta):
-	#move_arrows(delta)
-	pass
+	if Input.is_action_just_pressed("ui_down"):
+		$HUD.visible = false
+		$AnimationPlayer.play("gameplay_showcase")
 
 func start_wave():
 	if GameInfo.level == 4:
@@ -49,7 +50,7 @@ func start_wave():
 	wave_started = true
 	current_wave = level_data.waves[wave_index]
 	$Prebattle.stop()
-	$Theme.play()
+	#$Theme.play()
 	for tower in $Towers.get_children().filter(func(e): return e is Tower):
 		if GameInfo.level == 4:
 			tower.durability *= 4
