@@ -44,6 +44,7 @@ func _process(delta):
 
 
 func _on_modo_historia_pressed():
+	GameInfo.level = 1
 	for button in $VBoxContainer.get_children():
 		button.disabled = true
 	$Theme.stop()

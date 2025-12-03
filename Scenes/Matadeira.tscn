@@ -1,17 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4bfpsqyy3yub"]
+[gd_scene load_steps=7 format=3 uid="uid://b4bfpsqyy3yub"]
 
 [ext_resource type="PackedScene" uid="uid://d3intu4yo7hob" path="res://Scenes/Soldier.tscn" id="1_6tap3"]
-[ext_resource type="Texture2D" uid="uid://dacuw34vpiq2p" path="res://Assets/Characters/matadeira.png" id="2_vh1ii"]
+[ext_resource type="Texture2D" uid="uid://cqmpcu4eta0o4" path="res://Assets/Characters/sprites/matadeira/matadeira.png" id="2_by53u"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vrq2y"]
-atlas = ExtResource("2_vh1ii")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj4vc"]
+atlas = ExtResource("2_by53u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovdoh"]
+atlas = ExtResource("2_by53u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lr3ov"]
+atlas = ExtResource("2_by53u")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hwt7n"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vrq2y")
+"texture": SubResource("AtlasTexture_vj4vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovdoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lr3ov")
 }],
 "loop": true,
 "name": &"walking",
@@ -24,6 +38,8 @@ speed = 14
 invincible = true
 
 [node name="Sprite2D" parent="EnemyBody" index="0"]
+texture_filter = 1
+position = Vector2(7, -6)
+scale = Vector2(3.6875, 3.6875)
 sprite_frames = SubResource("SpriteFrames_hwt7n")
-frame_progress = 0.0
-flip_h = false
+frame_progress = 0.523303

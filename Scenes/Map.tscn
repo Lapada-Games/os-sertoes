@@ -130,7 +130,6 @@ level_data = ExtResource("2_otdfg")
 
 [node name="DialogBox" parent="." instance=ExtResource("2_7u5e1")]
 layer = 4
-visible = false
 
 [node name="HUD" parent="." instance=ExtResource("4_3hc8h")]
 layer = 2
